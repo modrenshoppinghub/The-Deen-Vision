@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Deen Vision | Matrix Media Infrastructure</title>
+    <title>The Deen Vision | Autonomous Media Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <style>
@@ -24,113 +24,105 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-deep); color: var(--text-main); transition: background 0.5s stability, color 0.5s; overflow-x: hidden; position: relative; }
+        body { background-color: var(--bg-deep); color: var(--text-main); transition: background 0.4s, color 0.4s; overflow-x: hidden; position: relative; }
 
-        /* Tech Mesh Background Effect */
+        /* Background Visual Layer */
         body::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 10% 20%, var(--glow) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, var(--glow) 0%, transparent 40%);
+            background: radial-gradient(circle at 15% 15%, var(--glow) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 85%, var(--glow) 0%, transparent 45%);
             z-index: -1; pointer-events: none;
         }
 
-        /* Dynamic Navigation Matrix */
+        /* Responsive Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center; padding: 20px 8%;
-            background: rgba(3, 7, 18, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            background: rgba(3, 7, 18, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 1000;
         }
-        nav .logo { font-size: 1.6rem; font-weight: 900; color: var(--primary); letter-spacing: 1.5px; display: flex; align-items: center; gap: 12px; }
-        .engine-dock { display: flex; align-items: center; gap: 25px; }
-        .theme-controller { display: flex; gap: 10px; background: var(--glass-bg); padding: 6px 12px; border-radius: 30px; border: 1px solid var(--glass-border); }
-        .control-node { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; transition: 0.3s transform; border: 2px solid transparent; }
-        .control-node:hover { transform: scale(1.25); }
-        .control-node.active { border-color: var(--text-main); transform: scale(1.1); }
+        nav .logo { font-size: 1.6rem; font-weight: 900; color: var(--primary); letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .control-dock { display: flex; align-items: center; gap: 20px; }
+        .theme-switcher { display: flex; gap: 8px; background: var(--glass-bg); padding: 6px; border-radius: 30px; border: 1px solid var(--glass-border); }
+        .dot-node { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
+        .dot-node.active { border-color: var(--text-main); transform: scale(1.1); }
 
-        /* Massive Cinematic Hero Grid */
-        .hero-viewport { position: relative; padding: 150px 20px 100px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
-        .pipeline-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 8px 20px; border-radius: 50px; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .hero-viewport h1 { font-size: 6rem; font-weight: 900; line-height: 1.05; letter-spacing: -3px; margin-bottom: 30px; background: linear-gradient(135deg, #fff 30%, var(--text-muted) 70%, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-viewport p { font-size: 1.4rem; color: var(--text-muted); max-width: 780px; margin: 0 auto 50px auto; line-height: 1.8; font-weight: 400; }
+        /* Hero Hub */
+        .hero-canvas { padding: 140px 20px 90px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .status-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 8px 18px; border-radius: 30px; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; }
+        .hero-canvas h1 { font-size: 5.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 25px; background: linear-gradient(135deg, #fff 40%, var(--text-muted) 80%, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-canvas p { font-size: 1.35rem; color: var(--text-muted); max-width: 760px; margin: 0 auto 45px auto; line-height: 1.7; }
 
-        /* Social Synchronization Links */
-        .sync-cluster { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-        .cluster-node { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 16px 30px; border-radius: 14px; color: inherit; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .cluster-node:hover { transform: translateY(-5px) scale(1.02); border-color: var(--primary); background: var(--bg-surface); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        /* Link Nodes */
+        .hub-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 35px; }
+        .link-node { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 14px 28px; border-radius: 12px; color: inherit; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .link-node:hover { transform: translateY(-4px); border-color: var(--primary); background: var(--bg-surface); }
 
-        /* Real-Time Metrics Center */
-        .analytics-matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 120px auto; padding: 0 20px; }
-        .metric-card { background: var(--bg-surface); border: 1px solid var(--glass-border); padding: 40px 30px; border-radius: 24px; text-align: center; position: relative; transition: 0.3s; }
-        .metric-card::before { content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 1px; background: linear-gradient(to bottom, var(--glass-border), transparent); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-        .metric-card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 20px; }
-        .metric-card h2 { font-size: 3.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 5px; color: #fff; }
-        .metric-card p { color: var(--text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        /* Metrics Grid */
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto 100px auto; padding: 0 20px; }
+        .metric-card { background: var(--bg-surface); border: 1px solid var(--glass-border); padding: 35px 25px; border-radius: 20px; text-align: center; }
+        .metric-card i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
+        .metric-card h2 { font-size: 3rem; font-weight: 800; margin-bottom: 5px; color: #fff; }
+        .metric-card p { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Content Hub Processing Unit */
-        .processing-hub { max-width: 1200px; margin: 0 auto 120px auto; padding: 0 20px; }
-        .filter-dock { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; padding: 20px; background: var(--glass-bg); border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(10px); }
-        .search-engine-box { position: relative; flex: 1; max-width: 450px; }
-        .search-engine-box input { width: 100%; padding: 15px 20px 15px 55px; background: var(--bg-deep); border: 1px solid var(--glass-border); border-radius: 12px; color: #fff; font-size: 1rem; outline: none; transition: 0.3s; }
-        .search-engine-box input:focus { border-color: var(--primary); box-shadow: 0 0 15px var(--glow); }
-        .search-engine-box i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; }
+        /* Content Hub Module */
+        .stream-center { max-width: 1200px; margin: 0 auto 120px auto; padding: 0 20px; }
+        .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 45px; padding: 15px; background: var(--glass-bg); border-radius: 16px; border: 1px solid var(--glass-border); }
+        .search-engine { position: relative; flex: 1; max-width: 400px; }
+        .search-engine input { width: 100%; padding: 14px 20px 14px 50px; background: var(--bg-deep); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff; outline: none; transition: 0.3s; }
+        .search-engine input:focus { border-color: var(--primary); }
+        .search-engine i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
         
-        .tab-array { display: flex; gap: 10px; flex-wrap: wrap; }
-        .engine-tab { background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 12px 24px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
-        .engine-tab.active, .engine-tab:hover { background: rgba(255,255,255,0.03); border-color: var(--primary); color: var(--primary); }
+        .tab-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tab-node { background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
+        .tab-node.active, .tab-node:hover { background: rgba(255,255,255,0.02); border-color: var(--primary); color: var(--primary); }
 
-        /* Advanced Media Stream Grid */
-        .stream-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 40px; }
-        .stream-node-card { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 24px; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; }
-        .stream-node-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        .media-iframe-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
-        .media-iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .meta-data-layer { padding: 30px; }
-        .category-node-tag { display: inline-block; padding: 6px 16px; background: rgba(52,232,158,0.06); color: var(--accent); border-radius: 50px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; border: 1px solid rgba(52,232,158,0.1); }
-        .meta-data-layer h3 { font-size: 1.25rem; line-height: 1.5; font-weight: 700; color: #fff; }
+        /* Media Display Architecture */
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 35px; }
+        .media-node { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s; }
+        .media-node:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .video-box { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .info-box { padding: 25px; }
+        .node-tag { display: inline-block; padding: 4px 12px; background: rgba(52,232,158,0.06); color: var(--accent); border-radius: 30px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
+        .info-box h3 { font-size: 1.2rem; line-height: 1.5; font-weight: 700; color: #fff; }
 
-        /* Deep System Knowledge Base (FAQ) */
-        .system-faq-vault { max-width: 850px; margin: 0 auto 150px auto; padding: 0 20px; }
-        .vault-container { margin-top: 45px; display: flex; flex-direction: column; gap: 16px; }
-        .vault-node { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 16px; transition: 0.3s; }
-        .vault-trigger { width: 100%; padding: 24px; text-align: left; background: transparent; border: none; color: #fff; font-size: 1.15rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .vault-content { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1); background: rgba(0,0,0,0.15); }
-        .vault-content p { padding: 24px; color: var(--text-muted); line-height: 1.7; font-size: 1rem; }
+        /* FAQ Framework */
+        .faq-vault { max-width: 800px; margin: 0 auto 120px auto; padding: 0 20px; }
+        .faq-node { background: var(--bg-surface); border: 1px solid var(--glass-border); margin-bottom: 12px; border-radius: 12px; overflow: hidden; }
+        .faq-trigger { width: 100%; padding: 22px; text-align: left; background: transparent; border: none; color: #fff; font-size: 1.1rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(0,0,0,0.1); }
+        .faq-content p { padding: 22px; color: var(--text-muted); line-height: 1.6; }
 
-        /* Infrastructure Footer */
-        footer { background: #02050a; padding: 80px 40px 40px 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.95rem; }
-        .footer-grid-layout { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
-        .footer-column h4 { color: #fff; font-weight: 800; margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 0.5px; }
-        .footer-column p { line-height: 1.8; }
-        .footer-system-terminal { border-top: 1px solid rgba(255,255,255,0.05); max-width: 1200px; margin: 60px auto 0 auto; padding-top: 30px; text-align: center; color: #4b5563; font-size: 0.85rem; font-weight: 500; }
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--glass-border); background: #02050a; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><i class="fa-solid fa-compass"></i> THE DEEN VISION</div>
-        <div class="engine-dock">
-            <div class="theme-controller">
-                <div class="control-node active" style="background:#0b1329;" onclick="triggerThemeEngine('dark', this)"></div>
-                <div class="control-node" style="background:#ffffff;" onclick="triggerThemeEngine('light', this)"></div>
-                <div class="control-node" style="background:#064e3b;" onclick="triggerThemeEngine('emerald', this)"></div>
+        <div class="logo"><i class="fa-solid fa-circle-nodes"></i> THE DEEN VISION</div>
+        <div class="control-dock">
+            <div class="theme-switcher">
+                <div class="dot-node active" style="background:#0b1329;" onclick="runThemeEngine('dark', this)"></div>
+                <div class="dot-node" style="background:#ffffff;" onclick="runThemeEngine('light', this)"></div>
+                <div class="dot-node" style="background:#064e3b;" onclick="runThemeEngine('emerald', this)"></div>
             </div>
         </div>
     </nav>
 
-    <section class="hero-viewport animate__animated animate__fadeIn">
-        <div class="pipeline-badge" id="systemClockNode"><i class="fa-solid fa-satellite-dish"></i> Pipeline Sync: Online</div>
-        <h1>The Next Generation<br>Islamic Media Cluster.</h1>
-        <p>A highly-scaled, asynchronous media distribution matrix connected straight to Google Cloud clusters, serving structured video logs instantaneously.</p>
+    <section class="hero-canvas animate__animated animate__fadeIn">
+        <div class="status-badge" id="systemSyncStatus"><i class="fa-solid fa-network-wired"></i> Core Sync Active</div>
+        <h1>Next-Gen Islamic<br>Media Architecture.</h1>
+        <p>A decoupled web node running highly optimized caching protocols to pipeline video metadata directly from Google cloud services straight into a modern client interface.</p>
         
-        <div class="sync-cluster">
-            <a href="https://youtube.com/@thedeenvisionhq" target="_blank" class="cluster-node"><i class="fab fa-youtube" style="color:#ff0000; font-size: 1.3rem;"></i> Core Broadcast Node</a>
-            <a href="https://www.instagram.com/thedeenvisionhq" target="_blank" class="cluster-node"><i class="fab fa-instagram" style="color:#e1306c; font-size: 1.3rem;"></i> Media Asset Stream</a>
-            <a href="https://www.facebook.com/share/14iaz8UrvnE/" target="_blank" class="cluster-node"><i class="fab fa-facebook-f" style="color:#1877f2; font-size: 1.3rem;"></i> Portal Junction</a>
-            <a href="https://www.tiktok.com/t/ZTB7NA8dP/" target="_blank" class="cluster-node"><i class="fab fa-tiktok" style="font-size: 1.3rem;"></i> Data Micro-Feeds</a>
+        <div class="hub-links">
+            <a href="https://youtube.com/@thedeenvisionhq" target="_blank" class="link-node"><i class="fab fa-youtube" style="color:#ff0000;"></i> Broadcast Channel</a>
+            <a href="https://www.instagram.com/thedeenvisionhq" target="_blank" class="link-node"><i class="fab fa-instagram" style="color:#e1306c;"></i> Instagram Asset</a>
+            <a href="https://www.facebook.com/share/14iaz8UrvnE/" target="_blank" class="link-node"><i class="fab fa-facebook-f" style="color:#1877f2;"></i> Facebook Portal</a>
+            <a href="https://www.tiktok.com/t/ZTB7NA8dP/" target="_blank" class="link-node"><i class="fab fa-tiktok"></i> Micro Stream</a>
         </div>
     </section>
 
-    <section class="analytics-matrix">
+    <section class="metrics-grid">
         {% for stat in stats %}
         <div class="metric-card animate__animated animate__fadeInUp">
             <i class="fa-solid {{ stat.icon }}"></i>
@@ -140,123 +132,108 @@
         {% endfor %}
     </section>
 
-    <section class="processing-hub" id="hub">
-        <div class="filter-dock">
-            <div class="search-engine-box">
-                <i class="fa-solid fa-terminal"></i>
-                <input type="text" id="pipelineSearch" placeholder="Query data pipeline matrix..." onkeyup="executePipelineQuery()">
+    <section class="stream-center" id="hub">
+        <div class="control-row">
+            <div class="search-engine">
+                <i class="fa-solid fa-code-branch"></i>
+                <input type="text" id="nodeSearchInput" placeholder="Filter indexed nodes..." onkeyup="filterDataGrid()">
             </div>
-            <div class="tab-array">
-                <button class="engine-tab active" onclick="sortPipelineCat('all', this)">All Nodes</button>
-                <button class="engine-tab" onclick="sortPipelineCat('Bayan', this)">Lectures</button>
-                <button class="engine-tab" onclick="sortPipelineCat('Shorts', this)">Micro-Feeds</button>
-                <button class="engine-tab" onclick="sortPipelineCat('Series', this)">Series Data</button>
-                <button class="engine-tab" onclick="sortPipelineCat('Reminders', this)">Reminders</button>
+            <div class="tab-group">
+                <button class="tab-node active" onclick="sortDataGridCat('all', this)">All Pipelines</button>
+                <button class="tab-node" onclick="sortDataGridCat('Bayan', this)">Lectures</button>
+                <button class="tab-node" onclick="sortDataGridCat('Shorts', this)">Micro Feeds</button>
+                <button class="tab-node" onclick="sortDataGridCat('Series', this)">Series Data</button>
+                <button class="tab-node" onclick="sortDataGridCat('Reminders', this)">Reminders</button>
             </div>
         </div>
 
-        <div class="stream-grid" id="pipelineGrid">
+        <div class="media-grid" id="gridContainer">
             {% for video in videos %}
-            <div class="stream-node-card data-cluster-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}">
-                <div class="media-iframe-wrapper">
+            <div class="media-node active-grid-item animate__animated animate__fadeInUp" data-cat-token="{{ video.category }}">
+                <div class="video-box">
                     <iframe src="https://www.youtube.com/embed/{{ video.id }}" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="meta-data-layer">
-                    <span class="category-node-tag">{{ video.category }}</span>
-                    <h3 class="raw-node-title">{{ video.title }}</h3>
+                <div class="info-box">
+                    <span class="node-tag">{{ video.category }}</span>
+                    <h3 class="node-raw-title">{{ video.title }}</h3>
                 </div>
             </div>
             {% endfor %}
         </div>
     </section>
 
-    <section class="system-faq-vault">
-        <h2 style="text-align:center; font-size:2.5rem; font-weight:900; letter-spacing:-1px;">Ecosystem Parameters</h2>
-        <div class="vault-container">
-            {% for faq in faqs %}
-            <div class="vault-node">
-                <button class="vault-trigger" onclick="engageVaultAccordion(this)">
-                    {{ faq.q }} <i class="fa-solid fa-chevron-down" style="font-size:0.9rem; transition:0.3s;"></i>
-                </button>
-                <div class="vault-content">
-                    <p>{{ faq.a }}</p>
-                </div>
+    <section class="faq-vault">
+        <h2 style="text-align:center; font-size:2.4rem; font-weight:800; margin-bottom:35px;">System Parameters</h2>
+        {% for faq in faqs %}
+        <div class="faq-node">
+            <button class="faq-trigger" onclick="handleAccordion(this)">
+                {{ faq.q }} <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-content">
+                <p>{{ faq.a }}</p>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </section>
 
     <footer>
-        <div class="footer-grid-layout">
-            <div class="footer-column">
-                <h4>CORE DIRECTIVE</h4>
-                <p>Deploying ultra high-fidelity technical nodes to streamline production environments and broadcast pristine content architectures across distributed clouds globally.</p>
-            </div>
-            <div class="footer-column">
-                <h4>PIPELINE INDEX</h4>
-                <p>Micro-framework: Python 3.x / Flask<br>Data Pipe: Google Cloud Storage API node<br>Style Engine: Cascading Style Matrix v3 Custom</p>
-            </div>
-        </div>
-        <div class="footer-system-terminal">
-            <p>&copy; 2026 The Deen Vision Core Architecture Hub. Automated System Infrastructure Secured.</p>
-        </div>
+        <p>&copy; 2026 The Deen Vision Media System Infrastructure Core. All Code Pipelines Secure.</p>
     </footer>
 
     <script>
-        let operationalActiveCat = 'all';
+        let currentGridCategory = 'all';
 
-        function triggerThemeEngine(theme, controllerElement) {
+        function runThemeEngine(theme, triggerElement) {
             document.documentElement.setAttribute('data-theme', theme);
-            let nodes = document.getElementsByClassName('control-node');
-            for(let node of nodes) node.classList.remove('active');
-            controllerElement.classList.add('active');
+            let dots = document.getElementsByClassName('dot-node');
+            for(let dot of dots) dot.classList.remove('active');
+            triggerElement.classList.add('active');
         }
 
-        function executePipelineQuery() {
-            let inputQuery = document.getElementById('pipelineSearch').value.toLowerCase();
-            let videoNodes = document.getElementsByClassName('data-cluster-node');
+        function filterDataGrid() {
+            let userQuery = document.getElementById('nodeSearchInput').value.toLowerCase();
+            let gridItems = document.getElementsByClassName('active-grid-item');
 
-            for (let node of videoNodes) {
-                let titleText = node.getElementsByClassName('raw-node-title')[0].innerText.toLowerCase();
-                let currentCat = node.getAttribute('data-node-cat');
+            for (let item of gridItems) {
+                let textTitle = item.getElementsByClassName('node-raw-title')[0].innerText.toLowerCase();
+                let itemCategory = item.getAttribute('data-cat-token');
 
-                let verifySearch = titleText.includes(inputQuery);
-                let verifyCat = (operationalActiveCat === 'all' || currentCat === operationalActiveCat);
+                let matchSearch = textTitle.includes(userQuery);
+                let matchCategory = (currentGridCategory === 'all' || itemCategory === currentGridCategory);
 
-                node.style.display = (verifySearch && verifyCat) ? "" : "none";
+                item.style.display = (matchSearch && matchCategory) ? "" : "none";
             }
         }
 
-        function sortPipelineCat(catToken, tabBtn) {
-            operationalActiveCat = catToken;
-            let tabs = document.getElementsByClassName('engine-tab');
+        function sortDataGridCat(categoryToken, activeBtn) {
+            currentGridCategory = categoryToken;
+            let tabs = document.getElementsByClassName('tab-node');
             for(let tab of tabs) tab.classList.remove('active');
-            tabBtn.classList.add('active');
-            executePipelineQuery();
+            activeBtn.classList.add('active');
+            filterDataGrid();
         }
 
-        function engageVaultAccordion(element) {
-            let panel = element.nextElementSibling;
-            let arrow = element.querySelector('i');
+        function handleAccordion(button) {
+            let panel = button.nextElementSibling;
+            let icon = button.querySelector('i');
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
-                arrow.style.transform = "rotate(0deg)";
+                icon.className = "fa-solid fa-plus";
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
-                arrow.style.transform = "rotate(180deg)";
+                icon.className = "fa-solid fa-minus";
             }
         }
 
-        // Time-based system logic for badge
-        function setSystemClockBadge() {
+        function assignNetworkBadge() {
             let hr = new Date().getHours();
-            let status = "System Synchronization: Active";
-            if (hr < 12) status = "☀️ Broadcast Active: Morning Node";
-            else if (hr < 18) status = "⚡ Pipeline Loaded: Midday Node";
-            else status = "🌙 Sync Established: Night Network";
-            document.getElementById('systemClockNode').innerHTML = `<i class="fa-solid fa-satellite-dish"></i> ${status}`;
+            let msg = "Network Cluster: Online";
+            if (hr < 12) msg = "☀️ Core Pipeline: Morning Mode";
+            else if (hr < 18) msg = "⚡ Cache Synchronized: Day Cluster";
+            else msg = "🌙 Node Verified: Night Operation";
+            document.getElementById('systemSyncStatus').innerHTML = `<i class="fa-solid fa-network-wired"></i> ${msg}`;
         }
-        setSystemClockBadge();
+        assignNetworkBadge();
     </script>
 </body>
 </html>
