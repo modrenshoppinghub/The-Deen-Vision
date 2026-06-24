@@ -1,123 +1,292 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Channel Website</title>
+    <title>The Deen Vision | Official Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <style>
+        :root {
+            --primary: #ffd700;
+            --secondary: #34e89e;
+            --bg-dark: #0a192f;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
-            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #ffffff;
+            background: radial-gradient(circle at 50% 50%, #112240 0%, var(--bg-dark) 100%);
+            color: #f4f6f9;
             overflow-x: hidden;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        /* Top Luxury Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 25, 47, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        header {
+
+        nav .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 100px 20px 60px 20px;
+            position: relative;
         }
-        header h1 {
-            font-size: 3rem;
-            color: #ffd700;
-            margin-bottom: 10px;
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
-        header p {
-            font-size: 1.2rem;
-            color: #dddddd;
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #a8b2d1;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+
+        /* Floating Social Bar */
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
+
+        .social-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            padding: 14px 28px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-card i { font-size: 1.3rem; }
+        .yt:hover { border-color: #ff0000; color: #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.2); }
+        .ig:hover { border-color: #e1306c; color: #e1306c; box-shadow: 0 0 20px rgba(225,48,108,0.2); }
+        .fb:hover { border-color: #1877f2; color: #1877f2; box-shadow: 0 0 20px rgba(24,119,242,0.2); }
+        .tk:hover { border-color: #34e89e; color: #34e89e; box-shadow: 0 0 20px rgba(52,232,158,0.2); }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Stats Showcase */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .stat-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            color: #8892b0;
+            font-size: 1rem;
+        }
+
+        /* Main Content Grid */
+        .main-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            position: relative;
+        }
+
+        .main-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
+
+        /* Luxury Video Card with Live Iframe Embedded */
         .video-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
         }
+
         .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-            border-color: #ffd700;
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-        .video-card h3 {
-            margin-top: 15px;
-            font-size: 1.3rem;
-            color: #ffffff;
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
         }
-        .subscribe-btn {
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-tag {
             display: inline-block;
-            margin-top: 40px;
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            background-color: #ff0000;
-            color: white;
-            text-decoration: none;
+            padding: 5px 12px;
+            background: rgba(52, 232, 158, 0.1);
+            color: var(--secondary);
             border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
-        .subscribe-btn:hover {
-            transform: scale(1.05);
-            background-color: #cc0000;
+
+        .video-info h3 {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            color: #e2e8f0;
         }
+
         footer {
             text-align: center;
             padding: 40px;
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #aaa;
+            margin-top: 100px;
+            font-size: 0.95rem;
+            color: #8892b0;
+            border-top: 1px solid var(--glass-border);
+            background: #060d1a;
         }
     </style>
 </head>
 <body>
 
-    <header class="animate__animated animate__fadeInDown">
-        <h1>Deen Ki Baat</h1>
-        <p>Welcome to our Official Islamic Channel Website</p>
-        <a href="#" class="subscribe-btn animate__animated animate__pulse animate__infinite">Subscribe Our Channel</a>
-    </header>
+    <nav>
+        <div class="logo">THE DEEN VISION</div>
+    </nav>
 
-    <div class="container">
-        <h2 style="text-align: center; color: #ffd700;" class="animate__animated animate__fadeIn">Latest Bayans & Videos</h2>
+    <section class="hero animate__animated animate__fadeIn">
+        <h1>The Deen Vision</h1>
+        <p>Spreading authentic Islamic knowledge and beautiful reminders across digital platforms. Connect with us globally.</p>
+        
+        <div class="social-grid">
+            <a href="https://youtube.com/@thedeenvisionhq?si=iqO_Q5HVe_LIhsvP" target="_blank" class="social-card yt">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.instagram.com/thedeenvisionhq?igsh=MWlsYzNiYXJodmludw==" target="_blank" class="social-card ig">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/share/14iaz8UrvnE/" target="_blank" class="social-card fb">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.tiktok.com/t/ZTB7NA8dP/" target="_blank" class="social-card tk">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+    </section>
+
+    <section class="stats-container animate__animated animate__fadeInUp">
+        {% for stat in stats %}
+        <div class="stat-box">
+            <h2>{{ stat.count }}</h2>
+            <p>{{ stat.label }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section style="margin-bottom: 60px;">
+        <h2 class="main-heading">Featured Reminders</h2>
         
         <div class="video-grid">
             {% for video in videos %}
             <div class="video-card animate__animated animate__zoomIn">
-                <div style="background: #111; height: 180px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: #666;">[ YouTube Video Player ]</span>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/{{ video.id }}" allowfullscreen></iframe>
                 </div>
-                <h3>{{ video.title }}</h3>
+                <div class="video-info">
+                    <span class="video-tag">{{ video.category }}</span>
+                    <h3>{{ video.title }}</h3>
+                </div>
             </div>
             {% endfor %}
         </div>
-    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Deen Ki Baat. All Rights Reserved.</p>
+        <p>&copy; 2026 The Deen Vision. Powered with Clarity and Purpose.</p>
     </footer>
 
 </body>
