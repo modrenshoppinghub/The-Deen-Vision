@@ -5,14 +5,15 @@ import time
 
 app = Flask(__name__)
 
-# ==========================================
-# ENTERPRISE SECURITY & CREDENTIALS LAYER
-# ==========================================
+# Essential for Vercel Serverless Production Routing
+app.debug = False
+
+# Official Active Credentials Node
 API_KEY = "AIzaSyB3K2pOe7pb8U6aiTmv-4LhehLG4_vbFCE"
 CHANNEL_ID = "UCignGBS20R65blQr7axPAVg"
 
-# Global Memory Cache Parameters (For Ultra-Fast Performance)
-CACHE_DURATION = 900  # 15 Minutes Cache to bypass YouTube API limits and speed up loading
+# Performance Cache Core
+CACHE_DURATION = 900  
 cache_data = None
 last_fetched_time = 0
 
@@ -20,7 +21,6 @@ def fetch_highly_optimized_feed():
     global cache_data, last_fetched_time
     current_time = time.time()
     
-    # Industrial Grade Fail-Safe Backup Data Set
     production_fallbacks = [
         {"title": "The Beauty of Islamic Character (Official Core Lecture)", "id": "dQw4w9WgXcQ", "category": "Bayan"},
         {"title": "Understanding the True Essence of Deen (Series Node)", "id": "dQw4w9WgXcQ", "category": "Series"},
@@ -28,14 +28,12 @@ def fetch_highly_optimized_feed():
         {"title": "Purification of the Heart & Soul (Spiritual Reminder)", "id": "dQw4w9WgXcQ", "category": "Reminders"}
     ]
 
-    # Serve data directly from memory cache if within 15 minutes window
     if cache_data and (current_time - last_fetched_time < CACHE_DURATION):
         return cache_data
 
     try:
-        # High-Speed API Node Call to Google Cloud Infrastructure
         url = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&channelId={CHANNEL_ID}&part=snippet,id&order=date&maxResults=15&type=video"
-        response = requests.get(url, timeout=4.5) # Strict timeout to ensure site never hangs
+        response = requests.get(url, timeout=4) 
         
         if response.status_code != 200:
             return cache_data if cache_data else production_fallbacks
@@ -48,7 +46,6 @@ def fetch_highly_optimized_feed():
                 title = item["snippet"]["title"]
                 video_id = item["id"]["videoId"]
                 
-                # Smart Algorithmic Content Categorization Engine
                 title_lower = title.lower()
                 if "short" in title_lower or "status" in title_lower or "reel" in title_lower:
                     category = "Shorts"
@@ -69,19 +66,15 @@ def fetch_highly_optimized_feed():
             cache_data = processed_videos
             last_fetched_time = current_time
             return cache_data
-        else:
-            return cache_data if cache_data else production_fallbacks
+        return cache_data if cache_data else production_fallbacks
             
     except Exception:
-        # Emergency pipeline redirect to prevent any server crash
         return cache_data if cache_data else production_fallbacks
 
 @app.route('/')
 def home():
-    # Dynamic Data Ingestion Pipeline
     synced_videos = fetch_highly_optimized_feed()
     
-    # High-End Metric System Configuration
     analytics_stats = [
         {"count": "100K+", "label": "Global Community Hub", "icon": "fa-users"},
         {"count": "500+", "label": "Media Broadcast Releases", "icon": "fa-video"},
@@ -89,7 +82,6 @@ def home():
         {"count": "24/7", "label": "Automated Server Sync", "icon": "fa-rotate"}
     ]
     
-    # Architectural FAQs Platform Base
     knowledge_base_faqs = [
         {"q": "What is the core architectural goal of this ecosystem?", "a": "To bridge professional web development standards with authentic Islamic multimedia content using automated API-driven data scaling."},
         {"q": "How does the real-time upload synchronization system process data?", "a": "The site uses an asynchronous server-side caching protocol. When you publish content natively on YouTube, our secure data channel fetches and structures it within the pipeline automatically."},
@@ -98,16 +90,9 @@ def home():
     
     return render_template('index.html', videos=synced_videos, stats=analytics_stats, faqs=knowledge_base_faqs)
 
-# Error Handler Layers to completely lock down the app security
-@app.errorhandler(404)
-def page_not_found(e):
-    return "The Deen Vision - Node Not Found", 404
-
-@app.errorhandler(500)
-def server_error(e):
-    return "The Deen Vision - Structural Failure Prevented", 500
+# Exposed WSGI handler layer explicitly structured for Vercel Python Runtime
+wsgi_handler = app
 
 if __name__ == '__main__':
-    # Cloud Deployment Ready Runtime Configuration
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run(host='0.0.0.0', port=port)
