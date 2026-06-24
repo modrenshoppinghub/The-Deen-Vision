@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Channel Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #dddddd;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+            border-color: #ffd700;
+        }
+        .video-card h3 {
+            margin-top: 15px;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+        .subscribe-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        }
+        .subscribe-btn:hover {
+            transform: scale(1.05);
+            background-color: #cc0000;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="animate__animated animate__fadeInDown">
+        <h1>Deen Ki Baat</h1>
+        <p>Welcome to our Official Islamic Channel Website</p>
+        <a href="#" class="subscribe-btn animate__animated animate__pulse animate__infinite">Subscribe Our Channel</a>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center; color: #ffd700;" class="animate__animated animate__fadeIn">Latest Bayans & Videos</h2>
+        
+        <div class="video-grid">
+            {% for video in videos %}
+            <div class="video-card animate__animated animate__zoomIn">
+                <div style="background: #111; height: 180px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #666;">[ YouTube Video Player ]</span>
+                </div>
+                <h3>{{ video.title }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Deen Ki Baat. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
