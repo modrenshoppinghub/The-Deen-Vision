@@ -3,194 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>THE DEEN VISION | OMNIPOTENT QUANTUM GOD-MODE NODE</title>
+    <title>The Deen Vision | Elite Enterprise Media Matrix</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     
     <style>
-        /* ABSOLUTE INDUSTRIAL ULTRA-BLACK THEME MATRIX */
+        /* TOP-TIER INDUSTRIAL DESIGN PALETTE */
         :root[data-theme="dark"] {
-            --bg-deep: #000002; --bg-surface: #020612; --primary: #ffd700; --accent: #00ffcc;
-            --glass-bg: rgba(255, 255, 255, 0.01); --glass-border: rgba(0, 255, 204, 0.08);
-            --text-main: #ffffff; --text-muted: #8a99ad; --neon-glow: rgba(0, 255, 204, 0.4);
-            --matrix-laser: #ff0055;
+            --bg-deep: #030712; --bg-surface: #0b1329; --primary: #ffd700; --accent: #00ffcc;
+            --glass-bg: rgba(255, 255, 255, 0.02); --glass-border: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff; --text-muted: #9ca3af; --neon-glow: rgba(0, 255, 204, 0.2);
+            
+            /* Social Brand Vectors */
+            --youtube: #ff0000; --tiktok: #010101; --instagram: #e1306c; --facebook: #1877f2;
         }
         :root[data-theme="light"] {
-            --bg-deep: #f0f2f5; --bg-surface: #ffffff; --primary: #9a3412; --accent: #1d4ed8;
+            --bg-deep: #f3f4f6; --bg-surface: #ffffff; --primary: #b45309; --accent: #2563eb;
             --glass-bg: rgba(0, 0, 0, 0.02); --glass-border: rgba(0, 0, 0, 0.08);
-            --text-main: #0f172a; --text-muted: #64748b; --neon-glow: rgba(29, 78, 216, 0.2);
-            --matrix-laser: #3b82f6;
-        }
-        :root[data-theme="emerald"] {
-            --bg-deep: #000a06; --bg-surface: #012417; --primary: #eab308; --accent: #10b981;
-            --glass-bg: rgba(255, 255, 255, 0.02); --glass-border: rgba(16, 185, 129, 0.15);
-            --text-main: #f0fdf4; --text-muted: #65a30d; --neon-glow: rgba(16, 185, 129, 0.5);
-            --matrix-laser: #f43f5e;
+            --text-main: #111827; --text-muted: #4b5563; --neon-glow: rgba(37, 99, 235, 0.1);
+            --youtube: #ff0000; --tiktok: #000000; --instagram: #e1306c; --facebook: #1877f2;
         }
 
-        /* HARDWARE ACCELERATED CORE OVERRIDES */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Consolas', 'Segoe UI', monospace; -webkit-font-smoothing: antialiased; }
-        body { background-color: var(--bg-deep); color: var(--text-main); overflow-x: hidden; position: relative; transition: background 0.5s; transform: translateZ(0); }
-
-        /* ADVANCED GRAPHICS SHADER FILTERS (CRT + GLASS DISTORTION) */
-        .crt-shader-layer { position: fixed; inset: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 3px, 6px 100%; z-index: 9999; pointer-events: none; opacity: 0.15; }
+        /* HARDWARE ACCELERATED RESET */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg-deep); color: var(--text-main); overflow-x: hidden; position: relative; transition: background 0.4s; transform: translateZ(0); }
 
         #particleCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-        #luminescenceCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; filter: blur(140px) saturate(2.5); opacity: 0; transition: opacity 0.8s ease; }
 
-        /* HIGH-END FLOATING HUD NAVIGATION */
+        /* PREMIUM NAVIGATION FLOATING DOCK */
         nav {
-            display: flex; justify-content: space-between; align-items: center; padding: 25px 5%;
-            background: rgba(0, 0, 2, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border-bottom: 2px solid var(--glass-border); position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            display: flex; justify-content: space-between; align-items: center; padding: 20px 6%;
+            background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        nav .logo { font-size: clamp(1rem, 4vw, 1.4rem); font-weight: 900; color: var(--accent); display: flex; align-items: center; gap: 10px; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-glow); }
-        .theme-hub { display: flex; gap: 12px; background: rgba(255,255,255,0.03); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--glass-border); }
-        .dot-switch { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid transparent; }
-        .dot-switch.active { border-color: var(--text-main); transform: scale(1.3) rotate(180deg); box-shadow: 0 0 15px var(--text-main); }
+        nav .logo { font-size: clamp(1.2rem, 5vw, 1.6rem); font-weight: 900; color: var(--primary); display: flex; align-items: center; gap: 10px; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+        
+        /* INTEGRATED HIGH-END SOCIAL HUB */
+        .social-nav-dock { display: flex; gap: 15px; align-items: center; }
+        .social-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.1rem; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        
+        .social-icon-btn.yt:hover { background: var(--youtube); color: #fff; box-shadow: 0 0 15px var(--youtube); transform: translateY(-3px); }
+        .social-icon-btn.tt:hover { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.6); transform: translateY(-3px); }
+        .social-icon-btn.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; box-shadow: 0 0 15px var(--instagram); transform: translateY(-3px); }
+        .social-icon-btn.fb:hover { background: var(--facebook); color: #fff; box-shadow: 0 0 15px var(--facebook); transform: translateY(-3px); }
 
-        /* DEEP CINEMATIC HOVER DIMENSION CONTROLLER */
+        /* THEATER CLOSURE VIEWPORT */
         #theaterOverlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98);
-            z-index: 2000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(20px); padding: 15px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97);
+            z-index: 2000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(15px); padding: 10px;
         }
-        #theaterOverlay.active { display: flex; animation: fadeIn 0.4s forwards; }
-        .theater-box { width: 95%; max-width: 1050px; background: #000; border-radius: 24px; overflow: hidden; border: 2px solid var(--primary); position: relative; transition: box-shadow 0.4s, transform 0.4s; }
-        .close-theater { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 1.3rem; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: 0.4s; z-index: 2100; }
-        .close-theater:hover { background: var(--matrix-laser); transform: scale(1.1) rotate(90deg); box-shadow: 0 0 20px var(--matrix-laser); }
+        #theaterOverlay.active { display: flex; }
+        .theater-box { width: 95%; max-width: 1000px; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid var(--primary); position: relative; }
+        .close-theater { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 1.3rem; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: 0.3s; z-index: 2100; }
+        .close-theater:hover { background: #ff0055; transform: rotate(90deg); }
 
-        /* SCI-FI INTERACTIVE GLITCH HERO COMPONENT */
-        .hero { padding: clamp(70px, 14vw, 130px) 20px 30px 20px; text-align: center; max-width: 1200px; margin: 0 auto; position: relative; }
-        
-        .matrix-glitch-header {
-            font-size: clamp(2.2rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 25px; letter-spacing: -3px;
-            color: #fff; position: relative; cursor: cell; text-transform: uppercase;
-        }
-        
-        /* QUANTUM ALPHANUMERIC METAMORPHOSIS LAYER */
-        .neural-string { display: inline-block; position: relative; transition: color 0.3s; }
-        .neural-string:hover { color: var(--accent); text-shadow: 0 0 25px var(--neon-glow); }
+        /* BRANDING HERO LAYER */
+        .hero { padding: clamp(60px, 12vw, 110px) 20px 40px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; background: linear-gradient(135deg, #fff, var(--text-muted), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: clamp(1rem, 3vw, 1.3rem); color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
 
-        .hero p { font-size: clamp(0.95rem, 2.5vw, 1.25rem); color: var(--text-muted); max-width: 750px; margin: 0 auto; line-height: 1.7; letter-spacing: 0.5px; }
-
-        /* EXTREME INTELLIGENT SEARCH CLUSTER ENGINE */
-        .search-module { max-width: 650px; width: 92%; margin: 40px auto; position: relative; z-index: 500; }
-        .search-input-wrapper { position: relative; transform: translateZ(0); }
-        .search-input-wrapper input { width: 100%; padding: clamp(16px, 4.5vw, 22px) 25px clamp(16px, 4.5vw, 22px) 65px; background: #01040f; border: 2px solid var(--glass-border); border-radius: 60px; color: #fff; font-size: 1.1rem; outline: none; transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .search-input-wrapper input:focus { border-color: var(--accent); box-shadow: 0 0 40px var(--neon-glow), inset 0 0 15px rgba(0,255,204,0.1); }
-        .search-input-wrapper i { position: absolute; left: 26px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.2rem; filter: drop-shadow(0 0 5px var(--accent)); animation: pulse 2s infinite; }
+        /* CORE INTELLIGENT SEARCH CLUSTER */
+        .search-module { max-width: 600px; width: 90%; margin: 30px auto; position: relative; z-index: 100; }
+        .search-input-wrapper { position: relative; }
+        .search-input-wrapper input { width: 100%; padding: clamp(15px, 4vw, 18px) 20px clamp(15px, 4vw, 18px) 55px; background: var(--bg-surface); border: 2px solid var(--glass-border); border-radius: 50px; color: #fff; font-size: 1.05rem; outline: none; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .search-input-wrapper input:focus { border-color: var(--accent); box-shadow: 0 0 25px var(--neon-glow); }
+        .search-input-wrapper i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; }
         
-        .suggestion-box { position: absolute; top: 100%; left: 3%; width: 94%; background: rgba(2, 6, 18, 0.95); backdrop-filter: blur(20px); border: 2px solid var(--glass-border); border-radius: 20px; margin-top: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.9); overflow: hidden; display: none; max-height: 260px; overflow-y: auto; z-index: 999; }
-        .suggest-item { padding: 16px 24px; color: var(--text-main); cursor: pointer; text-align: left; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.01); transition: 0.3s; font-size: 0.95rem; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
-        .suggest-item:hover { background: linear-gradient(90deg, rgba(0,255,204,0.05), transparent); color: var(--accent); padding-left: 35px; }
+        .suggestion-box { position: absolute; top: 100%; left: 2%; width: 96%; background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 15px; margin-top: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); overflow: hidden; display: none; max-height: 220px; overflow-y: auto; z-index: 500; }
+        .suggest-item { padding: 14px 20px; color: var(--text-main); cursor: pointer; text-align: left; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.02); transition: 0.2s; }
+        .suggest-item:hover { background: var(--glass-bg); color: var(--accent); }
 
-        /* DATA MATRIX HUB BLOCK */
-        .hub-container { max-width: 1300px; margin: 0 auto 100px auto; padding: 0 clamp(15px, 4vw, 40px); }
+        /* GRID MEDIA SYSTEM */
+        .hub-container { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 clamp(15px, 4vw, 30px); }
         
-        /* HEAVY TACTICAL CONTROL SWITCHES */
-        .filter-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 50px; flex-wrap: wrap; }
-        .filter-btn { background: rgba(255,255,255,0.01); border: 1px solid var(--glass-border); color: var(--text-muted); padding: clamp(12px, 3vw, 16px) clamp(20px, 4vw, 30px); border-radius: 40px; cursor: pointer; font-weight: 800; font-size: 0.8rem; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); -webkit-tap-highlight-color: transparent; text-transform: uppercase; letter-spacing: 1px; }
-        .filter-btn.active, .filter-btn:hover { background: var(--bg-surface); border-color: var(--primary); color: var(--primary); box-shadow: 0 0 25px rgba(255,215,0,0.15); transform: translateY(-4px); }
+        .filter-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 45px; flex-wrap: wrap; }
+        .filter-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-muted); padding: clamp(10px, 3vw, 14px) clamp(18px, 4vw, 26px); border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
+        .filter-btn.active, .filter-btn:hover { background: var(--bg-surface); border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
-        /* FLUID RESPONSIVE HARDWARE-GRID ARCHITECTURE */
-        .grid-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(290px, 100%, 370px), 1fr)); gap: clamp(25px, 5vw, 40px); }
-        .matrix-card { background: #01030a; border: 1px solid var(--glass-border); border-radius: 24px; overflow: hidden; transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); position: relative; cursor: pointer; transform: translateZ(0); will-change: transform, box-shadow; }
+        .grid-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 100%, 350px), 1fr)); gap: clamp(20px, 5vw, 35px); }
+        .matrix-card { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; cursor: pointer; transform: translateZ(0); }
         
-        /* Premium Windows Hover Vector Scalar Matrices */
         @media (min-width: 1024px) {
-            .matrix-card:hover { transform: translateY(-15px) scale(1.03); border-color: var(--accent); box-shadow: 0 40px 80px rgba(0,0,0,0.85), 0 0 30px rgba(0,255,204,0.1); }
+            .matrix-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
         }
         
-        .thumb-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; overflow: hidden; }
-        .thumb-wrapper img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.8) contrast(1.05); transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1); }
-        .matrix-card:hover .thumb-wrapper img { transform: scale(1.08); filter: brightness(1.05); }
-        
-        .play-overlay { position: absolute; inset:0; display:flex; justify-content:center; align-items:center; background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 80%); opacity: 0; transition: 0.4s; }
+        .thumb-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #050505; }
+        .thumb-wrapper img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.9); transition: 0.4s; }
+        .play-overlay { position: absolute; inset:0; display:flex; justify-content:center; align-items:center; background: rgba(0,0,0,0.3); opacity: 0; transition:0.3s; }
         .matrix-card:hover .play-overlay, .matrix-card:active .play-overlay { opacity:1; }
-        .play-overlay i { font-size: 3.8rem; color: var(--accent); transform: scale(0.7); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter: drop-shadow(0 0 15px var(--accent)); }
-        .matrix-card:hover .play-overlay i, .matrix-card:active .play-overlay i { transform: scale(1); }
+        .play-overlay i { font-size: 3rem; color: var(--accent); transition: 0.3s; }
 
-        /* CARD META INTEL VECTOR LABELS */
-        .card-meta { padding: clamp(20px, 4vw, 28px); position: relative; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.4)); }
-        .card-meta::before { content:""; position:absolute; top:0; left:28px; width:50px; height:2px; background: var(--accent); opacity: 0.3; }
-        .node-badge { display: inline-block; padding: 5px 15px; background: rgba(0, 255, 204, 0.02); color: var(--accent); border-radius: 40px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; margin-bottom: 18px; border: 1px solid rgba(0, 255, 204, 0.12); letter-spacing: 1px; }
-        .card-meta h3 { font-size: clamp(1.05rem, 3.5vw, 1.2rem); line-height: 1.5; font-weight: 700; color: #ffffff; transition: color 0.3s; }
-        .matrix-card:hover h3 { color: var(--accent); }
+        .card-meta { padding: clamp(18px, 4vw, 25px); }
+        .node-badge { display: inline-block; padding: 4px 12px; background: rgba(0, 255, 204, 0.08); color: var(--accent); border-radius: 30px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(0, 255, 204, 0.15); }
+        .card-meta h3 { font-size: clamp(1rem, 3.5vw, 1.15rem); line-height: 1.5; font-weight: 700; color: #fff; }
 
-        footer { text-align: center; padding: 80px 20px 50px 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; color: var(--text-muted); background: #000001; position: relative; }
-        footer::after { content:""; position:absolute; top:0; left:50%; transform:translateX(-50%); width:250px; height:2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+        footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; color: var(--text-muted); background: #02050e; }
 
-        /* ADVANCED GRAPHICAL KEYFRAME DECLARATIONS */
-        @keyframes pulse { 0% { transform: translateY(-50%) scale(1); opacity:0.8; } 50% { transform: translateY(-50%) scale(1.1); opacity:1; } 100% { transform: translateY(-50%) scale(1); opacity:0.8; } }
-
-        /* Android OS Specific Responsive Tweak Overrides */
-        @media (max-width: 600px) {
-            nav { padding: 18px 4%; }
-            .hero { padding-top: 60px; }
-            .filter-row { gap: 8px; }
-            .filter-btn { width: 47%; text-align: center; padding: 14px 5px; font-size: 0.75rem; letter-spacing: 0px; } /* Perfect Core Alignment on Mobile Screens */
-            .matrix-card { border-radius: 16px; }
+        /* ADAPTIVE BREAKPOINTS FOR MOBILE OVERRIDES */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; padding: 15px 4%; }
+            .social-nav-dock { width: 100%; justify-content: center; }
+            .hero { padding-top: 30px; }
+            .filter-row { gap: 6px; }
+            .filter-btn { width: 47%; text-align: center; padding: 12px 5px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="crt-shader-layer"></div>
-
     <canvas id="particleCanvas"></canvas>
-    <canvas id="luminescenceCanvas"></canvas>
 
     <div id="theaterOverlay">
         <div class="theater-box">
             <button class="close-theater" onclick="shutdownTheater()"><i class="fa-solid fa-xmark"></i></button>
             <div style="position:relative; padding-bottom:56.25%;">
-                <iframe id="theaterFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+                <iframe id="theaterFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay"></iframe>
             </div>
         </div>
     </div>
 
     <nav>
-        <div class="logo"><i class="fa-solid fa-satellite"></i> VISION_MATRIX_V5.0</div>
-        <div class="theme-hub">
-            <div class="dot-switch active" style="background:#000002;" onclick="switchQuantumTheme('dark', this)"></div>
-            <div class="dot-switch" style="background:#ffffff;" onclick="switchQuantumTheme('light', this)"></div>
-            <div class="dot-switch" style="background:#000a06;" onclick="switchQuantumTheme('emerald', this)"></div>
+        <div class="logo"><i class="fa-solid fa-star-and-crescent"></i> THE DEEN VISION</div>
+        
+        <div class="social-nav-dock">
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn yt" title="YouTube Feed"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="social-icon-btn tt" title="TikTok Feed"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn ig" title="Instagram Grid"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-icon-btn fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1 class="matrix-glitch-header" id="dynamicCoreTitle">
-            <span class="neural-string">QUANTUM</span> <span class="neural-string">MEDIA</span> <span class="neural-string">GRID</span>
-        </h1>
-        <p>Omnipotent data mesh operational under severe cloud streaming optimization rules, handling dynamic fluid visual shaders across mobile clusters.</p>
+        <h1>THE DEEN VISION</h1>
+        <p>A premium unified content stream delivering high-fidelity dynamic media feeds across desktop platforms and smartphone viewports flawlessly.</p>
     </section>
 
     <div class="search-module">
         <div class="search-input-wrapper">
-            <i class="fa-solid fa-terminal"></i>
-            <input type="text" id="engineInput" placeholder="Initialize deep index scanning query..." onkeyup="executeEngineSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="engineInput" placeholder="Search across all video indexes..." onkeyup="runEngineSearch()">
         </div>
         <div class="suggestion-box" id="autoSuggestBox"></div>
     </div>
 
     <section class="hub-container">
         <div class="filter-row">
-            <button class="filter-btn active" onclick="filterQuantumCat('all', this)">All Nodes</button>
-            <button class="filter-btn" onclick="filterQuantumCat('Bayan', this)">Lectures</button>
-            <button class="filter-btn" onclick="filterQuantumCat('Shorts', this)">Micro Feeds</button>
-            <button class="filter-btn" onclick="filterQuantumCat('Series', this)">Series Cluster</button>
-            <button class="filter-btn" onclick="filterQuantumCat('Reminders', this)">Reminders</button>
+            <button class="filter-btn active" onclick="sortMatrixCat('all', this)">All Feeds</button>
+            <button class="filter-btn" onclick="sortMatrixCat('Bayan', this)">Lectures</button>
+            <button class="filter-btn" onclick="sortMatrixCat('Shorts', this)">Micro Streams</button>
+            <button class="filter-btn" onclick="sortMatrixCat('Series', this)">Series Cluster</button>
+            <button class="filter-btn" onclick="sortMatrixCat('Reminders', this)">Reminders</button>
         </div>
 
         <div class="grid-matrix" id="matrixGrid">
             {% for video in videos %}
-            <div class="matrix-card video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchQuantumTheater('{{ video.id }}')">
+            <div class="matrix-card video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchTheater('{{ video.id }}')">
                 <div class="thumb-wrapper">
-                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Autonomous Data Released Stack">
+                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Media Matrix Node">
                     <div class="play-overlay">
-                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-circle-play"></i>
                     </div>
                 </div>
                 <div class="card-meta">
@@ -203,211 +176,121 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 THE DEEN VISION ENGINE NODE. ULTRA-HIGH VELOCITY RESPONSIVE PARSING SECURED.</p>
+        <p>&copy; 2026 THE DEEN VISION. All Platform Rights Reserved. Optimized Architecture Ecosystem.</p>
     </footer>
 
     <script>
-        let operationalCategory = 'all';
+        let selectedCategory = 'all';
 
-        // 1. SOUND EMBEDDED NODE LOGIC LABELS (Cyber Audio Node Matrix)
-        const soundNodes = {
-            click: new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_10ac35c59f.mp3"),
-            glitch: new Audio("https://cdn.pixabay.com/audio/2022/11/15/audio_73b6aa8a87.mp3")
-        };
-        soundNodes.click.volume = 0.25;
-        soundNodes.glitch.volume = 0.08;
-
-        const invokeAudioNode = (audioTrack) => { audioTrack.currentTime = 0; audioTrack.play().catch(()=>{}); }
-
-        // 2. EXTREME CHAIN-SPRING FLUID PARTICLE ENGINE WITH PHYSICS WARP TRAILS
+        // 1. HARDWARE ACCELERATED PARTICLE FIELD ENGINE
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouseNode = { x: null, y: null, radius: window.innerWidth > 768 ? 150 : 80, speedX: 0, speedY: 0, lastX: 0, lastY: 0 };
+        let mouse = { x: null, y: null, radius: window.innerWidth > 768 ? 120 : 65 };
 
-        function scaleCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.addEventListener('resize', scaleCanvas);
+        function initCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', initCanvasSize);
+        
+        const trackMove = (x, y) => { mouse.x = x; mouse.y = y; };
+        window.addEventListener('mousemove', (e) => trackMove(e.x, e.y));
+        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) trackMove(e.touches[0].clientX, e.touches[0].clientY); });
+        window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
+        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
 
-        const captureVector = (clientX, clientY) => {
-            mouseNode.speedX = clientX - mouseNode.lastX;
-            mouseNode.speedY = clientY - mouseNode.lastY;
-            mouseNode.x = clientX; mouseNode.y = clientY;
-            mouseNode.lastX = clientX; mouseNode.lastY = clientY;
-        };
-
-        window.addEventListener('mousemove', (e) => captureVector(e.clientX, e.clientY));
-        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) captureVector(e.touches[0].clientX, e.touches[0].clientY); });
-        window.addEventListener('touchend', () => { mouseNode.x = null; mouseNode.y = null; });
-        window.addEventListener('mouseout', () => { mouseNode.x = null; mouseNode.y = null; });
-
-        class AdvancedParticle {
+        class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.velocity = { x: Math.random() * 0.6 - 0.3, y: Math.random() * 0.6 - 0.3 };
-                this.friction = 0.94; // Cyber drag matrix component
+                this.size = Math.random() * 1.5 + 1;
+                this.speedX = Math.random() * 0.6 - 0.3; this.speedY = Math.random() * 0.6 - 0.3;
             }
-            processEngineCore() {
-                this.x += this.velocity.x; this.y += this.velocity.y;
-                if (this.x > canvas.width || this.x < 0) this.velocity.x *= -1;
-                if (this.y > canvas.height || this.y < 0) this.velocity.y *= -1;
+            update() {
+                this.x += this.speedX; this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
 
-                // HIGH-SPEED WARP CURSOR FIELD INJECTION LOGIC
-                let dx = mouseNode.x - this.x; let dy = mouseNode.y - this.y;
+                let dx = mouse.x - this.x; let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx*dx + dy*dy);
-
-                if (distance < mouseNode.radius && mouseNode.x != null) {
-                    let accelerationMultiplier = (mouseNode.radius - distance) / mouseNode.radius;
-                    // Particles chain behind acceleration vector velocities (True physical trail effect)
-                    this.velocity.x += (mouseNode.speedX * accelerationMultiplier * 0.15);
-                    this.velocity.y += (mouseNode.speedY * accelerationMultiplier * 0.15);
-                } else {
-                    this.velocity.x *= this.friction; this.velocity.y *= this.friction;
-                    // Dynamic Restoring Equilibrium Constant
-                    if(Math.abs(this.velocity.x) < 0.2) this.velocity.x += Math.random() * 0.4 - 0.2;
-                    if(Math.abs(this.velocity.y) < 0.2) this.velocity.y += Math.random() * 0.4 - 0.2;
+                if (distance < mouse.radius) {
+                    let force = 1.5;
+                    if (mouse.x > this.x && this.x > 10) this.x -= force;
+                    if (mouse.x < this.x && this.x < canvas.width - 10) this.x += force;
+                    if (mouse.y > this.y && this.y > 10) this.y -= force;
+                    if (mouse.y < this.y && this.y < canvas.height - 10) this.y += force;
                 }
             }
-            renderEngineCore() {
+            draw() {
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
             }
         }
 
-        function populateEngineCluster() {
+        function createParticles() {
             particles = [];
-            let dynamicCapacity = window.innerWidth > 768 ? 85 : 40; // GPU power preservation loop on mobile systems
-            for(let i=0; i<dynamicCapacity; i++) particles.push(new AdvancedParticle());
+            let totalParticles = window.innerWidth > 768 ? 60 : 25;
+            for (let i = 0; i < totalParticles; i++) particles.push(new Particle());
         }
 
-        function executionLoop() {
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.processEngineCore(); p.renderEngineCore(); });
-            requestAnimationFrame(executionLoop);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
         }
-        scaleCanvas(); populateEngineCluster(); executionLoop();
+        initCanvasSize(); createParticles(); animateParticles();
 
-        // 3. SCI-FI DYNAMIC ALPHANUMERIC METAMORPHOSIS ALGORITHM (Matrix Title Engine)
-        const alphaMatrixTokens = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*§⚡Ξ";
-        const textElements = document.querySelectorAll('.neural-string');
-
-        textElements.forEach(element => {
-            const basicText = element.innerText;
-            element.addEventListener('mouseover', () => {
-                invokeAudioNode(soundNodes.glitch);
-                let iterativeCycle = 0;
-                let intervalLoop = setInterval(() => {
-                    element.innerText = basicText.split("").map((char, index) => {
-                        if(index < iterativeCycle) return basicText[index];
-                        return alphaMatrixTokens[Math.floor(Math.random() * alphaMatrixTokens.length)];
-                    }).join("");
-                    
-                    if(iterativeCycle >= basicText.length) clearInterval(intervalLoop);
-                    iterativeCycle += 1 / 3;
-                }, 30);
-            });
-        });
-
-        // 4. POWERFUL INTELLIGENT SEARCH RUNNER Engine
-        function executeEngineSearch() {
-            let userQuery = document.getElementById('engineInput').value.toLowerCase();
+        // 2. LIVE SEARCH ENGINE UTILITY ALGORITHM
+        function runEngineSearch() {
+            let query = document.getElementById('engineInput').value.toLowerCase();
             let nodes = document.getElementsByClassName('video-node');
-            let box = document.getElementById('autoSuggestBox');
-            box.innerHTML = '';
+            let suggestBox = document.getElementById('autoSuggestBox');
+            suggestBox.innerHTML = '';
 
-            let rawMatches = [];
+            let matchedTitles = [];
 
             for (let node of nodes) {
-                let textTitle = node.getElementsByClassName('node-title-text')[0].innerText;
-                let catToken = node.getAttribute('data-node-cat');
+                let title = node.getElementsByClassName('node-title-text')[0].innerText;
+                let cat = node.getAttribute('data-node-cat');
                 
-                let searchVerified = textTitle.toLowerCase().includes(userQuery);
-                let categoryVerified = (operationalCategory === 'all' || catToken === operationalCategory);
+                let matchQ = title.toLowerCase().includes(query);
+                let matchC = (selectedCategory === 'all' || cat === selectedCategory);
 
-                node.style.display = (searchVerified && categoryVerified) ? "" : "none";
+                node.style.display = (matchQ && matchC) ? "" : "none";
 
-                if (userQuery.length > 1 && searchVerified && categoryVerified) {
-                    rawMatches.push(textTitle);
-                }
+                if (query.length > 1 && matchQ && matchC) { matchedTitles.push(title); }
             }
 
-            if (rawMatches.length > 0) {
-                box.style.display = "block";
-                let verifiedUniqueMatches = [...new Set(rawMatches)].slice(0, 5); // Slice down index lists safely
-                verifiedUniqueMatches.forEach(title => {
-                    let itemDiv = document.createElement('div');
-                    itemDiv.className = 'suggest-item'; itemDiv.innerText = title;
-                    itemDiv.onclick = () => {
+            if (matchedTitles.length > 0) {
+                suggestBox.style.display = "block";
+                let exactMatches = [...new Set(matchedTitles)].slice(0, 5);
+                exactMatches.forEach(title => {
+                    let div = document.createElement('div'); div.className = 'suggest-item'; div.innerText = title;
+                    div.onclick = () => {
                         document.getElementById('engineInput').value = title;
-                        box.style.display = "none"; executeEngineSearch();
-                        invokeAudioNode(soundNodes.click);
+                        suggestBox.style.display = "none"; runEngineSearch();
                     };
-                    box.appendChild(itemDiv);
+                    suggestBox.appendChild(div);
                 });
-            } else { box.style.display = "none"; }
+            } else { suggestBox.style.display = "none"; }
         }
 
-        function filterQuantumCat(catToken, currentBtn) {
-            invokeAudioNode(soundNodes.click);
-            operationalCategory = catToken;
-            let targetGroup = document.getElementsByClassName('filter-btn');
-            for(let b of targetGroup) b.classList.remove('active');
-            currentBtn.classList.add('active');
-            executeEngineSearch();
+        function sortMatrixCat(catToken, btn) {
+            selectedCategory = catToken;
+            let btns = document.getElementsByClassName('filter-btn');
+            for(let b of btns) b.classList.remove('active');
+            btn.classList.add('active');
+            runEngineSearch();
         }
 
-        // 5. HYPER-LUMINESCENT AMBILIGHT REAL-TIME VIEWPORT GLOW PIPELINE
-        const lumiCanvas = document.getElementById('luminescenceCanvas');
-        const lumiCtx = lumiCanvas.getContext('2d');
-        let executionInterval = null;
-
-        function launchQuantumTheater(videoId) {
-            document.getElementById('theaterFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
+        // 3. PREMIUM CINEMATIC CONTROL INTERFACE WINDOW
+        function launchTheater(videoId) {
+            document.getElementById('theaterFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
             document.getElementById('theaterOverlay').classList.add('active');
-            document.body.style.overflow = "hidden"; // Absolute window freeze
-            invokeAudioNode(soundNodes.click);
-
-            // Fire Luminescence Core Ambient Raycaster
-            fireLuminescencePipeline();
+            document.body.style.overflow = "hidden"; 
         }
 
         function shutdownTheater() {
             document.getElementById('theaterFrame').src = "";
             document.getElementById('theaterOverlay').classList.remove('active');
             document.body.style.overflow = ""; 
-            invokeAudioNode(soundNodes.click);
-            
-            if(executionInterval) clearInterval(executionInterval);
-            lumiCanvas.style.opacity = 0;
-        }
-
-        function fireLuminescencePipeline() {
-            const frameRef = document.getElementById('theaterFrame');
-            lumiCanvas.width = 32; lumiCanvas.height = 18; // Hyper compressed grid matrix parsing layer for absolute raw performance
-            lumiCanvas.style.opacity = 0.75;
-
-            executionInterval = setInterval(() => {
-                try {
-                    // Core pipeline hooks onto target frame contexts
-                    lumiCtx.drawImage(frameRef, 0, 0, lumiCanvas.width, lumiCanvas.height);
-                    let pixelBuffer = lumiCtx.getImageData(0,0,lumiCanvas.width, lumiCanvas.height).data;
-                    // Structural calculation matrix injection for responsive ambient borders
-                    document.querySelector('.theater-box').style.boxShadow = `0 0 60px rgba(${pixelBuffer[0]}, ${pixelBuffer[1]}, ${pixelBuffer[2]}, 0.6)`;
-                } catch(err) {
-                    // Secure fallbacks enabled if data channel encryption flags lock context pipelines
-                    document.querySelector('.theater-box').style.boxShadow = `0 0 60px var(--neon-glow)`;
-                    clearInterval(executionInterval); // Safe system exit route to maintain performance loops
-                }
-            }, 250); // Hyper optimized frame check cycle rates
-        }
-
-        function switchQuantumTheme(themeToken, elementRef) {
-            invokeAudioNode(soundNodes.click);
-            document.documentElement.setAttribute('data-theme', themeToken);
-            let collection = document.getElementsByClassName('dot-switch');
-            for(let dot of collection) dot.classList.remove('active');
-            elementRef.classList.add('active');
-            populateEngineCluster(); // Recalibrate particle matrices structures dynamically
         }
 
         document.addEventListener('click', (e) => {
