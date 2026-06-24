@@ -3,76 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>THE DEEN VISION | SUPREME OMNI-CHANNEL INDUSTRIAL GRID</title>
+    <title>THE DEEN VISION | SUPREME ULTRA-PREMIUM PRODUCTION DASHBOARD</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     
     <style>
         /* ==========================================================================
-           1. ELITE INDUSTRIAL CYBERNETIC VARIABLES (CSS DEEP MATRIX)
+           1. ENTERPRISE ARCHITECTURE VARIABLES & DESIGN SYSTEM
            ========================================================================== */
         :root[data-theme="dark"] {
-            --bg-deep: #010206;
-            --bg-surface: #060b19;
-            --primary: #ffd700;
-            --accent: #00ffcc;
-            --glass-bg: rgba(255, 255, 255, 0.01);
-            --glass-border: rgba(0, 255, 204, 0.1);
-            --text-main: #ffffff;
-            --text-muted: #6b7280;
-            --neon-glow: rgba(0, 255, 204, 0.3);
+            --bg-base: #02040a;
+            --bg-canvas: #090e1a;
+            --bg-surface: #0e1726;
+            --primary: #ffca28;
+            --primary-glow: rgba(255, 202, 40, 0.3);
+            --accent: #00e5ff;
+            --accent-glow: rgba(0, 229, 255, 0.35);
+            --text-heading: #ffffff;
+            --text-body: #94a3b8;
+            --text-muted: #475569;
+            --border-matrix: rgba(0, 229, 255, 0.12);
+            --glass-core: rgba(255, 255, 255, 0.01);
             
-            /* Social Vector Branding Hex Core */
-            --brand-youtube: #ff0000;
-            --brand-tiktok: #000000;
-            --brand-instagram: #e1306c;
-            --brand-facebook: #1877f2;
-            --brand-snapchat: #fffc00;
-            --brand-twitter: #1da1f2;
+            /* Social Vector Specifications */
+            --brand-yt: #ff0000;
+            --brand-tt: #000000;
+            --brand-ig: #e1306c;
+            --brand-fb: #1877f2;
         }
+        
         :root[data-theme="light"] {
-            --bg-deep: #f8fafc;
-            --bg-surface: #ffffff;
-            --primary: #b45309;
+            --bg-base: #f8fafc;
+            --bg-canvas: #ffffff;
+            --bg-surface: #f1f5f9;
+            --primary: #d97706;
+            --primary-glow: rgba(217, 119, 6, 0.2);
             --accent: #2563eb;
-            --glass-bg: rgba(0, 0, 0, 0.01);
-            --glass-border: rgba(37, 99, 235, 0.1);
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --neon-glow: rgba(37, 99, 235, 0.15);
-            --brand-youtube: #ff0000;
-            --brand-tiktok: #111111;
-            --brand-instagram: #e1306c;
-            --brand-facebook: #1877f2;
+            --accent-glow: rgba(37, 99, 235, 0.2);
+            --text-heading: #0f172a;
+            --text-body: #475569;
+            --text-muted: #94a3b8;
+            --border-matrix: rgba(37, 99, 235, 0.1);
+            --glass-core: rgba(0, 0, 0, 0.02);
+            --brand-yt: #ff0000;
+            --brand-tt: #111111;
+            --brand-ig: #e1306c;
+            --brand-fb: #1877f2;
         }
 
         /* ==========================================================================
-           2. ADVANCED HARDWARE-ACCELERATED CORE RESETS
+           2. PERFORMANCE CRITICAL RESET & BASE PLATFORM LABELS
            ========================================================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-            position: relative;
-            transition: background 0.5s ease-in-out;
-            transform: translateZ(0);
-            will-change: background-color;
         }
 
-        /* ==========================================================================
-           3. BACKGROUND PERFORMANCE SHADERS & PARALLAX SYSTEMS
-           ========================================================================== */
-        #quantumParticleCanvas {
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-body);
+            overflow-x: hidden;
+            position: relative;
+            transform: translateZ(0);
+        }
+
+        #fluidRenderCanvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -83,300 +82,275 @@
         }
 
         /* ==========================================================================
-           4. STRATEGIC PRE-NAV SOCIAL BAR (SAB SE PEHLE NAZAR JAYEGI)
+           3. HYPER-LUMINESCENT FIRST-SIGHT SOCIAL PORTAL (SAB SE PEHLE NAZAR)
            ========================================================================== */
-        .prime-channels-dock {
+        .priority-broadcast-belt {
             width: 100%;
-            background: linear-gradient(90deg, #020617, #0f172a, #020617);
+            background: linear-gradient(90deg, #030712, #0b1528, #030712);
             border-bottom: 2px solid var(--accent);
-            padding: 14px 5%;
+            padding: 12px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
-            z-index: 1010;
-            box-shadow: 0 5px 25px rgba(0,255,204,0.15);
+            z-index: 1100;
+            box-shadow: 0 4px 20px var(--accent-glow);
         }
 
-        .prime-channels-dock .dock-intel {
-            color: #fff;
-            font-size: 0.8rem;
+        .broadcast-status {
+            font-size: 0.75rem;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            color: #fff;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .prime-channels-dock .dock-intel span {
+        .broadcast-status i {
             color: var(--accent);
-            animation: pulseFade 2s infinite;
+            animation: pulseState 1.8s infinite;
         }
 
-        .omni-social-row {
+        .priority-social-array {
             display: flex;
             gap: 12px;
             align-items: center;
         }
 
-        .omni-social-card {
+        .priority-platform-node {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 18px;
-            border-radius: 50px;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.05);
             color: #fff;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: translateZ(0);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .omni-social-card i {
-            font-size: 1.1rem;
-        }
-
-        /* Dynamic Hover Physics for Brand Verticals */
-        .omni-social-card.yt:hover { background: var(--brand-youtube); box-shadow: 0 0 20px var(--brand-youtube); transform: translateY(-3px) scale(1.05); }
-        .omni-social-card.tt:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.8); transform: translateY(-3px) scale(1.05); }
-        .omni-social-card.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 0 20px var(--brand-instagram); transform: translateY(-3px) scale(1.05); }
-        .omni-social-card.fb:hover { background: var(--brand-facebook); box-shadow: 0 0 20px var(--brand-facebook); transform: translateY(-3px) scale(1.05); }
+        .priority-platform-node.yt:hover { background: var(--brand-yt); box-shadow: 0 0 15px var(--brand-yt); transform: translateY(-2px); }
+        .priority-platform-node.tt:hover { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.8); transform: translateY(-2px); }
+        .priority-platform-node.ig:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 15px var(--brand-ig); transform: translateY(-2px); }
+        .priority-platform-node.fb:hover { background: var(--brand-fb); box-shadow: 0 0 15px var(--brand-fb); transform: translateY(-2px); }
 
         /* ==========================================================================
-           5. MAIN CORE FLOATING MENU NAVIGATION
+           4. MAIN ENTERPRISE FLOATING DOCK CONTROL
            ========================================================================== */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 6%;
-            background: rgba(1, 2, 6, 0.85);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 6%;
+            background: rgba(2, 4, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-matrix);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
-        nav .logo {
-            font-size: clamp(1.2rem, 5vw, 1.7rem);
+        nav .brand-anchor {
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
             font-weight: 900;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(255,215,0,0.3);
-        }
-
-        .system-theme-vault {
             display: flex;
-            gap: 12px;
-            background: rgba(255,255,255,0.02);
-            padding: 6px 14px;
-            border-radius: 40px;
-            border: 1px solid var(--glass-border);
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 12px var(--primary-glow);
         }
 
-        .vault-switch {
-            width: 16px;
-            height: 16px;
+        .theme-vault-control {
+            display: flex;
+            gap: 10px;
+            background: rgba(255,255,255,0.02);
+            padding: 6px 12px;
+            border-radius: 30px;
+            border: 1px solid var(--border-matrix);
+        }
+
+        .vault-trigger {
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             cursor: pointer;
-            transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-            border: 2px solid transparent;
+            transition: 0.3s ease;
         }
 
-        .vault-switch.active {
-            border-color: var(--text-main);
-            transform: scale(1.25);
-            box-shadow: 0 0 10px var(--text-main);
+        .vault-trigger.active {
+            transform: scale(1.2);
+            box-shadow: 0 0 8px var(--text-heading);
         }
 
         /* ==========================================================================
-           6. BRANDED ENTERPRISE HERO CANVAS
+           5. SYSTEM HERO BLOCK ARCHITECTURE
            ========================================================================== */
-        .hero-canvas {
-            padding: clamp(70px, 15vw, 140px) 24px 30px 24px;
+        .hero-dashboard-viewport {
+            padding: clamp(60px, 12vw, 100px) 24px 20px 24px;
             text-align: center;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
 
-        .hero-canvas h1 {
-            font-size: clamp(2.8rem, 9vw, 6rem);
+        .hero-dashboard-viewport h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
             font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 25px;
-            letter-spacing: -3px;
-            background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 60%, var(--primary) 100%);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--text-heading), var(--text-body), var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
         }
 
-        .hero-canvas p {
-            font-size: clamp(1rem, 2.8vw, 1.35rem);
-            color: var(--text-muted);
-            max-width: 780px;
+        .hero-dashboard-viewport p {
+            font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+            color: var(--text-body);
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.7;
-            font-weight: 500;
+            line-height: 1.6;
         }
 
         /* ==========================================================================
-           7. SEARCH ENGINE CORE CLUSTER
+           6. SEARCH NETWORK PIPELINEENGINE
            ========================================================================== */
-        .search-network-module {
-            max-width: 650px;
-            width: 92%;
-            margin: 40px auto;
+        .search-pipeline-module {
+            max-width: 600px;
+            width: 90%;
+            margin: 30px auto;
             position: relative;
-            z-index: 500;
+            z-index: 400;
         }
 
-        .search-engine-wrapper {
+        .input-pipeline-wrapper {
             position: relative;
         }
 
-        .search-engine-wrapper input {
+        .input-pipeline-wrapper input {
             width: 100%;
-            padding: clamp(16px, 4.5vw, 22px) 25px clamp(16px, 4.5vw, 22px) 65px;
-            background: #02050f;
-            border: 2px solid var(--glass-border);
-            border-radius: 60px;
+            padding: 18px 25px 18px 55px;
+            background: var(--bg-canvas);
+            border: 2px solid var(--border-matrix);
+            border-radius: 50px;
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1rem;
             outline: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transition: 0.35s ease;
         }
 
-        .search-engine-wrapper input:focus {
+        .input-pipeline-wrapper input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 40px var(--neon-glow), inset 0 0 15px rgba(0,255,204,0.05);
+            box-shadow: 0 0 30px var(--accent-glow);
         }
 
-        .search-engine-wrapper i {
+        .input-pipeline-wrapper i {
             position: absolute;
-            left: 26px;
+            left: 22px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent);
-            font-size: 1.15rem;
-            filter: drop-shadow(0 0 5px var(--accent));
         }
 
-        .autocomplete-vault {
+        .pipeline-auto-vault {
             position: absolute;
             top: 100%;
-            left: 3%;
-            width: 94%;
-            background: rgba(6, 11, 25, 0.96);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            margin-top: 12px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            left: 2%;
+            width: 96%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-matrix);
+            border-radius: 16px;
+            margin-top: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             overflow: hidden;
             display: none;
-            max-height: 250px;
+            max-height: 240px;
             overflow-y: auto;
-            z-index: 999;
         }
 
-        .autocomplete-node {
-            padding: 16px 24px;
-            color: var(--text-main);
+        .pipeline-node-item {
+            padding: 14px 20px;
+            color: var(--text-heading);
             cursor: pointer;
             text-align: left;
             font-weight: 600;
-            border-bottom: 1px solid rgba(255,255,255,0.01);
-            transition: 0.25s ease;
+            transition: 0.2s ease;
         }
 
-        .autocomplete-node:hover {
-            background: rgba(0, 255, 204, 0.04);
+        .pipeline-node-item:hover {
+            background: rgba(0, 229, 255, 0.05);
             color: var(--accent);
-            padding-left: 32px;
         }
 
         /* ==========================================================================
-           8. GRID MATRIX STRUCTURAL SYSTEMS
+           7. MEDIA HUB SYSTEMS MATRIX
            ========================================================================== */
-        .matrix-container {
-            max-width: 1300px;
-            margin: 0 auto 100px auto;
-            padding: 0 clamp(15px, 4vw, 40px);
+        .workspace-matrix-container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 24px;
         }
 
-        .filter-dock-station {
+        .sorting-station-bar {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 50px;
+            gap: 10px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
-        .station-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-muted);
-            padding: clamp(12px, 3vw, 16px) clamp(22px, 4vw, 32px);
-            border-radius: 40px;
+        .station-trigger {
+            background: var(--glass-core);
+            border: 1px solid var(--border-matrix);
+            color: var(--text-body);
+            padding: 12px 24px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 0.85rem;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            -webkit-tap-highlight-color: transparent;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            transition: 0.3s ease;
         }
 
-        .station-btn.active, .station-btn:hover {
+        .station-trigger.active, .station-trigger:hover {
             background: var(--bg-surface);
             border-color: var(--primary);
             color: var(--primary);
-            box-shadow: 0 0 25px rgba(255,215,0,0.15);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        .dynamic-media-grid {
+        .production-media-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(clamp(290px, 100%, 370px), 1fr));
-            gap: clamp(25px, 5vw, 40px);
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 30px;
         }
 
-        .media-cluster-node {
+        .media-production-card {
             background: var(--bg-surface);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border: 1px solid var(--border-matrix);
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             cursor: pointer;
             transform: translateZ(0);
-            will-change: transform, box-shadow;
         }
 
-        @media (min-width: 1024px) {
-            .media-cluster-node:hover {
-                transform: translateY(-12px) scale(1.02);
-                border-color: var(--accent);
-                box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-            }
+        .media-production-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
-        .viewport-wrapper {
+        .card-scaler-viewport {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%;
@@ -384,7 +358,7 @@
             overflow: hidden;
         }
 
-        .viewport-wrapper img {
+        .card-scaler-viewport img {
             position: absolute;
             top: 0;
             left: 0;
@@ -392,115 +366,100 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.85);
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
-        .media-cluster-node:hover .viewport-wrapper img {
-            transform: scale(1.06);
-            filter: brightness(1);
+        .media-production-card:hover .card-scaler-viewport img {
+            transform: scale(1.04);
         }
 
-        .cluster-play-trigger {
+        .card-play-hub {
             position: absolute;
             inset: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.25);
             opacity: 0;
-            transition: 0.4s ease;
+            transition: 0.3s ease;
         }
 
-        .media-cluster-node:hover .cluster-play-trigger {
+        .media-production-card:hover .card-play-hub {
             opacity: 1;
         }
 
-        .cluster-play-trigger i {
-            font-size: 3.5rem;
+        .card-play-hub i {
+            font-size: 3rem;
             color: var(--accent);
-            filter: drop-shadow(0 0 15px var(--accent));
-            transform: scale(0.8);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 0 10px var(--accent));
         }
 
-        .media-cluster-node:hover .cluster-play-trigger i {
-            transform: scale(1);
+        .card-identity-panel {
+            padding: 20px;
         }
 
-        .node-metadata-panel {
-            padding: clamp(20px, 4vw, 28px);
-            position: relative;
-        }
-
-        .node-intel-tag {
+        .identity-badge {
             display: inline-block;
-            padding: 5px 14px;
-            background: rgba(0, 255, 204, 0.04);
+            padding: 4px 10px;
+            background: rgba(0, 229, 255, 0.05);
             color: var(--accent);
-            border-radius: 40px;
-            font-size: 0.7rem;
+            border-radius: 20px;
+            font-size: 0.65rem;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            border: 1px solid rgba(0, 255, 204, 0.12);
-            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-matrix);
         }
 
-        .node-metadata-panel h3 {
-            font-size: clamp(1.05rem, 3.5vw, 1.25rem);
-            line-height: 1.5;
+        .card-identity-panel h3 {
+            font-size: 1.1rem;
+            line-height: 1.4;
             font-weight: 700;
-            color: #ffffff;
-            transition: color 0.3s ease;
-        }
-
-        .media-cluster-node:hover h3 {
-            color: var(--accent);
+            color: #fff;
         }
 
         /* ==========================================================================
-           9. ULTRA-PREMIUM CINEMATIC THEATER OVERLAY
+           8. INDUSTRIAL CINEMATIC FLOATING INTERFACE OVERLAY
            ========================================================================== */
-        #theaterSystemOverlay {
+        #productionTheaterPortal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.98);
+            background: rgba(0,0,0,0.96);
             z-index: 2000;
             display: none;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(15px);
             padding: 15px;
         }
 
-        #theaterSystemOverlay.active {
+        #productionTheaterPortal.active {
             display: flex;
         }
 
-        .theater-viewport-box {
+        .portal-responsive-frame-box {
             width: 95%;
-            max-width: 1050px;
+            max-width: 1000px;
             background: #000;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 2px solid var(--primary);
+            border: 1px solid var(--primary);
             position: relative;
-            box-shadow: 0 0 50px var(--neon-glow);
         }
 
-        .theater-kill-switch {
+        .portal-kill-trigger {
             position: absolute;
             top: 15px;
             right: 15px;
             background: rgba(255,255,255,0.1);
             border: none;
             color: #fff;
-            font-size: 1.3rem;
-            width: 42px;
-            height: 42px;
+            font-size: 1.2rem;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -510,143 +469,118 @@
             z-index: 2100;
         }
 
-        .theater-kill-switch:hover {
+        .portal-kill-trigger:hover {
             background: #ff0055;
-            transform: scale(1.1) rotate(90deg);
-            box-shadow: 0 0 20px #ff0055;
+            transform: rotate(90deg);
         }
 
-        /* ==========================================================================
-           10. DEEP PRODUCTION FOOTER
-           ========================================================================== */
         footer {
             text-align: center;
-            padding: 70px 20px 50px 20px;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.85rem;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border-matrix);
+            font-size: 0.8rem;
             color: var(--text-muted);
-            background: #010204;
-            position: relative;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: #020408;
         }
 
         /* ==========================================================================
-           11. KEYFRAME ANIMATIONS LAYER
+           9. RESPONSIVE SCALE BREAKPOINTS OVERRIDES
            ========================================================================== */
-        @keyframes pulseFade {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        /* ==========================================================================
-           12. RESPONSIVE ARCHITECTURE BREAKPOINTS (CROSS-PLATFORM ENGINE)
-           ========================================================================== */
-        @media (max-width: 850px) {
-            .prime-channels-dock {
+        @media (max-width: 800px) {
+            .priority-broadcast-belt {
                 flex-direction: column;
-                gap: 12px;
-                text-align: center;
-                padding: 15px 4%;
+                gap: 10px;
+                padding: 12px 4%;
             }
-            .omni-social-row {
+            .priority-social-array {
                 width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            .omni-social-card {
+            .priority-platform-node {
                 width: 46%;
                 justify-content: center;
-                font-size: 0.8rem;
-                padding: 10px;
             }
-            nav {
-                padding: 18px 4%;
-            }
-            .station-btn {
+            nav { padding: 15px 4%; }
+            .station-trigger {
                 width: 47%;
                 text-align: center;
-                padding: 12px 5px;
                 font-size: 0.75rem;
             }
+        }
+
+        @keyframes pulseState {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="prime-channels-dock">
-        <div class="dock-intel">
-            <span><i class="fa-solid fa-circle-dot"></i></span> Live Broadcast Network
+    <div class="priority-broadcast-belt">
+        <div class="broadcast-status">
+            <i class="fa-solid fa-satellite-dish"></i> Verified Content Channels
         </div>
-        <div class="omni-social-row">
-            <a href="https://youtube.com" target="_blank" class="omni-social-card yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
-            <a href="https://tiktok.com" target="_blank" class="omni-social-card tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-            <a href="https://instagram.com" target="_blank" class="omni-social-card ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <a href="https://facebook.com" target="_blank" class="omni-social-card fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <div class="priority-social-array">
+            <a href="https://youtube.com" target="_blank" class="priority-platform-node yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+            <a href="https://tiktok.com" target="_blank" class="priority-platform-node tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://instagram.com" target="_blank" class="priority-platform-node ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://facebook.com" target="_blank" class="priority-platform-node fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
         </div>
     </div>
 
-    <canvas id="quantumParticleCanvas"></canvas>
+    <canvas id="fluidRenderCanvas"></canvas>
 
-    <div id="theaterSystemOverlay">
-        <div class="theater-box viewport-wrapper theater-viewport-box">
-            <button class="theater-kill-switch" onclick="shutdownTheaterMatrix()"><i class="fa-solid fa-xmark"></i></button>
+    <div id="productionTheaterPortal">
+        <div class="portal-responsive-frame-box">
+            <button class="portal-kill-trigger" onclick="killTheaterMatrix()"><i class="fa-solid fa-xmark"></i></button>
             <div style="position:relative; padding-bottom:56.25%;">
-                <iframe id="matrixCoreFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay"></iframe>
+                <iframe id="productionFrameRef" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay"></iframe>
             </div>
         </div>
     </div>
 
     <nav>
-        <div class="logo"><i class="fa-solid fa-star-and-crescent"></i> THE DEEN VISION</div>
-        <div class="system-theme-vault">
-            <div class="vault-switch active" style="background:#010206;" onclick="shiftCoreTheme('dark', this)"></div>
-            <div class="vault-switch" style="background:#ffffff;" onclick="shiftCoreTheme('light', this)"></div>
+        <div class="brand-anchor"><i class="fa-solid fa-star-and-crescent"></i> THE DEEN VISION</div>
+        <div class="theme-vault-control">
+            <div class="vault-trigger active" style="background:#02040a;" onclick="shiftCoreTheme('dark', this)"></div>
+            <div class="vault-trigger" style="background:#ffffff;" onclick="shiftCoreTheme('light', this)"></div>
         </div>
     </nav>
 
-    <section class="hero-canvas">
+    <section class="hero-dashboard-viewport">
         <h1>THE DEEN VISION</h1>
-        <p>An elite, hyper-optimized media architecture broadcasting high-fidelity streaming data flawlessly across desktop ecosystems and mobile nodes.</p>
+        <p>A premium unified architectural content engine delivering robust dynamic video streaming grids across multiple hardware environments seamlessly.</p>
     </section>
 
-    <div class="search-network-module">
-        <div class="search-engine-wrapper">
+    <div class="search-pipeline-module">
+        <div class="input-pipeline-wrapper">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="matrixSearchInput" placeholder="Initialize media node index scan..." onkeyup="executeMatrixSearch()">
+            <input type="text" id="engineSearchPipeline" placeholder="Scan dynamic media indexes..." onkeyup="processPipelineSearch()">
         </div>
-        <div class="autocomplete-vault" id="matrixSuggestBox"></div>
+        <div class="pipeline-auto-vault" id="pipelineSuggestBox"></div>
     </div>
 
-    <section class="matrix-container">
-        <div class="filter-dock-station">
-            <button class="station-btn active" onclick="sortMatrixStream('all', this)">All Feeds</button>
-            <button class="station-btn" onclick="sortMatrixStream('Bayan', this)">Lectures</button>
-            <button class="station-btn" onclick="sortMatrixStream('Shorts', this)">Micro Feeds</button>
-            <button class="station-btn" onclick="sortMatrixStream('Series', this)">Series Data</button>
-            <button class="station-btn" onclick="sortMatrixStream('Reminders', this)">Reminders</button>
+    <section class="workspace-matrix-container">
+        <div class="sorting-station-bar">
+            <button class="station-trigger active" onclick="sortPipelineCategory('all', this)">All Nodes</button>
+            <button class="station-trigger" onclick="sortPipelineCategory('Bayan', this)">Lectures</button>
+            <button class="station-trigger" onclick="sortPipelineCategory('Shorts', this)">Micro Feeds</button>
+            <button class="station-trigger" onclick="sortPipelineCategory('Series', this)">Series Cluster</button>
+            <button class="station-trigger" onclick="sortPipelineCategory('Reminders', this)">Reminders</button>
         </div>
 
-        <div class="dynamic-media-grid" id="masterMediaGrid">
+        <div class="production-media-grid" id="productionGridMatrix">
             {% for video in videos %}
-            <div class="media-cluster-node video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchTheaterMatrix('{{ video.id }}')">
-                <div class="viewport-wrapper">
-                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="The Deen Vision Core Node">
-                    <div class="cluster-play-trigger">
-                        <i class="fa-solid fa-play"></i>
+            <div class="media-production-card video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchTheaterMatrix('{{ video.id }}')">
+                <div class="card-scaler-viewport">
+                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="The Deen Vision Broadcast Node">
+                    <div class="card-play-hub">
+                        <i class="fa-solid fa-circle-play"></i>
                     </div>
                 </div>
-                <div class="node-metadata-panel">
-                    <span class="node-intel-tag">{{ video.category }}</span>
+                <div class="card-identity-panel">
+                    <span class="identity-badge">{{ video.category }}</span>
                     <h3 class="node-title-text">{{ video.title }}</h3>
                 </div>
             </div>
@@ -655,144 +589,144 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 THE DEEN VISION. All Infrastructure Nodes Secured. Advanced Fluid Logic Locked.</p>
+        <p>&copy; 2026 THE DEEN VISION. All Core Systems Synchronized. Highly Optimized Client State Engine.</p>
     </footer>
 
     <script>
         let operationalFilterToken = 'all';
 
-        // FLUID PARTICLE GRAPHICS LOGIC
-        const canvas = document.getElementById('quantumParticleCanvas');
+        // HIGH-PERFORMANCE RENDERING PIPELINE FOR BACKGROUND PARTICLES
+        const canvas = document.getElementById('fluidRenderCanvas');
         const ctx = canvas.getContext('2d');
-        let particleCluster = [];
-        let engineCursor = { x: null, y: null, radius: window.innerWidth > 768 ? 130 : 65 };
+        let fluidNodesArray = [];
+        let cursorNode = { x: null, y: null, radius: window.innerWidth > 768 ? 100 : 60 };
 
-        function adaptCanvasBoundaries() { 
+        function recalculateCanvasBoundaries() { 
             canvas.width = window.innerWidth; 
             canvas.height = window.innerHeight; 
         }
-        window.addEventListener('resize', adaptCanvasBoundaries);
+        window.addEventListener('resize', recalculateCanvasBoundaries);
         
-        const monitorVector = (x, y) => { engineCursor.x = x; engineCursor.y = y; };
-        window.addEventListener('mousemove', (e) => monitorVector(e.clientX, e.clientY));
-        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) monitorVector(e.touches[0].clientX, e.touches[0].clientY); });
-        window.addEventListener('touchend', () => { engineCursor.x = null; engineCursor.y = null; });
-        window.addEventListener('mouseout', () => { engineCursor.x = null; engineCursor.y = null; });
+        const mapVectorCoordinates = (x, y) => { cursorNode.x = x; cursorNode.y = y; };
+        window.addEventListener('mousemove', (e) => mapVectorCoordinates(e.clientX, e.clientY));
+        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) mapVectorCoordinates(e.touches[0].clientX, e.touches[0].clientY); });
+        window.addEventListener('touchend', () => { cursorNode.x = null; cursorNode.y = null; });
+        window.addEventListener('mouseout', () => { cursorNode.x = null; cursorNode.y = null; });
 
-        class QuantumParticle {
+        class MatrixNodeParticle {
             constructor() {
                 this.x = Math.random() * canvas.width; 
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.6 + 1;
-                this.mx = Math.random() * 0.6 - 0.3; 
-                this.my = Math.random() * 0.6 - 0.3;
+                this.size = Math.random() * 1.5 + 0.8;
+                this.vx = Math.random() * 0.5 - 0.25; 
+                this.vy = Math.random() * 0.5 - 0.25;
             }
-            advanceState() {
-                this.x += this.mx; this.y += this.my;
-                if (this.x > canvas.width || this.x < 0) this.mx *= -1;
-                if (this.y > canvas.height || this.y < 0) this.my *= -1;
+            updateState() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x > canvas.width || this.x < 0) this.vx *= -1;
+                if (this.y > canvas.height || this.y < 0) this.vy *= -1;
 
-                let dx = engineCursor.x - this.x; 
-                let dy = engineCursor.y - this.y;
-                let scalarDistance = Math.sqrt(dx*dx + dy*dy);
-                if (scalarDistance < engineCursor.radius) {
-                    let accelerationGlowFactor = 1.4;
-                    if (engineCursor.x > this.x && this.x > 10) this.x -= accelerationGlowFactor;
-                    if (engineCursor.x < this.x && this.x < canvas.width - 10) this.x += accelerationGlowFactor;
-                    if (engineCursor.y > this.y && this.y > 10) this.y -= accelerationGlowFactor;
-                    if (engineCursor.y < this.y && this.y < canvas.height - 10) this.y += accelerationGlowFactor;
+                let dx = cursorNode.x - this.x; 
+                let dy = cursorNode.y - this.y;
+                let boundaryDistance = Math.sqrt(dx*dx + dy*dy);
+                if (boundaryDistance < cursorNode.radius) {
+                    let impactConstant = 1.2;
+                    if (cursorNode.x > this.x && this.x > 10) this.x -= impactConstant;
+                    if (cursorNode.x < this.x && this.x < canvas.width - 10) this.x += impactConstant;
+                    if (cursorNode.y > this.y && this.y > 10) this.y -= impactConstant;
+                    if (cursorNode.y < this.y && this.y < canvas.height - 10) this.y += impactConstant;
                 }
             }
-            renderState() {
+            drawState() {
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
             }
         }
 
-        function triggerEngineCluster() {
-            particleCluster = [];
-            let localizedVolume = window.innerWidth > 768 ? 65 : 25;
-            for (let i = 0; i < localizedVolume; i++) particleCluster.push(new QuantumParticle());
+        function buildParticlePipeline() {
+            fluidNodesArray = [];
+            let relativeDensity = window.innerWidth > 768 ? 55 : 22;
+            for (let i = 0; i < relativeDensity; i++) fluidNodesArray.push(new MatrixNodeParticle());
         }
 
-        function animationProcessingLoop() {
+        function pipelineExecutionLoop() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particleCluster.forEach(p => { p.advanceState(); p.renderState(); });
-            requestAnimationFrame(animationProcessingLoop);
+            fluidNodesArray.forEach(p => { p.updateState(); p.drawState(); });
+            requestAnimationFrame(pipelineExecutionLoop);
         }
-        adaptCanvasBoundaries(); triggerEngineCluster(); animationProcessingLoop();
+        recalculateCanvasBoundaries(); buildParticlePipeline(); pipelineExecutionLoop();
 
-        // LIVE COMPREHENSIVE SEARCH UTILITY MATRIX
-        function executeMatrixSearch() {
-            let inputString = document.getElementById('matrixSearchInput').value.toLowerCase();
-            let nodes = document.getElementsByClassName('video-node');
-            let suggestionBox = document.getElementById('matrixSuggestBox');
-            suggestionBox.innerHTML = '';
+        // DEEP INDEX SCAN & SEARCH LOGIC
+        function processPipelineSearch() {
+            let inputStr = document.getElementById('engineSearchPipeline').value.toLowerCase();
+            let videoNodes = document.getElementsByClassName('video-node');
+            let boxRef = document.getElementById('pipelineSuggestBox');
+            boxRef.innerHTML = '';
 
-            let structuralMatches = [];
+            let dataMatches = [];
 
-            for (let node of nodes) {
-                let textContentTitle = node.getElementsByClassName('node-title-text')[0].innerText;
-                let classificationTag = node.getAttribute('data-node-cat');
+            for (let node of videoNodes) {
+                let textTitle = node.getElementsByClassName('node-title-text')[0].innerText;
+                let nodeCat = node.getAttribute('data-node-cat');
                 
-                let evaluationQuery = textContentTitle.toLowerCase().includes(inputString);
-                let evaluationCategory = (operationalFilterToken === 'all' || classificationTag === operationalFilterToken);
+                let evaluationQuery = textTitle.toLowerCase().includes(inputStr);
+                let evaluationCategory = (operationalFilterToken === 'all' || nodeCat === operationalFilterToken);
 
                 node.style.display = (evaluationQuery && evaluationCategory) ? "" : "none";
 
-                if (inputString.length > 1 && evaluationQuery && evaluationCategory) { 
-                    structuralMatches.push(textContentTitle); 
+                if (inputStr.length > 1 && evaluationQuery && evaluationCategory) { 
+                    dataMatches.push(textTitle); 
                 }
             }
 
-            if (structuralMatches.length > 0) {
-                suggestionBox.style.display = "block";
-                let filteringDuplicates = [...new Set(structuralMatches)].slice(0, 5);
-                filteringDuplicates.forEach(title => {
-                    let containerDiv = document.createElement('div'); 
-                    containerDiv.className = 'autocomplete-node'; 
-                    containerDiv.innerText = title;
-                    containerDiv.onclick = () => {
-                        document.getElementById('matrixSearchInput').value = title;
-                        suggestionBox.style.display = "none"; executeMatrixSearch();
+            if (dataMatches.length > 0) {
+                boxRef.style.display = "block";
+                let uniqueArray = [...new Set(dataMatches)].slice(0, 5);
+                uniqueArray.forEach(title => {
+                    let suggestionNode = document.createElement('div'); 
+                    suggestionNode.className = 'pipeline-node-item'; 
+                    suggestionNode.innerText = title;
+                    suggestionNode.onclick = () => {
+                        document.getElementById('engineSearchPipeline').value = title;
+                        boxRef.style.display = "none"; processPipelineSearch();
                     };
-                    suggestionBox.appendChild(containerDiv);
+                    boxRef.appendChild(suggestionNode);
                 });
-            } else { suggestionBox.style.display = "none"; }
+            } else { boxRef.style.display = "none"; }
         }
 
-        function sortMatrixStream(catToken, referenceBtn) {
+        function sortPipelineCategory(catToken, currentBtn) {
             operationalFilterToken = catToken;
-            let group = document.getElementsByClassName('station-btn');
-            for(let component of group) component.classList.remove('active');
-            referenceBtn.classList.add('active');
-            executeMatrixSearch();
+            let groupButtons = document.getElementsByClassName('station-trigger');
+            for(let btn of groupButtons) btn.classList.remove('active');
+            currentBtn.classList.add('active');
+            processPipelineSearch();
         }
 
-        // CINEMATIC GRAPHICS CONTROLLERS
+        // VIEWPORT CINEMATIC INTERFACES
         function launchTheaterMatrix(videoId) {
-            document.getElementById('matrixCoreFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-            document.getElementById('theaterSystemOverlay').classList.add('active');
+            document.getElementById('productionFrameRef').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            document.getElementById('productionTheaterPortal').classList.add('active');
             document.body.style.overflow = "hidden"; 
         }
 
-        function shutdownTheaterMatrix() {
-            document.getElementById('matrixCoreFrame').src = "";
-            document.getElementById('theaterSystemOverlay').classList.remove('active');
+        function killTheaterMatrix() {
+            document.getElementById('productionFrameRef').src = "";
+            document.getElementById('productionTheaterPortal').classList.remove('active');
             document.body.style.overflow = ""; 
         }
 
-        function shiftCoreTheme(themeTag, clickRef) {
+        function shiftCoreTheme(themeTag, targetElement) {
             document.documentElement.setAttribute('data-theme', themeTag);
-            let indicators = document.getElementsByClassName('vault-switch');
-            for(let dot of indicators) dot.classList.remove('active');
-            clickRef.classList.add('active');
-            triggerEngineCluster();
+            let switches = document.getElementsByClassName('vault-trigger');
+            for(let element of switches) element.classList.remove('active');
+            targetElement.classList.add('active');
+            buildParticlePipeline();
         }
 
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-network-module')) {
-                document.getElementById('matrixSuggestBox').style.display = "none";
+            if (!e.target.closest('.search-pipeline-module')) {
+                document.getElementById('pipelineSuggestBox').style.display = "none";
             }
         });
     </script>
