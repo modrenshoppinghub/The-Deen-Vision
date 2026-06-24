@@ -3,171 +3,650 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>The Deen Vision | Elite Enterprise Media Matrix</title>
+    <title>THE DEEN VISION | SUPREME OMNI-CHANNEL INDUSTRIAL GRID</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     
     <style>
-        /* TOP-TIER INDUSTRIAL DESIGN PALETTE */
+        /* ==========================================================================
+           1. ELITE INDUSTRIAL CYBERNETIC VARIABLES (CSS DEEP MATRIX)
+           ========================================================================== */
         :root[data-theme="dark"] {
-            --bg-deep: #030712; --bg-surface: #0b1329; --primary: #ffd700; --accent: #00ffcc;
-            --glass-bg: rgba(255, 255, 255, 0.02); --glass-border: rgba(255, 255, 255, 0.05);
-            --text-main: #ffffff; --text-muted: #9ca3af; --neon-glow: rgba(0, 255, 204, 0.2);
+            --bg-deep: #010206;
+            --bg-surface: #060b19;
+            --primary: #ffd700;
+            --accent: #00ffcc;
+            --glass-bg: rgba(255, 255, 255, 0.01);
+            --glass-border: rgba(0, 255, 204, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #6b7280;
+            --neon-glow: rgba(0, 255, 204, 0.3);
             
-            /* Social Brand Vectors */
-            --youtube: #ff0000; --tiktok: #010101; --instagram: #e1306c; --facebook: #1877f2;
+            /* Social Vector Branding Hex Core */
+            --brand-youtube: #ff0000;
+            --brand-tiktok: #000000;
+            --brand-instagram: #e1306c;
+            --brand-facebook: #1877f2;
+            --brand-snapchat: #fffc00;
+            --brand-twitter: #1da1f2;
         }
         :root[data-theme="light"] {
-            --bg-deep: #f3f4f6; --bg-surface: #ffffff; --primary: #b45309; --accent: #2563eb;
-            --glass-bg: rgba(0, 0, 0, 0.02); --glass-border: rgba(0, 0, 0, 0.08);
-            --text-main: #111827; --text-muted: #4b5563; --neon-glow: rgba(37, 99, 235, 0.1);
-            --youtube: #ff0000; --tiktok: #000000; --instagram: #e1306c; --facebook: #1877f2;
+            --bg-deep: #f8fafc;
+            --bg-surface: #ffffff;
+            --primary: #b45309;
+            --accent: #2563eb;
+            --glass-bg: rgba(0, 0, 0, 0.01);
+            --glass-border: rgba(37, 99, 235, 0.1);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --neon-glow: rgba(37, 99, 235, 0.15);
+            --brand-youtube: #ff0000;
+            --brand-tiktok: #111111;
+            --brand-instagram: #e1306c;
+            --brand-facebook: #1877f2;
         }
 
-        /* HARDWARE ACCELERATED RESET */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
-        body { background-color: var(--bg-deep); color: var(--text-main); overflow-x: hidden; position: relative; transition: background 0.4s; transform: translateZ(0); }
+        /* ==========================================================================
+           2. ADVANCED HARDWARE-ACCELERATED CORE RESETS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+            transition: background 0.5s ease-in-out;
+            transform: translateZ(0);
+            will-change: background-color;
+        }
 
-        #particleCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+        /* ==========================================================================
+           3. BACKGROUND PERFORMANCE SHADERS & PARALLAX SYSTEMS
+           ========================================================================== */
+        #quantumParticleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
 
-        /* PREMIUM NAVIGATION FLOATING DOCK */
+        /* ==========================================================================
+           4. STRATEGIC PRE-NAV SOCIAL BAR (SAB SE PEHLE NAZAR JAYEGI)
+           ========================================================================== */
+        .prime-channels-dock {
+            width: 100%;
+            background: linear-gradient(90deg, #020617, #0f172a, #020617);
+            border-bottom: 2px solid var(--accent);
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1010;
+            box-shadow: 0 5px 25px rgba(0,255,204,0.15);
+        }
+
+        .prime-channels-dock .dock-intel {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prime-channels-dock .dock-intel span {
+            color: var(--accent);
+            animation: pulseFade 2s infinite;
+        }
+
+        .omni-social-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .omni-social-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateZ(0);
+        }
+
+        .omni-social-card i {
+            font-size: 1.1rem;
+        }
+
+        /* Dynamic Hover Physics for Brand Verticals */
+        .omni-social-card.yt:hover { background: var(--brand-youtube); box-shadow: 0 0 20px var(--brand-youtube); transform: translateY(-3px) scale(1.05); }
+        .omni-social-card.tt:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.8); transform: translateY(-3px) scale(1.05); }
+        .omni-social-card.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 0 20px var(--brand-instagram); transform: translateY(-3px) scale(1.05); }
+        .omni-social-card.fb:hover { background: var(--brand-facebook); box-shadow: 0 0 20px var(--brand-facebook); transform: translateY(-3px) scale(1.05); }
+
+        /* ==========================================================================
+           5. MAIN CORE FLOATING MENU NAVIGATION
+           ========================================================================== */
         nav {
-            display: flex; justify-content: space-between; align-items: center; padding: 20px 6%;
-            background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 6%;
+            background: rgba(1, 2, 6, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
-        nav .logo { font-size: clamp(1.2rem, 5vw, 1.6rem); font-weight: 900; color: var(--primary); display: flex; align-items: center; gap: 10px; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
-        
-        /* INTEGRATED HIGH-END SOCIAL HUB */
-        .social-nav-dock { display: flex; gap: 15px; align-items: center; }
-        .social-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.1rem; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        
-        .social-icon-btn.yt:hover { background: var(--youtube); color: #fff; box-shadow: 0 0 15px var(--youtube); transform: translateY(-3px); }
-        .social-icon-btn.tt:hover { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.6); transform: translateY(-3px); }
-        .social-icon-btn.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; box-shadow: 0 0 15px var(--instagram); transform: translateY(-3px); }
-        .social-icon-btn.fb:hover { background: var(--facebook); color: #fff; box-shadow: 0 0 15px var(--facebook); transform: translateY(-3px); }
 
-        /* THEATER CLOSURE VIEWPORT */
-        #theaterOverlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97);
-            z-index: 2000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(15px); padding: 10px;
+        nav .logo {
+            font-size: clamp(1.2rem, 5vw, 1.7rem);
+            font-weight: 900;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255,215,0,0.3);
         }
-        #theaterOverlay.active { display: flex; }
-        .theater-box { width: 95%; max-width: 1000px; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid var(--primary); position: relative; }
-        .close-theater { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 1.3rem; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: 0.3s; z-index: 2100; }
-        .close-theater:hover { background: #ff0055; transform: rotate(90deg); }
 
-        /* BRANDING HERO LAYER */
-        .hero { padding: clamp(60px, 12vw, 110px) 20px 40px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; background: linear-gradient(135deg, #fff, var(--text-muted), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: clamp(1rem, 3vw, 1.3rem); color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .system-theme-vault {
+            display: flex;
+            gap: 12px;
+            background: rgba(255,255,255,0.02);
+            padding: 6px 14px;
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
+        }
 
-        /* CORE INTELLIGENT SEARCH CLUSTER */
-        .search-module { max-width: 600px; width: 90%; margin: 30px auto; position: relative; z-index: 100; }
-        .search-input-wrapper { position: relative; }
-        .search-input-wrapper input { width: 100%; padding: clamp(15px, 4vw, 18px) 20px clamp(15px, 4vw, 18px) 55px; background: var(--bg-surface); border: 2px solid var(--glass-border); border-radius: 50px; color: #fff; font-size: 1.05rem; outline: none; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .search-input-wrapper input:focus { border-color: var(--accent); box-shadow: 0 0 25px var(--neon-glow); }
-        .search-input-wrapper i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; }
-        
-        .suggestion-box { position: absolute; top: 100%; left: 2%; width: 96%; background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 15px; margin-top: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); overflow: hidden; display: none; max-height: 220px; overflow-y: auto; z-index: 500; }
-        .suggest-item { padding: 14px 20px; color: var(--text-main); cursor: pointer; text-align: left; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.02); transition: 0.2s; }
-        .suggest-item:hover { background: var(--glass-bg); color: var(--accent); }
+        .vault-switch {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+            border: 2px solid transparent;
+        }
 
-        /* GRID MEDIA SYSTEM */
-        .hub-container { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 clamp(15px, 4vw, 30px); }
-        
-        .filter-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 45px; flex-wrap: wrap; }
-        .filter-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-muted); padding: clamp(10px, 3vw, 14px) clamp(18px, 4vw, 26px); border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
-        .filter-btn.active, .filter-btn:hover { background: var(--bg-surface); border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .vault-switch.active {
+            border-color: var(--text-main);
+            transform: scale(1.25);
+            box-shadow: 0 0 10px var(--text-main);
+        }
 
-        .grid-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 100%, 350px), 1fr)); gap: clamp(20px, 5vw, 35px); }
-        .matrix-card { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; cursor: pointer; transform: translateZ(0); }
-        
+        /* ==========================================================================
+           6. BRANDED ENTERPRISE HERO CANVAS
+           ========================================================================== */
+        .hero-canvas {
+            padding: clamp(70px, 15vw, 140px) 24px 30px 24px;
+            text-align: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-canvas h1 {
+            font-size: clamp(2.8rem, 9vw, 6rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 60%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+        }
+
+        .hero-canvas p {
+            font-size: clamp(1rem, 2.8vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           7. SEARCH ENGINE CORE CLUSTER
+           ========================================================================== */
+        .search-network-module {
+            max-width: 650px;
+            width: 92%;
+            margin: 40px auto;
+            position: relative;
+            z-index: 500;
+        }
+
+        .search-engine-wrapper {
+            position: relative;
+        }
+
+        .search-engine-wrapper input {
+            width: 100%;
+            padding: clamp(16px, 4.5vw, 22px) 25px clamp(16px, 4.5vw, 22px) 65px;
+            background: #02050f;
+            border: 2px solid var(--glass-border);
+            border-radius: 60px;
+            color: #fff;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .search-engine-wrapper input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 40px var(--neon-glow), inset 0 0 15px rgba(0,255,204,0.05);
+        }
+
+        .search-engine-wrapper i {
+            position: absolute;
+            left: 26px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.15rem;
+            filter: drop-shadow(0 0 5px var(--accent));
+        }
+
+        .autocomplete-vault {
+            position: absolute;
+            top: 100%;
+            left: 3%;
+            width: 94%;
+            background: rgba(6, 11, 25, 0.96);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            margin-top: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            overflow: hidden;
+            display: none;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 999;
+        }
+
+        .autocomplete-node {
+            padding: 16px 24px;
+            color: var(--text-main);
+            cursor: pointer;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.01);
+            transition: 0.25s ease;
+        }
+
+        .autocomplete-node:hover {
+            background: rgba(0, 255, 204, 0.04);
+            color: var(--accent);
+            padding-left: 32px;
+        }
+
+        /* ==========================================================================
+           8. GRID MATRIX STRUCTURAL SYSTEMS
+           ========================================================================== */
+        .matrix-container {
+            max-width: 1300px;
+            margin: 0 auto 100px auto;
+            padding: 0 clamp(15px, 4vw, 40px);
+        }
+
+        .filter-dock-station {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .station-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: clamp(12px, 3vw, 16px) clamp(22px, 4vw, 32px);
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            -webkit-tap-highlight-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .station-btn.active, .station-btn:hover {
+            background: var(--bg-surface);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 25px rgba(255,215,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        .dynamic-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(clamp(290px, 100%, 370px), 1fr));
+            gap: clamp(25px, 5vw, 40px);
+        }
+
+        .media-cluster-node {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            position: relative;
+            cursor: pointer;
+            transform: translateZ(0);
+            will-change: transform, box-shadow;
+        }
+
         @media (min-width: 1024px) {
-            .matrix-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+            .media-cluster-node:hover {
+                transform: translateY(-12px) scale(1.02);
+                border-color: var(--accent);
+                box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            }
         }
-        
-        .thumb-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #050505; }
-        .thumb-wrapper img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.9); transition: 0.4s; }
-        .play-overlay { position: absolute; inset:0; display:flex; justify-content:center; align-items:center; background: rgba(0,0,0,0.3); opacity: 0; transition:0.3s; }
-        .matrix-card:hover .play-overlay, .matrix-card:active .play-overlay { opacity:1; }
-        .play-overlay i { font-size: 3rem; color: var(--accent); transition: 0.3s; }
 
-        .card-meta { padding: clamp(18px, 4vw, 25px); }
-        .node-badge { display: inline-block; padding: 4px 12px; background: rgba(0, 255, 204, 0.08); color: var(--accent); border-radius: 30px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(0, 255, 204, 0.15); }
-        .card-meta h3 { font-size: clamp(1rem, 3.5vw, 1.15rem); line-height: 1.5; font-weight: 700; color: #fff; }
+        .viewport-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            overflow: hidden;
+        }
 
-        footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; color: var(--text-muted); background: #02050e; }
+        .viewport-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: transform 0.5s ease;
+        }
 
-        /* ADAPTIVE BREAKPOINTS FOR MOBILE OVERRIDES */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; padding: 15px 4%; }
-            .social-nav-dock { width: 100%; justify-content: center; }
-            .hero { padding-top: 30px; }
-            .filter-row { gap: 6px; }
-            .filter-btn { width: 47%; text-align: center; padding: 12px 5px; }
+        .media-cluster-node:hover .viewport-wrapper img {
+            transform: scale(1.06);
+            filter: brightness(1);
+        }
+
+        .cluster-play-trigger {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+
+        .media-cluster-node:hover .cluster-play-trigger {
+            opacity: 1;
+        }
+
+        .cluster-play-trigger i {
+            font-size: 3.5rem;
+            color: var(--accent);
+            filter: drop-shadow(0 0 15px var(--accent));
+            transform: scale(0.8);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .media-cluster-node:hover .cluster-play-trigger i {
+            transform: scale(1);
+        }
+
+        .node-metadata-panel {
+            padding: clamp(20px, 4vw, 28px);
+            position: relative;
+        }
+
+        .node-intel-tag {
+            display: inline-block;
+            padding: 5px 14px;
+            background: rgba(0, 255, 204, 0.04);
+            color: var(--accent);
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 255, 204, 0.12);
+            letter-spacing: 1px;
+        }
+
+        .node-metadata-panel h3 {
+            font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+            line-height: 1.5;
+            font-weight: 700;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .media-cluster-node:hover h3 {
+            color: var(--accent);
+        }
+
+        /* ==========================================================================
+           9. ULTRA-PREMIUM CINEMATIC THEATER OVERLAY
+           ========================================================================== */
+        #theaterSystemOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.98);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            padding: 15px;
+        }
+
+        #theaterSystemOverlay.active {
+            display: flex;
+        }
+
+        .theater-viewport-box {
+            width: 95%;
+            max-width: 1050px;
+            background: #000;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            position: relative;
+            box-shadow: 0 0 50px var(--neon-glow);
+        }
+
+        .theater-kill-switch {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease;
+            z-index: 2100;
+        }
+
+        .theater-kill-switch:hover {
+            background: #ff0055;
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 0 20px #ff0055;
+        }
+
+        /* ==========================================================================
+           10. DEEP PRODUCTION FOOTER
+           ========================================================================== */
+        footer {
+            text-align: center;
+            padding: 70px 20px 50px 20px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #010204;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        /* ==========================================================================
+           11. KEYFRAME ANIMATIONS LAYER
+           ========================================================================== */
+        @keyframes pulseFade {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ==========================================================================
+           12. RESPONSIVE ARCHITECTURE BREAKPOINTS (CROSS-PLATFORM ENGINE)
+           ========================================================================== */
+        @media (max-width: 850px) {
+            .prime-channels-dock {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 15px 4%;
+            }
+            .omni-social-row {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .omni-social-card {
+                width: 46%;
+                justify-content: center;
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+            nav {
+                padding: 18px 4%;
+            }
+            .station-btn {
+                width: 47%;
+                text-align: center;
+                padding: 12px 5px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <canvas id="particleCanvas"></canvas>
+    <div class="prime-channels-dock">
+        <div class="dock-intel">
+            <span><i class="fa-solid fa-circle-dot"></i></span> Live Broadcast Network
+        </div>
+        <div class="omni-social-row">
+            <a href="https://youtube.com" target="_blank" class="omni-social-card yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+            <a href="https://tiktok.com" target="_blank" class="omni-social-card tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://instagram.com" target="_blank" class="omni-social-card ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://facebook.com" target="_blank" class="omni-social-card fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        </div>
+    </div>
 
-    <div id="theaterOverlay">
-        <div class="theater-box">
-            <button class="close-theater" onclick="shutdownTheater()"><i class="fa-solid fa-xmark"></i></button>
+    <canvas id="quantumParticleCanvas"></canvas>
+
+    <div id="theaterSystemOverlay">
+        <div class="theater-box viewport-wrapper theater-viewport-box">
+            <button class="theater-kill-switch" onclick="shutdownTheaterMatrix()"><i class="fa-solid fa-xmark"></i></button>
             <div style="position:relative; padding-bottom:56.25%;">
-                <iframe id="theaterFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay"></iframe>
+                <iframe id="matrixCoreFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen allow="autoplay"></iframe>
             </div>
         </div>
     </div>
 
     <nav>
         <div class="logo"><i class="fa-solid fa-star-and-crescent"></i> THE DEEN VISION</div>
-        
-        <div class="social-nav-dock">
-            <a href="https://youtube.com" target="_blank" class="social-icon-btn yt" title="YouTube Feed"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://tiktok.com" target="_blank" class="social-icon-btn tt" title="TikTok Feed"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon-btn ig" title="Instagram Grid"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" class="social-icon-btn fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        <div class="system-theme-vault">
+            <div class="vault-switch active" style="background:#010206;" onclick="shiftCoreTheme('dark', this)"></div>
+            <div class="vault-switch" style="background:#ffffff;" onclick="shiftCoreTheme('light', this)"></div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero-canvas">
         <h1>THE DEEN VISION</h1>
-        <p>A premium unified content stream delivering high-fidelity dynamic media feeds across desktop platforms and smartphone viewports flawlessly.</p>
+        <p>An elite, hyper-optimized media architecture broadcasting high-fidelity streaming data flawlessly across desktop ecosystems and mobile nodes.</p>
     </section>
 
-    <div class="search-module">
-        <div class="search-input-wrapper">
+    <div class="search-network-module">
+        <div class="search-engine-wrapper">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="engineInput" placeholder="Search across all video indexes..." onkeyup="runEngineSearch()">
+            <input type="text" id="matrixSearchInput" placeholder="Initialize media node index scan..." onkeyup="executeMatrixSearch()">
         </div>
-        <div class="suggestion-box" id="autoSuggestBox"></div>
+        <div class="autocomplete-vault" id="matrixSuggestBox"></div>
     </div>
 
-    <section class="hub-container">
-        <div class="filter-row">
-            <button class="filter-btn active" onclick="sortMatrixCat('all', this)">All Feeds</button>
-            <button class="filter-btn" onclick="sortMatrixCat('Bayan', this)">Lectures</button>
-            <button class="filter-btn" onclick="sortMatrixCat('Shorts', this)">Micro Streams</button>
-            <button class="filter-btn" onclick="sortMatrixCat('Series', this)">Series Cluster</button>
-            <button class="filter-btn" onclick="sortMatrixCat('Reminders', this)">Reminders</button>
+    <section class="matrix-container">
+        <div class="filter-dock-station">
+            <button class="station-btn active" onclick="sortMatrixStream('all', this)">All Feeds</button>
+            <button class="station-btn" onclick="sortMatrixStream('Bayan', this)">Lectures</button>
+            <button class="station-btn" onclick="sortMatrixStream('Shorts', this)">Micro Feeds</button>
+            <button class="station-btn" onclick="sortMatrixStream('Series', this)">Series Data</button>
+            <button class="station-btn" onclick="sortMatrixStream('Reminders', this)">Reminders</button>
         </div>
 
-        <div class="grid-matrix" id="matrixGrid">
+        <div class="dynamic-media-grid" id="masterMediaGrid">
             {% for video in videos %}
-            <div class="matrix-card video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchTheater('{{ video.id }}')">
-                <div class="thumb-wrapper">
-                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Media Matrix Node">
-                    <div class="play-overlay">
-                        <i class="fa-solid fa-circle-play"></i>
+            <div class="media-cluster-node video-node animate__animated animate__fadeInUp" data-node-cat="{{ video.category }}" onclick="launchTheaterMatrix('{{ video.id }}')">
+                <div class="viewport-wrapper">
+                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="The Deen Vision Core Node">
+                    <div class="cluster-play-trigger">
+                        <i class="fa-solid fa-play"></i>
                     </div>
                 </div>
-                <div class="card-meta">
-                    <span class="node-badge">{{ video.category }}</span>
+                <div class="node-metadata-panel">
+                    <span class="node-intel-tag">{{ video.category }}</span>
                     <h3 class="node-title-text">{{ video.title }}</h3>
                 </div>
             </div>
@@ -176,126 +655,144 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 THE DEEN VISION. All Platform Rights Reserved. Optimized Architecture Ecosystem.</p>
+        <p>&copy; 2026 THE DEEN VISION. All Infrastructure Nodes Secured. Advanced Fluid Logic Locked.</p>
     </footer>
 
     <script>
-        let selectedCategory = 'all';
+        let operationalFilterToken = 'all';
 
-        // 1. HARDWARE ACCELERATED PARTICLE FIELD ENGINE
-        const canvas = document.getElementById('particleCanvas');
+        // FLUID PARTICLE GRAPHICS LOGIC
+        const canvas = document.getElementById('quantumParticleCanvas');
         const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = { x: null, y: null, radius: window.innerWidth > 768 ? 120 : 65 };
+        let particleCluster = [];
+        let engineCursor = { x: null, y: null, radius: window.innerWidth > 768 ? 130 : 65 };
 
-        function initCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.addEventListener('resize', initCanvasSize);
+        function adaptCanvasBoundaries() { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+        }
+        window.addEventListener('resize', adaptCanvasBoundaries);
         
-        const trackMove = (x, y) => { mouse.x = x; mouse.y = y; };
-        window.addEventListener('mousemove', (e) => trackMove(e.x, e.y));
-        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) trackMove(e.touches[0].clientX, e.touches[0].clientY); });
-        window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
-        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+        const monitorVector = (x, y) => { engineCursor.x = x; engineCursor.y = y; };
+        window.addEventListener('mousemove', (e) => monitorVector(e.clientX, e.clientY));
+        window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) monitorVector(e.touches[0].clientX, e.touches[0].clientY); });
+        window.addEventListener('touchend', () => { engineCursor.x = null; engineCursor.y = null; });
+        window.addEventListener('mouseout', () => { engineCursor.x = null; engineCursor.y = null; });
 
-        class Particle {
+        class QuantumParticle {
             constructor() {
-                this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 1;
-                this.speedX = Math.random() * 0.6 - 0.3; this.speedY = Math.random() * 0.6 - 0.3;
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.6 + 1;
+                this.mx = Math.random() * 0.6 - 0.3; 
+                this.my = Math.random() * 0.6 - 0.3;
             }
-            update() {
-                this.x += this.speedX; this.y += this.speedY;
-                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+            advanceState() {
+                this.x += this.mx; this.y += this.my;
+                if (this.x > canvas.width || this.x < 0) this.mx *= -1;
+                if (this.y > canvas.height || this.y < 0) this.my *= -1;
 
-                let dx = mouse.x - this.x; let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < mouse.radius) {
-                    let force = 1.5;
-                    if (mouse.x > this.x && this.x > 10) this.x -= force;
-                    if (mouse.x < this.x && this.x < canvas.width - 10) this.x += force;
-                    if (mouse.y > this.y && this.y > 10) this.y -= force;
-                    if (mouse.y < this.y && this.y < canvas.height - 10) this.y += force;
+                let dx = engineCursor.x - this.x; 
+                let dy = engineCursor.y - this.y;
+                let scalarDistance = Math.sqrt(dx*dx + dy*dy);
+                if (scalarDistance < engineCursor.radius) {
+                    let accelerationGlowFactor = 1.4;
+                    if (engineCursor.x > this.x && this.x > 10) this.x -= accelerationGlowFactor;
+                    if (engineCursor.x < this.x && this.x < canvas.width - 10) this.x += accelerationGlowFactor;
+                    if (engineCursor.y > this.y && this.y > 10) this.y -= accelerationGlowFactor;
+                    if (engineCursor.y < this.y && this.y < canvas.height - 10) this.y += accelerationGlowFactor;
                 }
             }
-            draw() {
+            renderState() {
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
             }
         }
 
-        function createParticles() {
-            particles = [];
-            let totalParticles = window.innerWidth > 768 ? 60 : 25;
-            for (let i = 0; i < totalParticles; i++) particles.push(new Particle());
+        function triggerEngineCluster() {
+            particleCluster = [];
+            let localizedVolume = window.innerWidth > 768 ? 65 : 25;
+            for (let i = 0; i < localizedVolume; i++) particleCluster.push(new QuantumParticle());
         }
 
-        function animateParticles() {
+        function animationProcessingLoop() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animateParticles);
+            particleCluster.forEach(p => { p.advanceState(); p.renderState(); });
+            requestAnimationFrame(animationProcessingLoop);
         }
-        initCanvasSize(); createParticles(); animateParticles();
+        adaptCanvasBoundaries(); triggerEngineCluster(); animationProcessingLoop();
 
-        // 2. LIVE SEARCH ENGINE UTILITY ALGORITHM
-        function runEngineSearch() {
-            let query = document.getElementById('engineInput').value.toLowerCase();
+        // LIVE COMPREHENSIVE SEARCH UTILITY MATRIX
+        function executeMatrixSearch() {
+            let inputString = document.getElementById('matrixSearchInput').value.toLowerCase();
             let nodes = document.getElementsByClassName('video-node');
-            let suggestBox = document.getElementById('autoSuggestBox');
-            suggestBox.innerHTML = '';
+            let suggestionBox = document.getElementById('matrixSuggestBox');
+            suggestionBox.innerHTML = '';
 
-            let matchedTitles = [];
+            let structuralMatches = [];
 
             for (let node of nodes) {
-                let title = node.getElementsByClassName('node-title-text')[0].innerText;
-                let cat = node.getAttribute('data-node-cat');
+                let textContentTitle = node.getElementsByClassName('node-title-text')[0].innerText;
+                let classificationTag = node.getAttribute('data-node-cat');
                 
-                let matchQ = title.toLowerCase().includes(query);
-                let matchC = (selectedCategory === 'all' || cat === selectedCategory);
+                let evaluationQuery = textContentTitle.toLowerCase().includes(inputString);
+                let evaluationCategory = (operationalFilterToken === 'all' || classificationTag === operationalFilterToken);
 
-                node.style.display = (matchQ && matchC) ? "" : "none";
+                node.style.display = (evaluationQuery && evaluationCategory) ? "" : "none";
 
-                if (query.length > 1 && matchQ && matchC) { matchedTitles.push(title); }
+                if (inputString.length > 1 && evaluationQuery && evaluationCategory) { 
+                    structuralMatches.push(textContentTitle); 
+                }
             }
 
-            if (matchedTitles.length > 0) {
-                suggestBox.style.display = "block";
-                let exactMatches = [...new Set(matchedTitles)].slice(0, 5);
-                exactMatches.forEach(title => {
-                    let div = document.createElement('div'); div.className = 'suggest-item'; div.innerText = title;
-                    div.onclick = () => {
-                        document.getElementById('engineInput').value = title;
-                        suggestBox.style.display = "none"; runEngineSearch();
+            if (structuralMatches.length > 0) {
+                suggestionBox.style.display = "block";
+                let filteringDuplicates = [...new Set(structuralMatches)].slice(0, 5);
+                filteringDuplicates.forEach(title => {
+                    let containerDiv = document.createElement('div'); 
+                    containerDiv.className = 'autocomplete-node'; 
+                    containerDiv.innerText = title;
+                    containerDiv.onclick = () => {
+                        document.getElementById('matrixSearchInput').value = title;
+                        suggestionBox.style.display = "none"; executeMatrixSearch();
                     };
-                    suggestBox.appendChild(div);
+                    suggestionBox.appendChild(containerDiv);
                 });
-            } else { suggestBox.style.display = "none"; }
+            } else { suggestionBox.style.display = "none"; }
         }
 
-        function sortMatrixCat(catToken, btn) {
-            selectedCategory = catToken;
-            let btns = document.getElementsByClassName('filter-btn');
-            for(let b of btns) b.classList.remove('active');
-            btn.classList.add('active');
-            runEngineSearch();
+        function sortMatrixStream(catToken, referenceBtn) {
+            operationalFilterToken = catToken;
+            let group = document.getElementsByClassName('station-btn');
+            for(let component of group) component.classList.remove('active');
+            referenceBtn.classList.add('active');
+            executeMatrixSearch();
         }
 
-        // 3. PREMIUM CINEMATIC CONTROL INTERFACE WINDOW
-        function launchTheater(videoId) {
-            document.getElementById('theaterFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-            document.getElementById('theaterOverlay').classList.add('active');
+        // CINEMATIC GRAPHICS CONTROLLERS
+        function launchTheaterMatrix(videoId) {
+            document.getElementById('matrixCoreFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            document.getElementById('theaterSystemOverlay').classList.add('active');
             document.body.style.overflow = "hidden"; 
         }
 
-        function shutdownTheater() {
-            document.getElementById('theaterFrame').src = "";
-            document.getElementById('theaterOverlay').classList.remove('active');
+        function shutdownTheaterMatrix() {
+            document.getElementById('matrixCoreFrame').src = "";
+            document.getElementById('theaterSystemOverlay').classList.remove('active');
             document.body.style.overflow = ""; 
         }
 
+        function shiftCoreTheme(themeTag, clickRef) {
+            document.documentElement.setAttribute('data-theme', themeTag);
+            let indicators = document.getElementsByClassName('vault-switch');
+            for(let dot of indicators) dot.classList.remove('active');
+            clickRef.classList.add('active');
+            triggerEngineCluster();
+        }
+
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-module')) {
-                document.getElementById('autoSuggestBox').style.display = "none";
+            if (!e.target.closest('.search-network-module')) {
+                document.getElementById('matrixSuggestBox').style.display = "none";
             }
         });
     </script>
