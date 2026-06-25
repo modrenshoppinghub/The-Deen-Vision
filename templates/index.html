@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE DEEN VISION | Official Premium Portal</title>
+    <title>THE DEEN VISION | Ultimate Animated Premium Portal</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -13,14 +13,14 @@
            1. PREMIUM DESIGN SYSTEM & THEME TOKENS
            ========================================================================== */
         :root {
-            --bg-deep: #030712;
+            --bg-deep: #020617;
             --bg-surface: #0f172a;
             --primary-gold: #f59e0b;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --border-glow: rgba(245, 158, 11, 0.15);
+            --border-glow: rgba(245, 158, 11, 0.2);
             
-            /* Exact Brand Colors Requested */
+            /* Social Brand Colors */
             --yt-red: #ff0000;
             --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             --tt-black: #000000;
@@ -42,7 +42,48 @@
         }
 
         /* ==========================================================================
-           2. TOP PROFESSIONAL PATTI (NAVBAR) WITH OWNER VAULT
+           2. INTERACTIVE GATEWAY OVERLAY (FOR AUDIO AUTOPLAY BYPASS)
+           ========================================================================== */
+        .portal-gate-overlay {
+            position: fixed;
+            inset: 0;
+            background: #020617;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+        
+        .portal-gate-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .enter-channel-btn {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--border-glow);
+            transition: all 0.4s ease;
+        }
+
+        .enter-channel-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* ==========================================================================
+           3. TOP PROFESSIONAL PATTI (NAVBAR) WITH OWNER VAULT
            ========================================================================== */
         .top-premium-belt {
             width: 100%;
@@ -74,10 +115,8 @@
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #fff;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.3s ease;
         }
 
         .owner-trigger-box:hover {
@@ -87,7 +126,7 @@
             box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
-        /* Owner Overlay Panel / Modal */
+        /* Owner Overlay Panel */
         .owner-modal-overlay {
             position: fixed;
             inset: 0;
@@ -100,9 +139,7 @@
             padding: 20px;
         }
 
-        .owner-modal-overlay.active {
-            display: flex;
-        }
+        .owner-modal-overlay.active { display: flex; }
 
         .owner-card-content {
             background: var(--bg-surface);
@@ -113,7 +150,6 @@
             width: 100%;
             text-align: center;
             position: relative;
-            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.2);
         }
 
         .close-modal-btn {
@@ -125,39 +161,32 @@
             color: var(--text-muted);
             font-size: 1.3rem;
             cursor: pointer;
-            transition: 0.2s;
         }
 
-        .close-modal-btn:hover { color: #fff; transform: rotate(90deg); }
-
-        .owner-card-content h2 {
-            color: var(--primary-gold);
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .owner-card-content p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
+        .owner-card-content h2 { color: var(--primary-gold); margin-bottom: 15px; }
 
         /* ==========================================================================
-           3. CINEMATIC VIDEO HERO STAGE (WITH BACKGROUND VIDEO LOOP)
+           4. CINEMATIC MULTI-VIDEO BACKGROUND SLIDER STAGE
            ========================================================================== */
         .cinematic-hero-container {
             position: relative;
             width: 100%;
-            height: 65vh;
-            min-height: 450px;
+            height: 70vh;
+            min-height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
         }
 
-        .hero-background-video {
+        /* Video Track Slider Wrapper */
+        .video-slider-track {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+        }
+
+        .slide-video {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -165,16 +194,21 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -2;
             transform: translate(-50%, -50%);
             object-fit: cover;
             filter: brightness(0.35);
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .slide-video.active {
+            opacity: 1;
         }
 
         .hero-video-fallback-blur {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(3,7,18,0.1), var(--bg-deep));
+            background: linear-gradient(to bottom, rgba(2,6,23,0.1), var(--bg-deep));
             z-index: -1;
         }
 
@@ -185,21 +219,27 @@
         }
 
         .hero-title-overlay h1 {
-            font-size: clamp(2.8rem, 8vw, 6rem);
+            font-size: clamp(3rem, 9vw, 6.5rem);
             font-weight: 900;
             letter-spacing: -2px;
-            background: linear-gradient(135deg, #ffffff 40%, var(--primary-gold));
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); }
+            100% { filter: drop-shadow(0 0 25px rgba(245,158,11,0.4)); }
         }
 
         /* ==========================================================================
-           4. SPECIFIC BRANDED SOCIAL LINKS (BOXES MATRIX)
+           5. SPECIFIC BRANDED SOCIAL LINKS BOXES MATRIX
            ========================================================================== */
         .social-matrix-section {
             max-width: 1100px;
-            margin: -40px auto 40px auto;
+            margin: -50px auto 40px auto;
             padding: 0 24px;
             position: relative;
             z-index: 20;
@@ -216,33 +256,32 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
             border-radius: 16px;
             color: #ffffff;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             gap: 12px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .social-box-node i { font-size: 2.5rem; }
+        .social-box-node i { font-size: 2.8rem; }
 
-        /* Exact Brand Specifications Map */
         .social-box-node.yt { background: var(--yt-red); }
         .social-box-node.ig { background: var(--ig-gradient); }
         .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
         .social-box-node.fb { background: var(--fb-blue); }
 
         .social-box-node:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255,255,255,0.1);
-            filter: brightness(1.1);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.15);
+            filter: brightness(1.15);
         }
 
         /* ==========================================================================
-           5. PRODUCTION ANALYTICS VIEWS COUNTER
+           6. PRODUCTION ANALYTICS VIEWS COUNTER
            ========================================================================== */
         .analytics-counter-strip {
             text-align: center;
@@ -255,16 +294,21 @@
             gap: 10px;
             background: rgba(255,255,255,0.02);
             border: 1px solid var(--border-glow);
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 50px;
+            animation: pulseState 2s infinite;
         }
 
         .counter-badge-box i { color: var(--primary-gold); }
-        .counter-badge-box span { font-weight: 700; font-size: 0.95rem; color: var(--text-light); }
-        .counter-badge-box strong { color: var(--primary-gold); font-size: 1.1rem; }
+        .counter-badge-box strong { color: var(--primary-gold); font-size: 1.2rem; }
+
+        @keyframes pulseState {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
 
         /* ==========================================================================
-           6. LIVE INDUSTRIAL SEARCH ENGINE
+           7. LIVE SEARCH ENGINE BLOCK
            ========================================================================== */
         .search-engine-section {
             max-width: 600px;
@@ -272,13 +316,10 @@
             margin: 0 auto 50px auto;
         }
 
-        .search-field-wrapper {
-            position: relative;
-        }
-
+        .search-field-wrapper { position: relative; }
         .search-field-wrapper input {
             width: 100%;
-            padding: 16px 20px 16px 55px;
+            padding: 18px 20px 18px 60px;
             background: var(--bg-surface);
             border: 2px solid var(--border-glow);
             border-radius: 50px;
@@ -290,20 +331,20 @@
 
         .search-field-wrapper input:focus {
             border-color: var(--primary-gold);
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
         }
 
         .search-field-wrapper i {
             position: absolute;
-            left: 22px;
+            left: 24px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--primary-gold);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         /* ==========================================================================
-           7. AUTOMATED MEDIA DATA CONTAINER METRIC
+           8. AUTOMATED YOUTUBE MEDIA GRID WITH HOVER EFFECT
            ========================================================================== */
         .media-workspace-shell {
             max-width: 1200px;
@@ -319,18 +360,18 @@
 
         .media-card-node {
             background: var(--bg-surface);
-            border: 1px solid rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.02);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer;
         }
 
         .media-card-node:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--primary-gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
         .thumb-ratio {
@@ -346,60 +387,57 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s;
+            transition: transform 0.5s ease;
         }
 
-        .media-card-node:hover .thumb-ratio img { transform: scale(1.03); }
-
-        .meta-pad { padding: 20px; }
+        .media-card-node:hover .thumb-ratio img { transform: scale(1.05); }
+        .meta-pad { padding: 22px; }
         .meta-pad h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: #fff; }
 
         /* ==========================================================================
-           8. SYSTEM/CHANNEL INTRODUCTION BLOCK
+           9. CHANNEL PROFILE INTRODUCTION BLOCK
            ========================================================================== */
         .channel-profile-intro-row {
-            background: #090d16;
+            background: #070b14;
             border-top: 1px solid var(--border-glow);
-            padding: 60px 24px;
+            padding: 70px 24px;
             text-align: center;
         }
 
-        .profile-container-inner {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .profile-container-inner { max-width: 800px; margin: 0 auto; }
         .profile-container-inner h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-gold);
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
-        .profile-container-inner p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
+        .profile-container-inner p { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; }
 
         footer {
             text-align: center;
             padding: 30px 20px;
-            background: #05080f;
+            background: #04060c;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.2);
-            border-top: 1px solid rgba(255,255,255,0.02);
+            color: rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255,255,255,0.01);
         }
 
         @media (max-width: 768px) {
-            .top-premium-belt { padding: 15px 4%; }
-            .social-matrix-section { margin-top: -20px; }
             .social-grid-wrapper { grid-template-columns: 1fr 1fr; }
+            .cinematic-hero-container { height: 55vh; }
         }
     </style>
 </head>
 <body>
+
+    <div class="portal-gate-overlay" id="portalGate">
+        <button class="enter-channel-btn animate__animated animate__pulse animate__infinite" onclick="unlockPortalAndGreet()">
+            <i class="fa-solid fa-play"></i> Enter The Deen Vision
+        </button>
+    </div>
 
     <div class="top-premium-belt">
         <div class="belt-brand">The Deen Vision</div>
@@ -417,12 +455,20 @@
     </div>
 
     <section class="cinematic-hero-container">
-        <video class="hero-background-video" autoplay loop muted playsinline>
-            <source src="/static/videos/hero-reel.mp4" type="video/mp4">
-        </video>
+        <div class="video-slider-track">
+            <video class="slide-video active" autoplay loop muted playsinline id="promoVid1">
+                <source src="/static/videos/youtube-promo.mp4" type="video/mp4">
+            </video>
+            <video class="slide-video" autoplay loop muted playsinline id="promoVid2">
+                <source src="/static/videos/instagram-promo.mp4" type="video/mp4">
+            </video>
+            <video class="slide-video" autoplay loop muted playsinline id="promoVid3">
+                <source src="/static/videos/tiktok-promo.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="hero-video-fallback-blur"></div>
         <div class="hero-title-overlay">
-            <h1 class="animate__animated animate__fadeInUp">THE DEEN VISION</h1>
+            <h1 class="animate__animated animate__zoomIn">THE DEEN VISION</h1>
         </div>
     </section>
 
@@ -446,7 +492,7 @@
     <div class="analytics-counter-strip">
         <div class="counter-badge-box">
             <i class="fa-solid fa-eye"></i>
-            <span>Live Platform Views: <strong>142,850</strong></span>
+            <span>Live Platform Views: <strong>254,910</strong></span>
         </div>
     </div>
 
@@ -484,6 +530,47 @@
     </footer>
 
     <script>
+        // AI Voice Greeting & Portal Entrance Engine
+        function unlockPortalAndGreet() {
+            // Hide Overlay
+            document.getElementById('portalGate').classList.add('hidden');
+            
+            // Web Speech API Initialization
+            if ('speechSynthesis' in window) {
+                const speechText = "Welcome to The Deen Vision";
+                const utterance = new SpeechSynthesisUtterance(speechText);
+                
+                // Fine-tuning tone for premium aesthetic
+                utterance.volume = 1.0; 
+                utterance.rate = 0.95; // Slightly slower for heavy/professional impact
+                utterance.pitch = 1.0; 
+                
+                // Try selecting an English corporate voice if available
+                const voices = window.speechSynthesis.getVoices();
+                const premiumVoice = voices.find(voice => voice.lang.includes('en') && voice.name.toLowerCase().includes('google'));
+                if (premiumVoice) utterance.voice = premiumVoice;
+                
+                window.speechSynthesis.speak(utterance);
+            }
+            
+            // Start Video Rotation Loop
+            startBackgroundSlider();
+        }
+
+        // Automatic Video Background Slider Logic
+        let activeSlideIndex = 0;
+        const videosList = document.querySelectorAll('.slide-video');
+
+        function startBackgroundSlider() {
+            if(videosList.length <= 1) return;
+            
+            setInterval(() => {
+                videosList[activeSlideIndex].classList.remove('active');
+                activeSlideIndex = (activeSlideIndex + 1) % videosList.length;
+                videosList[activeSlideIndex].classList.add('active');
+            }, 6000); // Transitions video slides every 6 seconds smoothly
+        }
+
         // Owner Modal Controls
         function toggleOwnerVault(shouldOpen) {
             const vault = document.getElementById('ownerOverlayVault');
@@ -502,7 +589,7 @@
             }
         }
 
-        // Live Real-Time Filtering System
+        // Real-Time Dynamic Grid Filtering System
         function executeClientSearch() {
             let userQuery = document.getElementById('workspaceSearch').value.toLowerCase();
             let videoItems = document.getElementsByClassName('video-item');
@@ -515,6 +602,11 @@
                     item.style.display = "none";
                 }
             }
+        }
+
+        // Voice list loader hook for Chrome/Safari
+        if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = () => {};
         }
     </script>
 </body>
