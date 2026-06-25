@@ -1,714 +1,521 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE DEEN VISION | Ultimate Media Experience</title>
+    <title>THE DEEN VISION | Official Premium Portal</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     
     <style>
         /* ==========================================================================
-           1. GLOBAL DESIGN TOKENS & VARIABLES
+           1. PREMIUM DESIGN SYSTEM & THEME TOKENS
            ========================================================================== */
-        :root[data-theme="dark"] {
-            --bg-base: #020408;
-            --bg-surface: #0a1120;
-            --bg-card: #0f192e;
-            --primary: #ffca28;
-            --accent: #00e5ff;
-            --accent-glow: rgba(0, 229, 255, 0.2);
-            --text-main: #ffffff;
-            --text-muted: #64748b;
-            --border-line: rgba(0, 229, 255, 0.1);
-            --brand-yt: #ff0000; 
-            --brand-tt: #000000; 
-            --brand-ig: #e1306c; 
-            --brand-fb: #1877f2;
-        }
-
-        :root[data-theme="light"] {
-            --bg-base: #f8fafc;
-            --bg-surface: #ffffff;
-            --bg-card: #f1f5f9;
-            --primary: #d97706;
-            --accent: #2563eb;
-            --accent-glow: rgba(37, 99, 235, 0.15);
-            --text-main: #0f172a;
+        :root {
+            --bg-deep: #030712;
+            --bg-surface: #0f172a;
+            --primary-gold: #f59e0b;
+            --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --border-line: rgba(37, 99, 235, 0.08);
-            --brand-yt: #ff0000; 
-            --brand-tt: #111111; 
-            --brand-ig: #e1306c; 
-            --brand-fb: #1877f2;
+            --border-glow: rgba(245, 158, 11, 0.15);
+            
+            /* Exact Brand Colors Requested */
+            --yt-red: #ff0000;
+            --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --tt-black: #000000;
+            --fb-blue: #1877f2;
         }
 
-        /* Hardware Acceleration & Resets */
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-        }
-        
-        body { 
-            background-color: var(--bg-base); 
-            color: var(--text-main); 
-            font-family: system-ui, -apple-system, sans-serif; 
-            overflow-x: hidden; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        #quantumGridCanvas { 
-            position: fixed; 
-            inset: 0; 
-            z-index: -1; 
-            pointer-events: none; 
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            overflow-x: hidden;
         }
 
         /* ==========================================================================
-           2. PRIORITY SOCIAL DECK (SAB SE PEHLE NAZAR)
+           2. TOP PROFESSIONAL PATTI (NAVBAR) WITH OWNER VAULT
            ========================================================================== */
-        .priority-channels-belt { 
-            width: 100%; 
-            background: #010307; 
-            padding: 12px 6%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 2px solid var(--accent); 
-            position: relative; 
-            z-index: 1000; 
-        }
-        
-        .broadcast-badge { 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            color: #fff; 
-            letter-spacing: 1px; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-        }
-        
-        .broadcast-badge i { 
-            color: var(--accent); 
+        .top-premium-belt {
+            width: 100%;
+            background: #090d16;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .omni-social-grid { 
-            display: flex; 
-            gap: 12px; 
-        }
-        
-        .social-node { 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-            padding: 6px 16px; 
-            border-radius: 30px; 
-            color: #fff; 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            font-weight: 700; 
-            background: rgba(255,255,255,0.02); 
-            border: 1px solid rgba(255,255,255,0.05); 
-            transition: all 0.3s ease; 
+        .belt-brand {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
         }
 
-        .social-node.yt:hover { background: var(--brand-yt); box-shadow: 0 0 15px var(--brand-yt); transform: translateY(-2px); }
-        .social-node.tt:hover { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.8); transform: translateY(-2px); }
-        .social-node.ig:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 15px var(--brand-ig); transform: translateY(-2px); }
-        .social-node.fb:hover { background: var(--brand-fb); box-shadow: 0 0 15px var(--brand-fb); transform: translateY(-2px); }
-
-        /* ==========================================================================
-           3. STICKY NAVIGATION & HEADERS
-           ========================================================================== */
-        .main-navigation-bar { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 6%; 
-            background: rgba(2, 4, 8, 0.85); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px); 
-            border-bottom: 1px solid var(--border-line); 
-            position: sticky; 
-            top: 0; 
-            z-index: 999; 
-        }
-        
-        .app-branding-logo { 
-            font-size: 1.5rem; 
-            font-weight: 900; 
-            color: var(--primary); 
-            letter-spacing: 1px; 
-            text-transform: uppercase; 
+        .owner-trigger-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid var(--primary-gold);
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .matrix-theme-toggle { 
-            display: flex; 
-            gap: 8px; 
-            background: rgba(255,255,255,0.02); 
-            padding: 4px 10px; 
-            border-radius: 20px; 
-            border: 1px solid var(--border-line); 
+        .owner-trigger-box:hover {
+            background: var(--primary-gold);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
-        
-        .theme-dot { 
-            width: 14px; 
-            height: 14px; 
-            border-radius: 50%; 
-            border: none; 
-            cursor: pointer; 
-            transition: 0.2s; 
-        }
-        
-        .theme-dot.dark { background: #0a1120; } 
-        .theme-dot.light { background: #fff; }
-        .theme-dot.active { transform: scale(1.2); box-shadow: 0 0 8px var(--text-main); }
 
-        .master-hero-viewport { 
-            text-align: center; 
-            padding: 80px 24px 30px 24px; 
-            max-width: 1000px; 
-            margin: 0 auto; 
+        /* Owner Overlay Panel / Modal */
+        .owner-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
-        
-        .master-hero-viewport h1 { 
-            font-size: clamp(2.5rem, 7vw, 5rem); 
-            font-weight: 900; 
-            margin-bottom: 20px; 
-            background: linear-gradient(135deg, #fff, var(--text-muted), var(--primary)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+
+        .owner-modal-overlay.active {
+            display: flex;
         }
-        
-        .master-hero-viewport p { 
-            font-size: clamp(1rem, 2.5vw, 1.25rem); 
-            color: var(--text-muted); 
-            line-height: 1.6; 
+
+        .owner-card-content {
+            background: var(--bg-surface);
+            border: 2px solid var(--primary-gold);
+            padding: 35px;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.2);
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal-btn:hover { color: #fff; transform: rotate(90deg); }
+
+        .owner-card-content h2 {
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .owner-card-content p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* ==========================================================================
-           4. INTELLIGENT SEARCH PIPELINE
+           3. CINEMATIC VIDEO HERO STAGE (WITH BACKGROUND VIDEO LOOP)
            ========================================================================== */
-        .search-pipeline-container { 
-            max-width: 600px; 
-            width: 90%; 
-            margin: 30px auto; 
-            position: relative; 
-            z-index: 500; 
-        }
-        
-        .search-input-wrapper { 
-            position: relative; 
-        }
-        
-        .search-input-wrapper input { 
-            width: 100%; 
-            padding: 18px 20px 18px 55px; 
-            background: var(--bg-surface); 
-            border: 2px solid var(--border-line); 
-            border-radius: 50px; 
-            color: #fff; 
-            font-size: 1rem; 
-            outline: none; 
-            transition: 0.3s ease; 
-        }
-        
-        .search-input-wrapper input:focus { 
-            border-color: var(--accent); 
-            box-shadow: 0 0 25px var(--accent-glow); 
-        }
-        
-        .search-icon { 
-            position: absolute; 
-            left: 22px; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            color: var(--accent); 
+        .cinematic-hero-container {
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
-        .search-autocomplete-dropdown { 
-            position: absolute; 
-            top: 100%; 
-            left: 2%; 
-            width: 96%; 
-            background: var(--bg-card); 
-            border: 1px solid var(--border-line); 
-            border-radius: 16px; 
-            margin-top: 8px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-            overflow: hidden; 
-            display: none; 
-            max-height: 220px; 
-            overflow-y: auto; 
+        .hero-background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.35);
         }
-        
-        .pipeline-item { 
-            padding: 14px 20px; 
-            color: var(--text-main); 
-            cursor: pointer; 
-            text-align: left; 
-            font-weight: 600; 
-            border-bottom: 1px solid rgba(255,255,255,0.01); 
-            transition: 0.2s; 
+
+        .hero-video-fallback-blur {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(3,7,18,0.1), var(--bg-deep));
+            z-index: -1;
         }
-        
-        .pipeline-item:hover { 
-            background: rgba(0, 229, 255, 0.04); 
-            color: var(--accent); 
+
+        .hero-title-overlay {
+            text-align: center;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .hero-title-overlay h1 {
+            font-size: clamp(2.8rem, 8vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         /* ==========================================================================
-           5. MEDIA WORKSPACE GRID ARCHITECTURE
+           4. SPECIFIC BRANDED SOCIAL LINKS (BOXES MATRIX)
            ========================================================================== */
-        .workspace-grid-matrix { 
-            max-width: 1200px; 
-            margin: 0 auto 80px auto; 
-            padding: 0 24px; 
-        }
-        
-        .filter-station-row { 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            margin-bottom: 40px; 
-            flex-wrap: wrap; 
-        }
-        
-        .station-tab { 
-            background: rgba(255,255,255,0.01); 
-            border: 1px solid var(--border-line); 
-            color: var(--text-muted); 
-            padding: 12px 24px; 
-            border-radius: 30px; 
-            cursor: pointer; 
-            font-weight: 700; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            transition: 0.3s; 
-        }
-        
-        .station-tab.active, .station-tab:hover { 
-            background: var(--bg-surface); 
-            border-color: var(--primary); 
-            color: var(--primary); 
-            transform: translateY(-2px); 
+        .social-matrix-section {
+            max-width: 1100px;
+            margin: -40px auto 40px auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 20;
         }
 
-        .dynamic-media-mesh { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); 
-            gap: 30px; 
-        }
-        
-        .media-node-card { 
-            background: var(--bg-surface); 
-            border: 1px solid var(--border-line); 
-            border-radius: 20px; 
-            overflow: hidden; 
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-            cursor: pointer; 
-        }
-        
-        .media-node-card:hover { 
-            transform: translateY(-8px); 
-            border-color: var(--accent); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+        .social-grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
         }
 
-        .thumbnail-aspect-ratio { 
-            position: relative; 
-            width: 100%; 
-            padding-bottom: 56.25%; 
-            background: #000; 
-            overflow: hidden; 
-        }
-        
-        .thumbnail-aspect-ratio img { 
-            position: absolute; 
-            inset: 0; 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            filter: brightness(0.85); 
-            transition: 0.4s; 
-        }
-        
-        .media-node-card:hover .thumbnail-aspect-ratio img { 
-            transform: scale(1.04); 
+        .social-box-node {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .play-state-overlay { 
-            position: absolute; 
-            inset: 0; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            background: rgba(0,0,0,0.2); 
-            opacity: 0; 
-            transition: 0.3s; 
-        }
-        
-        .media-node-card:hover .play-state-overlay { 
-            opacity: 1; 
-        }
-        
-        .play-state-overlay i { 
-            font-size: 3rem; 
-            color: var(--accent); 
-            filter: drop-shadow(0 0 10px var(--accent)); 
-        }
+        .social-box-node i { font-size: 2.5rem; }
 
-        .node-meta-information { 
-            padding: 20px; 
-        }
-        
-        .category-pill-tag { 
-            display: inline-block; 
-            padding: 4px 10px; 
-            background: rgba(0, 229, 255, 0.05); 
-            color: var(--accent); 
-            border-radius: 20px; 
-            font-size: 0.65rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            margin-bottom: 12px; 
-            border: 1px solid var(--border-line); 
-        }
-        
-        .node-title-string { 
-            font-size: 1.1rem; 
-            line-height: 1.4; 
-            font-weight: 700; 
-            color: #fff; 
+        /* Exact Brand Specifications Map */
+        .social-box-node.yt { background: var(--yt-red); }
+        .social-box-node.ig { background: var(--ig-gradient); }
+        .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
+        .social-box-node.fb { background: var(--fb-blue); }
+
+        .social-box-node:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255,255,255,0.1);
+            filter: brightness(1.1);
         }
 
         /* ==========================================================================
-           6. CINEMATIC THEATER OVERLAY
+           5. PRODUCTION ANALYTICS VIEWS COUNTER
            ========================================================================== */
-        #cinematicTheaterPortal { 
-            position: fixed; 
-            inset: 0; 
-            background: rgba(0,0,0,0.96); 
-            z-index: 2000; 
-            display: none; 
-            justify-content: center; 
-            align-items: center; 
-            backdrop-filter: blur(15px); 
-            padding: 15px; 
-        }
-        
-        #cinematicTheaterPortal.active { 
-            display: flex; 
-        }
-        
-        .theater-responsive-container { 
-            width: 95%; 
-            max-width: 1000px; 
-            background: #000; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid var(--primary); 
-            position: relative; 
-        }
-        
-        .theater-close-trigger { 
-            position: absolute; 
-            top: 15px; 
-            right: 15px; 
-            background: rgba(255,255,255,0.1); 
-            border: none; 
-            color: #fff; 
-            font-size: 1.2rem; 
-            width: 38px; 
-            height: 38px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            transition: 0.3s; 
-            z-index: 2100; 
-        }
-        
-        .theater-close-trigger:hover { 
-            background: #ff0055; 
-            transform: rotate(90deg); 
-        }
-        
-        .iframe-wrapper { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-        }
-        
-        .iframe-wrapper iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: 0; 
+        .analytics-counter-strip {
+            text-align: center;
+            margin: 40px 0;
         }
 
-        .enterprise-footer { 
-            text-align: center; 
-            padding: 50px 20px; 
-            border-top: 1px solid var(--border-line); 
-            font-size: 0.8rem; 
-            color: var(--text-muted); 
-            background: #010306; 
+        .counter-badge-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-glow);
+            padding: 10px 25px;
+            border-radius: 50px;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 800px) {
-            .priority-channels-belt { flex-direction: column; gap: 10px; padding: 12px 4%; }
-            .omni-social-grid { width: 100%; justify-content: center; flex-wrap: wrap; }
-            .social-node { width: 46%; justify-content: center; }
-            .main-navigation-bar { padding: 15px 4%; }
-            .station-tab { width: 47%; text-align: center; font-size: 0.75rem; }
+        .counter-badge-box i { color: var(--primary-gold); }
+        .counter-badge-box span { font-weight: 700; font-size: 0.95rem; color: var(--text-light); }
+        .counter-badge-box strong { color: var(--primary-gold); font-size: 1.1rem; }
+
+        /* ==========================================================================
+           6. LIVE INDUSTRIAL SEARCH ENGINE
+           ========================================================================== */
+        .search-engine-section {
+            max-width: 600px;
+            width: 90%;
+            margin: 0 auto 50px auto;
+        }
+
+        .search-field-wrapper {
+            position: relative;
+        }
+
+        .search-field-wrapper input {
+            width: 100%;
+            padding: 16px 20px 16px 55px;
+            background: var(--bg-surface);
+            border: 2px solid var(--border-glow);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-field-wrapper input:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+        }
+
+        .search-field-wrapper i {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+        }
+
+        /* ==========================================================================
+           7. AUTOMATED MEDIA DATA CONTAINER METRIC
+           ========================================================================== */
+        .media-workspace-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 60px 24px;
+        }
+
+        .media-dynamic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .media-card-node {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+        }
+
+        .media-card-node:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .thumb-ratio {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+        }
+
+        .thumb-ratio img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .media-card-node:hover .thumb-ratio img { transform: scale(1.03); }
+
+        .meta-pad { padding: 20px; }
+        .meta-pad h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: #fff; }
+
+        /* ==========================================================================
+           8. SYSTEM/CHANNEL INTRODUCTION BLOCK
+           ========================================================================== */
+        .channel-profile-intro-row {
+            background: #090d16;
+            border-top: 1px solid var(--border-glow);
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .profile-container-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-container-inner h2 {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .profile-container-inner p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #05080f;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        @media (max-width: 768px) {
+            .top-premium-belt { padding: 15px 4%; }
+            .social-matrix-section { margin-top: -20px; }
+            .social-grid-wrapper { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="priority-channels-belt">
-        <div class="broadcast-badge">
-            <i class="fa-solid fa-satellite-dish animate-pulse"></i> LIVE STREAMS ACTIVE
-        </div>
-        <div class="omni-social-grid">
-            <a href="https://youtube.com" target="_blank" class="social-node yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
-            <a href="https://tiktok.com" target="_blank" class="social-node tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-            <a href="https://instagram.com" target="_blank" class="social-node ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <a href="https://facebook.com" target="_blank" class="social-node fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+    <div class="top-premium-belt">
+        <div class="belt-brand">The Deen Vision</div>
+        <div class="owner-trigger-box" onclick="toggleOwnerVault(true)">
+            <i class="fa-solid fa-user-tie"></i> Owner Info
         </div>
     </div>
 
-    <canvas id="quantumGridCanvas"></canvas>
-
-    <nav class="main-navigation-bar">
-        <div class="app-branding-logo">
-            <i class="fa-solid fa-star-and-crescent"></i> THE DEEN VISION
+    <div class="owner-modal-overlay" id="ownerOverlayVault" onclick="closeVaultViaOverlay(event)">
+        <div class="owner-card-content animate__animated animate__zoomIn">
+            <button class="close-modal-btn" onclick="toggleOwnerVault(false)"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Abdul Subhan Almani</h2>
+            <p>Welcome to the core portal of THE DEEN VISION. As the principal director, our objective is to architect high-fidelity systems that streamline spiritual development media network distributions across all main online nodes globally.</p>
         </div>
-        <div class="matrix-theme-toggle">
-            <button class="theme-dot dark active" onclick="setGlobalTheme('dark', this)"></button>
-            <button class="theme-dot light" onclick="setGlobalTheme('light', this)"></button>
-        </div>
-    </nav>
-
-    <header class="master-hero-viewport">
-        <h1 class="animate__animated animate__fadeInDown">THE DEEN VISION</h1>
-        <p class="animate__animated animate__fadeInUp">The pinnacle of digital content architecture. Broadcasting high-fidelity spiritual and educational media streams across the modern web ecosystem.</p>
-    </header>
-
-    <div class="search-pipeline-container">
-        <div class="search-input-wrapper">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="internalSearchEngine" placeholder="Scan and filter media nodes instantly..." onkeyup="executeEngineFilter()">
-        </div>
-        <div class="search-autocomplete-dropdown" id="searchSuggestionVault"></div>
     </div>
 
-    <main class="workspace-grid-matrix">
-        <div class="filter-station-row">
-            <button class="station-tab active" onclick="filterMatrixCategory('all', this)">All Fe feeds</button>
-            <button class="station-tab" onclick="filterMatrixCategory('Bayan', this)">Lectures</button>
-            <button class="station-tab" onclick="filterMatrixCategory('Shorts', this)">Micro Streams</button>
-            <button class="station-tab" onclick="filterMatrixCategory('Series', this)">Series Data</button>
-            <button class="station-tab" onclick="filterMatrixCategory('Reminders', this)">Reminders</button>
+    <section class="cinematic-hero-container">
+        <video class="hero-background-video" autoplay loop muted playsinline>
+            <source src="/static/videos/hero-reel.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-fallback-blur"></div>
+        <div class="hero-title-overlay">
+            <h1 class="animate__animated animate__fadeInUp">THE DEEN VISION</h1>
         </div>
+    </section>
 
-        <div class="dynamic-media-mesh" id="masterMediaMesh">
+    <section class="social-matrix-section">
+        <div class="social-grid-wrapper">
+            <a href="https://youtube.com" target="_blank" class="social-box-node yt animate__animated animate__fadeInUp">
+                <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-box-node ig animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-box-node tt animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-box-node fb animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+        </div>
+    </section>
+
+    <div class="analytics-counter-strip">
+        <div class="counter-badge-box">
+            <i class="fa-solid fa-eye"></i>
+            <span>Live Platform Views: <strong>142,850</strong></span>
+        </div>
+    </div>
+
+    <div class="search-engine-section">
+        <div class="search-field-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="workspaceSearch" placeholder="Filter through broadcast feeds..." onkeyup="executeClientSearch()">
+        </div>
+    </div>
+
+    <main class="media-workspace-shell">
+        <div class="media-dynamic-grid" id="masterVideoGrid">
             {% for video in videos %}
-            <div class="media-node-card video-node" data-category="{{ video.category }}" onclick="openCinematicTheater('{{ video.id }}')">
-                <div class="thumbnail-aspect-ratio">
-                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="The Deen Vision Core Feed">
-                    <div class="play-state-overlay">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
+            <div class="media-card-node video-item animate__animated animate__fadeInUp">
+                <div class="thumb-ratio">
+                    <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Video Feed Component">
                 </div>
-                <div class="node-meta-information">
-                    <span class="category-pill-tag">{{ video.category }}</span>
-                    <h3 class="node-title-string">{{ video.title }}</h3>
+                <div class="meta-pad">
+                    <h3 class="video-title-text">{{ video.title }}</h3>
                 </div>
             </div>
             {% endfor %}
         </div>
     </main>
 
-    <div id="cinematicTheaterPortal">
-        <div class="theater-responsive-container">
-            <button class="theater-close-trigger" onclick="closeCinematicTheater()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="iframe-wrapper">
-                <iframe id="globalTheaterIframe" allowfullscreen allow="autoplay"></iframe>
-            </div>
+    <section class="channel-profile-intro-row">
+        <div class="profile-container-inner">
+            <h2>About the Channel & Platform</h2>
+            <p>The Deen Vision is an enterprise multimedia portal designed to distribute structured educational lectures, micro-reminders, and full content series. Powered by optimized automated streaming feeds, this layout bridges your primary social network pipelines into a unified, clean standalone system built for seamless scalability and high digital impact.</p>
         </div>
-    </div>
+    </section>
 
-    <footer class="enterprise-footer">
-        <p>&copy; 2026 THE DEEN VISION. Engineered to Perfection. All Rights Reserved Across All Nodes.</p>
+    <footer>
+        <p>&copy; 2026 THE DEEN VISION. Dynamic Media Portal Integration Framework. Powered by Clean Architectural Logic.</p>
     </footer>
 
     <script>
-        let globalFilterContext = 'all';
-        let particleSystemPool = [];
-        const canvasElement = document.getElementById('quantumGridCanvas');
-        const context2D = canvasElement.getContext('2d');
-        let vectorCursor = { x: null, y: null, radius: window.innerWidth > 768 ? 110 : 60 };
-
-        // Graphics Framework Reset
-        function adjustCanvasViewport() {
-            canvasElement.width = window.innerWidth;
-            canvasElement.height = window.innerHeight;
-        }
-        window.addEventListener('resize', adjustCanvasViewport);
-
-        const trackInputVectors = (clientX, clientY) => {
-            vectorCursor.x = clientX;
-            vectorCursor.y = clientY;
-        };
-        window.addEventListener('mousemove', (e) => trackInputVectors(e.clientX, e.clientY));
-        window.addEventListener('touchmove', (e) => {
-            if (e.touches.length > 0) trackInputVectors(e.touches[0].clientX, e.touches[0].clientY);
-        });
-        window.addEventListener('touchend', () => { vectorCursor.x = null; vectorCursor.y = null; });
-        window.addEventListener('mouseout', () => { vectorCursor.x = null; vectorCursor.y = null; });
-
-        class QuantumGridParticle {
-            constructor() {
-                this.x = Math.random() * canvasElement.width;
-                this.y = Math.random() * canvasElement.height;
-                this.velocityScaleX = Math.random() * 0.4 - 0.2;
-                this.velocityScaleY = Math.random() * 0.4 - 0.2;
-                this.nodeRadius = Math.random() * 1.5 + 0.8;
-            }
-            computeNextState() {
-                this.x += this.velocityScaleX;
-                this.y += this.velocityScaleY;
-                
-                if (this.x > canvasElement.width || this.x < 0) this.velocityScaleX *= -1;
-                if (this.y > canvasElement.height || this.y < 0) this.velocityScaleY *= -1;
-
-                let deltaX = vectorCursor.x - this.x;
-                let deltaY = vectorCursor.y - this.y;
-                let linearDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                
-                if (linearDistance < vectorCursor.radius) {
-                    let escapeVelocity = 1.3;
-                    if (vectorCursor.x > this.x && this.x > 10) this.x -= escapeVelocity;
-                    if (vectorCursor.x < this.x && this.x < canvasElement.width - 10) this.x += escapeVelocity;
-                    if (vectorCursor.y > this.y && this.y > 10) this.y -= escapeVelocity;
-                    if (vectorCursor.y < this.y && this.y < canvasElement.height - 10) this.y += escapeVelocity;
-                }
-            }
-            renderStateFrame() {
-                context2D.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-                context2D.beginPath();
-                context2D.arc(this.x, this.y, this.nodeRadius, 0, Math.PI * 2);
-                context2D.fill();
-            }
-        }
-
-        function operationalizeParticleMatrix() {
-            particleSystemPool = [];
-            let dynamicVolumeDensity = window.innerWidth > 768 ? 60 : 25;
-            for (let i = 0; i < dynamicVolumeDensity; i++) {
-                particleSystemPool.push(new QuantumGridParticle());
-            }
-        }
-
-        function processFrameAnimationLoop() {
-            context2D.clearRect(0, 0, canvasElement.width, canvasElement.height);
-            particleSystemPool.forEach(particle => {
-                particle.computeNextState();
-                particle.renderStateFrame();
-            });
-            requestAnimationFrame(processFrameAnimationLoop);
-        }
-
-        // Run Background Graphics System
-        adjustCanvasViewport();
-        operationalizeParticleMatrix();
-        processFrameAnimationLoop();
-
-        // Engine Live Search Pipeline
-        function executeEngineFilter() {
-            let rawQueryInput = document.getElementById('internalSearchEngine').value.toLowerCase();
-            let multiVideoNodes = document.getElementsByClassName('video-node');
-            let suggestionVault = document.getElementById('searchSuggestionVault');
-            suggestionVault.innerHTML = '';
-
-            let asynchronousMatches = [];
-
-            for (let singleNode of multiVideoNodes) {
-                let computationalTitle = singleNode.getElementsByClassName('node-title-string')[0].innerText;
-                let targetCategory = singleNode.getAttribute('data-category');
-                
-                let queryValid = computationalTitle.toLowerCase().includes(rawQueryInput);
-                let categoryValid = (globalFilterContext === 'all' || targetCategory === globalFilterContext);
-
-                singleNode.style.display = (queryValid && categoryValid) ? "" : "none";
-
-                if (rawQueryInput.length > 1 && queryValid && categoryValid) {
-                    asynchronousMatches.push(computationalTitle);
-                }
-            }
-
-            if (asynchronousMatches.length > 0) {
-                suggestionVault.style.display = "block";
-                let deduplicatedMatrix = [...new Set(asynchronousMatches)].slice(0, 5);
-                deduplicatedMatrix.forEach(title => {
-                    let DOMElement = document.createElement('div');
-                    DOMElement.className = 'pipeline-item';
-                    DOMElement.innerText = title;
-                    DOMElement.onclick = () => {
-                        document.getElementById('internalSearchEngine').value = title;
-                        suggestionVault.style.display = "none";
-                        executeEngineFilter();
-                    };
-                    suggestionVault.appendChild(DOMElement);
-                });
+        // Owner Modal Controls
+        function toggleOwnerVault(shouldOpen) {
+            const vault = document.getElementById('ownerOverlayVault');
+            if (shouldOpen) {
+                vault.classList.add('active');
+                document.body.style.overflow = 'hidden';
             } else {
-                suggestionVault.style.display = "none";
+                vault.classList.remove('active');
+                document.body.style.overflow = '';
             }
         }
 
-        function filterMatrixCategory(categoryToken, triggerReference) {
-            globalFilterContext = categoryToken;
-            let trackingTabs = document.getElementsByClassName('station-tab');
-            for (let tab of trackingTabs) tab.classList.remove('active');
-            triggerReference.classList.add('active');
-            executeEngineFilter();
-        }
-
-        // Cinematic Media Overlay Methods
-        function openCinematicTheater(mediaId) {
-            const URLTargetString = `https://www.youtube.com/embed/${mediaId}?autoplay=1&rel=0&modestbranding=1`;
-            document.getElementById('globalTheaterIframe').src = URLTargetString;
-            document.getElementById('cinematicTheaterPortal').classList.add('active');
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeCinematicTheater() {
-            document.getElementById('globalTheaterIframe').src = "";
-            document.getElementById('cinematicTheaterPortal').classList.remove('active');
-            document.body.style.overflow = "";
-        }
-
-        function setGlobalTheme(targetTheme, triggerButton) {
-            document.documentElement.setAttribute('data-theme', targetTheme);
-            let allSwitches = document.getElementsByClassName('theme-dot');
-            for (let individualDot of allSwitches) individualDot.classList.remove('active');
-            triggerButton.classList.add('active');
-            operationalizeParticleMatrix();
-        }
-
-        document.addEventListener('click', (event) => {
-            if (!event.target.closest('.search-pipeline-container')) {
-                document.getElementById('searchSuggestionVault').style.display = "none";
+        function closeVaultViaOverlay(event) {
+            if (event.target.id === 'ownerOverlayVault') {
+                toggleOwnerVault(false);
             }
-        });
+        }
+
+        // Live Real-Time Filtering System
+        function executeClientSearch() {
+            let userQuery = document.getElementById('workspaceSearch').value.toLowerCase();
+            let videoItems = document.getElementsByClassName('video-item');
+
+            for (let item of videoItems) {
+                let currentTitle = item.getElementsByClassName('video-title-text')[0].innerText.toLowerCase();
+                if (currentTitle.includes(userQuery)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
     </script>
 </body>
 </html>
