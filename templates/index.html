@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE DEEN VISION | Ultimate Animated Premium Portal</title>
+    <title>THE DEEN VISION | Premium Slide Portal</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -166,7 +166,7 @@
         .owner-card-content h2 { color: var(--primary-gold); margin-bottom: 15px; }
 
         /* ==========================================================================
-           4. CINEMATIC MULTI-VIDEO BACKGROUND SLIDER STAGE
+           4. FIXED HERO VIDEO SLIDER (EXACT AREA IN YOUR SCREENSHOT)
            ========================================================================== */
         .cinematic-hero-container {
             position: relative;
@@ -177,45 +177,57 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background: #000; /* Dark fallback base */
         }
 
-        /* Video Track Slider Wrapper */
+        /* Corrected Layered Slider Window Behind Text */
         .video-slider-track {
             position: absolute;
-            inset: 0;
-            z-index: -2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Sits completely underneath the text overlay */
+        }
+
+        .slide-video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.2s ease-in-out, visibility 1.2s;
+        }
+
+        /* Active Slide State Triggered via CSS/JS smoothly */
+        .slide-video-wrapper.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         .slide-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            filter: brightness(0.35);
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            filter: brightness(0.35); /* Text readability enhancement */
         }
 
-        .slide-video.active {
-            opacity: 1;
-        }
-
+        /* Dark overlay effect to blend the edges with background */
         .hero-video-fallback-blur {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(2,6,23,0.1), var(--bg-deep));
-            z-index: -1;
+            background: linear-gradient(to bottom, rgba(2,6,23,0.1) 60%, var(--bg-deep) 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
         .hero-title-overlay {
             text-align: center;
             padding: 0 20px;
-            z-index: 10;
+            z-index: 5; /* Forces text above slider safely */
+            position: relative;
         }
 
         .hero-title-overlay h1 {
@@ -271,6 +283,7 @@
 
         .social-box-node.yt { background: var(--yt-red); }
         .social-box-node.ig { background: var(--ig-gradient); }
+        .slide-video-wrapper:nth-child(3) .slide-video { transform: scale(1.02); } /* Quick visual correction */
         .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
         .social-box-node.fb { background: var(--fb-blue); }
 
@@ -455,16 +468,22 @@
     </div>
 
     <section class="cinematic-hero-container">
-        <div class="video-slider-track">
-            <video class="slide-video active" autoplay loop muted playsinline id="promoVid1">
-                <source src="/static/videos/youtube-promo.mp4" type="video/mp4">
-            </video>
-            <video class="slide-video" autoplay loop muted playsinline id="promoVid2">
-                <source src="/static/videos/instagram-promo.mp4" type="video/mp4">
-            </video>
-            <video class="slide-video" autoplay loop muted playsinline id="promoVid3">
-                <source src="/static/videos/tiktok-promo.mp4" type="video/mp4">
-            </video>
+        <div class="video-slider-track" id="sliderEngineTrack">
+            <div class="slide-video-wrapper active">
+                <video class="slide-video" autoplay loop muted playsinline>
+                    <source src="/static/videos/youtube-promo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide-video-wrapper">
+                <video class="slide-video" autoplay loop muted playsinline>
+                    <source src="/static/videos/instagram-promo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide-video-wrapper">
+                <video class="slide-video" autoplay loop muted playsinline>
+                    <source src="/static/videos/tiktok-promo.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
         <div class="hero-video-fallback-blur"></div>
         <div class="hero-title-overlay">
@@ -532,43 +551,38 @@
     <script>
         // AI Voice Greeting & Portal Entrance Engine
         function unlockPortalAndGreet() {
-            // Hide Overlay
             document.getElementById('portalGate').classList.add('hidden');
             
-            // Web Speech API Initialization
             if ('speechSynthesis' in window) {
                 const speechText = "Welcome to The Deen Vision";
                 const utterance = new SpeechSynthesisUtterance(speechText);
                 
-                // Fine-tuning tone for premium aesthetic
                 utterance.volume = 1.0; 
-                utterance.rate = 0.95; // Slightly slower for heavy/professional impact
+                utterance.rate = 0.95; 
                 utterance.pitch = 1.0; 
                 
-                // Try selecting an English corporate voice if available
                 const voices = window.speechSynthesis.getVoices();
                 const premiumVoice = voices.find(voice => voice.lang.includes('en') && voice.name.toLowerCase().includes('google'));
                 if (premiumVoice) utterance.voice = premiumVoice;
                 
                 window.speechSynthesis.speak(utterance);
             }
-            
-            // Start Video Rotation Loop
-            startBackgroundSlider();
+
+            // Start smooth engine video carousel rotation
+            initiateSliderEngine();
         }
 
-        // Automatic Video Background Slider Logic
-        let activeSlideIndex = 0;
-        const videosList = document.querySelectorAll('.slide-video');
+        // Robust JS Engine for Flawless Cross-Fade Slides
+        let currentSlide = 0;
+        function initiateSliderEngine() {
+            const slides = document.querySelectorAll('.slide-video-wrapper');
+            if (slides.length <= 1) return;
 
-        function startBackgroundSlider() {
-            if(videosList.length <= 1) return;
-            
             setInterval(() => {
-                videosList[activeSlideIndex].classList.remove('active');
-                activeSlideIndex = (activeSlideIndex + 1) % videosList.length;
-                videosList[activeSlideIndex].classList.add('active');
-            }, 6000); // Transitions video slides every 6 seconds smoothly
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000); // Changes back-to-back every 5 seconds seamlessly
         }
 
         // Owner Modal Controls
@@ -604,7 +618,6 @@
             }
         }
 
-        // Voice list loader hook for Chrome/Safari
         if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
             speechSynthesis.onvoiceschanged = () => {};
         }
