@@ -42,7 +42,7 @@
         }
 
         /* ==========================================================================
-           2. INTERACTIVE GATEWAY OVERLAY (FOR AUDIO AUTOPLAY BYPASS)
+           2. INTERACTIVE GATEWAY OVERLAY
            ========================================================================== */
         .portal-gate-overlay {
             position: fixed;
@@ -83,7 +83,7 @@
         }
 
         /* ==========================================================================
-           3. TOP PROFESSIONAL PATTI (NAVBAR)
+           3. TOP NAVBAR
            ========================================================================== */
         .top-premium-belt {
             width: 100%;
@@ -105,7 +105,6 @@
             color: var(--primary-gold);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
         }
 
         .owner-trigger-box {
@@ -163,10 +162,8 @@
             cursor: pointer;
         }
 
-        .owner-card-content h2 { color: var(--primary-gold); margin-bottom: 15px; }
-
         /* ==========================================================================
-           4. FIXED HERO VIDEO SLIDER WITH FORCE-PLAY BACKEND
+           4. HERO VIDEO SLIDER
            ========================================================================== */
         .cinematic-hero-container {
             position: relative;
@@ -235,16 +232,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 10px 30px rgba(0,0,0,0.7);
-            animation: pulseGlow 3s infinite alternate;
-        }
-
-        @pragma-glow {
-            0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); }
-            100% { filter: drop-shadow(0 0 25px rgba(245,158,11,0.4)); }
         }
 
         /* ==========================================================================
-           5. SOCIAL LINKS GRID WITH CORRECT CHANNELS ROUTING
+           5. SOCIAL LINKS GRID
            ========================================================================== */
         .social-matrix-section {
             max-width: 1100px;
@@ -272,30 +263,94 @@
             font-weight: 800;
             font-size: 1.25rem;
             gap: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .social-box-node i { 
-            font-size: 3.2rem; 
-            display: block;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        /* Brand Color Schemes */
+        .social-box-node i { font-size: 3.2rem; }
         .social-box-node.yt { background: var(--yt-red); }
         .social-box-node.ig { background: var(--ig-gradient); }
         .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
         .social-box-node.fb { background: var(--fb-blue); }
 
-        .social-box-node:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255,255,255,0.15);
-            filter: brightness(1.15);
+        /* ==========================================================================
+           6. AUTOMATED DYNAMIC YOUTUBE MEDIA GRID (WITH LIVE PLAY IN WEBSITE)
+           ========================================================================== */
+        .media-workspace-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 60px 24px;
         }
 
+        .media-dynamic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .media-card-node {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.02);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+        }
+
+        .media-card-node:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .thumb-ratio {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            cursor: pointer;
+        }
+
+        .thumb-ratio img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Video Play Icon Overlay */
+        .play-overlay-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 3rem;
+            color: #fff;
+            opacity: 0.8;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .thumb-ratio:hover .play-overlay-icon {
+            opacity: 1;
+            transform: scale(1.1);
+            color: var(--primary-gold);
+        }
+
+        .thumb-ratio iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .meta-pad { padding: 22px; }
+        .meta-pad h3 { font-size: 1.1rem; font-weight: 700; color: #fff; }
+
         /* ==========================================================================
-           6. DESIGN SYSTEM REMAINING COMPONENT TILES
+           7. EXTRA SECTIONS
            ========================================================================== */
         .analytics-counter-strip { text-align: center; margin: 40px 0; }
         .counter-badge-box {
@@ -314,21 +369,11 @@
         .search-field-wrapper input {
             width: 100%; padding: 18px 20px 18px 60px;
             background: var(--bg-surface); border: 2px solid var(--border-glow);
-            border-radius: 50px; color: #fff; font-size: 1rem; outline: none;
+            border-radius: 50px; color: #fff; outline: none;
         }
         .search-field-wrapper i { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); color: var(--primary-gold); }
 
-        .media-workspace-shell { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px 24px; }
-        .media-dynamic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-        .media-card-node { background: var(--bg-surface); border: 1px solid rgba(255,255,255,0.02); border-radius: 16px; overflow: hidden; }
-        .thumb-ratio { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
-        .thumb-ratio img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .meta-pad { padding: 22px; }
-
         .channel-profile-intro-row { background: #070b14; border-top: 1px solid var(--border-glow); padding: 70px 24px; text-align: center; }
-        .profile-container-inner { max-width: 800px; margin: 0 auto; }
-        .profile-container-inner h2 { color: var(--primary-gold); margin-bottom: 20px; text-transform: uppercase; }
-        .profile-container-inner p { color: var(--text-muted); line-height: 1.8; }
         footer { text-align: center; padding: 30px 20px; background: #04060c; font-size: 0.8rem; color: rgba(255,255,255,0.15); }
 
         @media (max-width: 768px) {
@@ -356,7 +401,7 @@
         <div class="owner-card-content">
             <button class="close-modal-btn" onclick="toggleOwnerVault(false)"><i class="fa-solid fa-xmark"></i></button>
             <h2>Abdul Subhan Almani</h2>
-            <p>Welcome to the core portal of THE DEEN VISION. As the principal director, our objective is to architect high-fidelity systems that streamline spiritual development media network distributions across all main online nodes globally.</p>
+            <p>Welcome to the core portal of THE DEEN VISION.</p>
         </div>
     </div>
 
@@ -386,16 +431,16 @@
 
     <section class="social-matrix-section">
         <div class="social-grid-wrapper">
-            <a href="YOUR_YOUTUBE_CHANNEL_LINK" target="_blank" class="social-box-node yt">
+            <a href="https://youtube.com/@TheDeenVision" target="_blank" class="social-box-node yt">
                 <i class="fa-brands fa-youtube"></i> YouTube
             </a>
-            <a href="YOUR_INSTAGRAM_PROFILE_LINK" target="_blank" class="social-box-node ig">
+            <a href="https://instagram.com/TheDeenVision" target="_blank" class="social-box-node ig">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
-            <a href="YOUR_TIKTOK_PROFILE_LINK" target="_blank" class="social-box-node tt">
+            <a href="https://tiktok.com/@TheDeenVision" target="_blank" class="social-box-node tt">
                 <i class="fa-brands fa-tiktok"></i> TikTok
             </a>
-            <a href="YOUR_FACEBOOK_PAGE_LINK" target="_blank" class="social-box-node fb">
+            <a href="https://facebook.com/TheDeenVision" target="_blank" class="social-box-node fb">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
             </a>
         </div>
@@ -419,8 +464,11 @@
         <div class="media-dynamic-grid" id="masterVideoGrid">
             {% for video in videos %}
             <div class="media-card-node video-item">
-                <div class="thumb-ratio">
+                <div class="thumb-ratio" onclick="playYouTubeVideoInline(this, '{{ video.id }}')">
                     <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Video Feed Component">
+                    <div class="play-overlay-icon">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </div>
                 </div>
                 <div class="meta-pad">
                     <h3 class="video-title-text">{{ video.title }}</h3>
@@ -433,7 +481,7 @@
     <section class="channel-profile-intro-row">
         <div class="profile-container-inner">
             <h2>About the Channel & Platform</h2>
-            <p>The Deen Vision is an enterprise multimedia portal designed to distribute structured educational lectures, micro-reminders, and full content series.</p>
+            <p>The Deen Vision is an enterprise multimedia portal designed to distribute structured educational lectures.</p>
         </div>
     </section>
 
@@ -442,7 +490,13 @@
     </footer>
 
     <script>
-        // Force Trigger Autoplay Engine for Mobile Handsets
+        // Inline Video Player Trigger Logic
+        function playYouTubeVideoInline(element, videoId) {
+            // Tasveer ki jagah real YouTube Official Player Insert karein taake views seedha counter par jayein
+            element.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        }
+
+        // Force Autoplay Logic for Background Videos
         function forcePlayAllVideos() {
             const videoElements = document.querySelectorAll('.hero-video-element');
             videoElements.forEach(video => {
@@ -450,9 +504,7 @@
                 video.playsInline = true;
                 let playPromise = video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Autoplay forced system prevented slightly: ", error);
-                    });
+                    playPromise.catch(error => { console.log(error); });
                 }
             });
         }
@@ -460,18 +512,9 @@
         function unlockPortalAndGreet() {
             document.getElementById('portalGate').classList.add('hidden');
             forcePlayAllVideos();
-            
-            if ('speechSynthesis' in window) {
-                const speechText = "Welcome to The Deen Vision";
-                const utterance = new SpeechSynthesisUtterance(speechText);
-                utterance.volume = 1.0; utterance.rate = 0.95; utterance.pitch = 1.0;
-                window.speechSynthesis.speak(utterance);
-            }
-
             initiateSliderEngine();
         }
 
-        // JS Engine for Slide Fades
         let currentSlide = 0;
         function initiateSliderEngine() {
             const slides = document.querySelectorAll('.slide-video-wrapper');
@@ -482,15 +525,12 @@
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
                 
-                // Play specific focused active slide element safely
                 const activeVideo = slides[currentSlide].querySelector('.hero-video-element');
                 if(activeVideo) activeVideo.play();
             }, 5000); 
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            forcePlayAllVideos();
-        });
+        window.addEventListener('DOMContentLoaded', () => { forcePlayAllVideos(); });
 
         function toggleOwnerVault(shouldOpen) {
             const vault = document.getElementById('ownerOverlayVault');
