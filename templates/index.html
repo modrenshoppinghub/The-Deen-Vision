@@ -235,7 +235,7 @@
         }
 
         /* ==========================================================================
-           5. SOCIAL LINKS GRID
+           5. SOCIAL LINKS GRID WITH YOUR LIVE PROFILES
            ========================================================================== */
         .social-matrix-section {
             max-width: 1100px;
@@ -273,8 +273,14 @@
         .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
         .social-box-node.fb { background: var(--fb-blue); }
 
+        .social-box-node:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.15);
+            filter: brightness(1.15);
+        }
+
         /* ==========================================================================
-           6. AUTOMATED DYNAMIC YOUTUBE MEDIA GRID (WITH LIVE PLAY IN WEBSITE)
+           6. AUTOMATED DYNAMIC YOUTUBE MEDIA GRID (LIVE INLINE PLAYER)
            ========================================================================== */
         .media-workspace-shell {
             max-width: 1200px;
@@ -305,7 +311,7 @@
         .thumb-ratio {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; 
             background: #000;
             cursor: pointer;
         }
@@ -318,7 +324,6 @@
             object-fit: cover;
         }
 
-        /* Video Play Icon Overlay */
         .play-overlay-icon {
             position: absolute;
             inset: 0;
@@ -350,7 +355,7 @@
         .meta-pad h3 { font-size: 1.1rem; font-weight: 700; color: #fff; }
 
         /* ==========================================================================
-           7. EXTRA SECTIONS
+           7. EXTRA STRUCTURAL STRIPS
            ========================================================================== */
         .analytics-counter-strip { text-align: center; margin: 40px 0; }
         .counter-badge-box {
@@ -431,16 +436,16 @@
 
     <section class="social-matrix-section">
         <div class="social-grid-wrapper">
-            <a href="https://youtube.com/@TheDeenVision" target="_blank" class="social-box-node yt">
+            <a href="https://youtube.com/@thedeenvisionhq?si=xKKz9agyBuLLyKtG" target="_blank" class="social-box-node yt">
                 <i class="fa-brands fa-youtube"></i> YouTube
             </a>
-            <a href="https://instagram.com/TheDeenVision" target="_blank" class="social-box-node ig">
+            <a href="https://www.instagram.com/thedeenvisionhq?igsh=MWlsYzNiYXJodmludw==" target="_blank" class="social-box-node ig">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
-            <a href="https://tiktok.com/@TheDeenVision" target="_blank" class="social-box-node tt">
+            <a href="https://www.tiktok.com/t/ZTB7NA8dP/" target="_blank" class="social-box-node tt">
                 <i class="fa-brands fa-tiktok"></i> TikTok
             </a>
-            <a href="https://facebook.com/TheDeenVision" target="_blank" class="social-box-node fb">
+            <a href="https://www.facebook.com/share/19DYV6GNGA/" target="_blank" class="social-box-node fb">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
             </a>
         </div>
@@ -492,7 +497,7 @@
     <script>
         // Inline Video Player Trigger Logic
         function playYouTubeVideoInline(element, videoId) {
-            // Tasveer ki jagah real YouTube Official Player Insert karein taake views seedha counter par jayein
+            // Real YouTube player inject hoga taake views direct handle hon
             element.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
 
