@@ -6,7 +6,7 @@
     <title>THE DEEN VISION | Premium Slide Portal</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     
     <style>
         /* ==========================================================================
@@ -83,7 +83,7 @@
         }
 
         /* ==========================================================================
-           3. TOP PROFESSIONAL PATTI (NAVBAR) WITH OWNER VAULT
+           3. TOP PROFESSIONAL PATTI (NAVBAR)
            ========================================================================== */
         .top-premium-belt {
             width: 100%;
@@ -166,7 +166,7 @@
         .owner-card-content h2 { color: var(--primary-gold); margin-bottom: 15px; }
 
         /* ==========================================================================
-           4. FIXED HERO VIDEO SLIDER (EXACT AREA IN YOUR SCREENSHOT)
+           4. FIXED HERO VIDEO SLIDER WITH FORCE-PLAY BACKEND
            ========================================================================== */
         .cinematic-hero-container {
             position: relative;
@@ -177,17 +177,16 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: #000; /* Dark fallback base */
+            background: #000;
         }
 
-        /* Corrected Layered Slider Window Behind Text */
         .video-slider-track {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Sits completely underneath the text overlay */
+            z-index: 1;
         }
 
         .slide-video-wrapper {
@@ -201,7 +200,6 @@
             transition: opacity 1.2s ease-in-out, visibility 1.2s;
         }
 
-        /* Active Slide State Triggered via CSS/JS smoothly */
         .slide-video-wrapper.active {
             opacity: 1;
             visibility: visible;
@@ -211,10 +209,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.35); /* Text readability enhancement */
+            filter: brightness(0.35);
         }
 
-        /* Dark overlay effect to blend the edges with background */
         .hero-video-fallback-blur {
             position: absolute;
             inset: 0;
@@ -226,7 +223,7 @@
         .hero-title-overlay {
             text-align: center;
             padding: 0 20px;
-            z-index: 5; /* Forces text above slider safely */
+            z-index: 5;
             position: relative;
         }
 
@@ -241,13 +238,13 @@
             animation: pulseGlow 3s infinite alternate;
         }
 
-        @keyframes pulseGlow {
+        @pragma-glow {
             0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); }
             100% { filter: drop-shadow(0 0 25px rgba(245,158,11,0.4)); }
         }
 
         /* ==========================================================================
-           5. SPECIFIC BRANDED SOCIAL LINKS BOXES MATRIX
+           5. SOCIAL LINKS GRID WITH CORRECT CHANNELS ROUTING
            ========================================================================== */
         .social-matrix-section {
             max-width: 1100px;
@@ -274,16 +271,20 @@
             text-decoration: none;
             font-weight: 800;
             font-size: 1.25rem;
-            gap: 12px;
+            gap: 15px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .social-box-node i { font-size: 2.8rem; }
+        .social-box-node i { 
+            font-size: 3.2rem; 
+            display: block;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
+        /* Brand Color Schemes */
         .social-box-node.yt { background: var(--yt-red); }
         .social-box-node.ig { background: var(--ig-gradient); }
-        .slide-video-wrapper:nth-child(3) .slide-video { transform: scale(1.02); } /* Quick visual correction */
         .social-box-node.tt { background: var(--tt-black); border: 1px solid rgba(255,255,255,0.15); }
         .social-box-node.fb { background: var(--fb-blue); }
 
@@ -294,13 +295,9 @@
         }
 
         /* ==========================================================================
-           6. PRODUCTION ANALYTICS VIEWS COUNTER
+           6. DESIGN SYSTEM REMAINING COMPONENT TILES
            ========================================================================== */
-        .analytics-counter-strip {
-            text-align: center;
-            margin: 40px 0;
-        }
-
+        .analytics-counter-strip { text-align: center; margin: 40px 0; }
         .counter-badge-box {
             display: inline-flex;
             align-items: center;
@@ -309,134 +306,30 @@
             border: 1px solid var(--border-glow);
             padding: 12px 30px;
             border-radius: 50px;
-            animation: pulseState 2s infinite;
         }
+        .counter-badge-box i, .counter-badge-box strong { color: var(--primary-gold); }
 
-        .counter-badge-box i { color: var(--primary-gold); }
-        .counter-badge-box strong { color: var(--primary-gold); font-size: 1.2rem; }
-
-        @keyframes pulseState {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-
-        /* ==========================================================================
-           7. LIVE SEARCH ENGINE BLOCK
-           ========================================================================== */
-        .search-engine-section {
-            max-width: 600px;
-            width: 90%;
-            margin: 0 auto 50px auto;
-        }
-
+        .search-engine-section { max-width: 600px; width: 90%; margin: 0 auto 50px auto; }
         .search-field-wrapper { position: relative; }
         .search-field-wrapper input {
-            width: 100%;
-            padding: 18px 20px 18px 60px;
-            background: var(--bg-surface);
-            border: 2px solid var(--border-glow);
-            border-radius: 50px;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
+            width: 100%; padding: 18px 20px 18px 60px;
+            background: var(--bg-surface); border: 2px solid var(--border-glow);
+            border-radius: 50px; color: #fff; font-size: 1rem; outline: none;
         }
+        .search-field-wrapper i { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); color: var(--primary-gold); }
 
-        .search-field-wrapper input:focus {
-            border-color: var(--primary-gold);
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
-        }
-
-        .search-field-wrapper i {
-            position: absolute;
-            left: 24px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-        }
-
-        /* ==========================================================================
-           8. AUTOMATED YOUTUBE MEDIA GRID WITH HOVER EFFECT
-           ========================================================================== */
-        .media-workspace-shell {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px 60px 24px;
-        }
-
-        .media-dynamic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .media-card-node {
-            background: var(--bg-surface);
-            border: 1px solid rgba(255,255,255,0.02);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer;
-        }
-
-        .media-card-node:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .thumb-ratio {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            background: #000;
-        }
-
-        .thumb-ratio img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .media-card-node:hover .thumb-ratio img { transform: scale(1.05); }
+        .media-workspace-shell { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px 24px; }
+        .media-dynamic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .media-card-node { background: var(--bg-surface); border: 1px solid rgba(255,255,255,0.02); border-radius: 16px; overflow: hidden; }
+        .thumb-ratio { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+        .thumb-ratio img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .meta-pad { padding: 22px; }
-        .meta-pad h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: #fff; }
 
-        /* ==========================================================================
-           9. CHANNEL PROFILE INTRODUCTION BLOCK
-           ========================================================================== */
-        .channel-profile-intro-row {
-            background: #070b14;
-            border-top: 1px solid var(--border-glow);
-            padding: 70px 24px;
-            text-align: center;
-        }
-
+        .channel-profile-intro-row { background: #070b14; border-top: 1px solid var(--border-glow); padding: 70px 24px; text-align: center; }
         .profile-container-inner { max-width: 800px; margin: 0 auto; }
-        .profile-container-inner h2 {
-            font-size: 2.2rem;
-            color: var(--primary-gold);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-
-        .profile-container-inner p { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: #04060c;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.15);
-            border-top: 1px solid rgba(255,255,255,0.01);
-        }
+        .profile-container-inner h2 { color: var(--primary-gold); margin-bottom: 20px; text-transform: uppercase; }
+        .profile-container-inner p { color: var(--text-muted); line-height: 1.8; }
+        footer { text-align: center; padding: 30px 20px; background: #04060c; font-size: 0.8rem; color: rgba(255,255,255,0.15); }
 
         @media (max-width: 768px) {
             .social-grid-wrapper { grid-template-columns: 1fr 1fr; }
@@ -447,7 +340,7 @@
 <body>
 
     <div class="portal-gate-overlay" id="portalGate">
-        <button class="enter-channel-btn animate__animated animate__pulse animate__infinite" onclick="unlockPortalAndGreet()">
+        <button class="enter-channel-btn" onclick="unlockPortalAndGreet()">
             <i class="fa-solid fa-play"></i> Enter The Deen Vision
         </button>
     </div>
@@ -460,7 +353,7 @@
     </div>
 
     <div class="owner-modal-overlay" id="ownerOverlayVault" onclick="closeVaultViaOverlay(event)">
-        <div class="owner-card-content animate__animated animate__zoomIn">
+        <div class="owner-card-content">
             <button class="close-modal-btn" onclick="toggleOwnerVault(false)"><i class="fa-solid fa-xmark"></i></button>
             <h2>Abdul Subhan Almani</h2>
             <p>Welcome to the core portal of THE DEEN VISION. As the principal director, our objective is to architect high-fidelity systems that streamline spiritual development media network distributions across all main online nodes globally.</p>
@@ -470,39 +363,39 @@
     <section class="cinematic-hero-container">
         <div class="video-slider-track" id="sliderEngineTrack">
             <div class="slide-video-wrapper active">
-                <video class="slide-video" autoplay loop muted playsinline>
+                <video class="slide-video hero-video-element" autoplay loop muted playsinline preload="auto">
                     <source src="/static/videos/youtube-promo.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="slide-video-wrapper">
-                <video class="slide-video" autoplay loop muted playsinline>
+                <video class="slide-video hero-video-element" loop muted playsinline preload="auto">
                     <source src="/static/videos/instagram-promo.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="slide-video-wrapper">
-                <video class="slide-video" autoplay loop muted playsinline>
+                <video class="slide-video hero-video-element" loop muted playsinline preload="auto">
                     <source src="/static/videos/tiktok-promo.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
         <div class="hero-video-fallback-blur"></div>
         <div class="hero-title-overlay">
-            <h1 class="animate__animated animate__zoomIn">THE DEEN VISION</h1>
+            <h1>THE DEEN VISION</h1>
         </div>
     </section>
 
     <section class="social-matrix-section">
         <div class="social-grid-wrapper">
-            <a href="https://youtube.com" target="_blank" class="social-box-node yt animate__animated animate__fadeInUp">
+            <a href="YOUR_YOUTUBE_CHANNEL_LINK" target="_blank" class="social-box-node yt">
                 <i class="fa-brands fa-youtube"></i> YouTube
             </a>
-            <a href="https://instagram.com" target="_blank" class="social-box-node ig animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <a href="YOUR_INSTAGRAM_PROFILE_LINK" target="_blank" class="social-box-node ig">
                 <i class="fa-brands fa-instagram"></i> Instagram
             </a>
-            <a href="https://tiktok.com" target="_blank" class="social-box-node tt animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <a href="YOUR_TIKTOK_PROFILE_LINK" target="_blank" class="social-box-node tt">
                 <i class="fa-brands fa-tiktok"></i> TikTok
             </a>
-            <a href="https://facebook.com" target="_blank" class="social-box-node fb animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <a href="YOUR_FACEBOOK_PAGE_LINK" target="_blank" class="social-box-node fb">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
             </a>
         </div>
@@ -525,7 +418,7 @@
     <main class="media-workspace-shell">
         <div class="media-dynamic-grid" id="masterVideoGrid">
             {% for video in videos %}
-            <div class="media-card-node video-item animate__animated animate__fadeInUp">
+            <div class="media-card-node video-item">
                 <div class="thumb-ratio">
                     <img src="https://img.youtube.com/vi/{{ video.id }}/hqdefault.jpg" alt="Video Feed Component">
                 </div>
@@ -540,39 +433,45 @@
     <section class="channel-profile-intro-row">
         <div class="profile-container-inner">
             <h2>About the Channel & Platform</h2>
-            <p>The Deen Vision is an enterprise multimedia portal designed to distribute structured educational lectures, micro-reminders, and full content series. Powered by optimized automated streaming feeds, this layout bridges your primary social network pipelines into a unified, clean standalone system built for seamless scalability and high digital impact.</p>
+            <p>The Deen Vision is an enterprise multimedia portal designed to distribute structured educational lectures, micro-reminders, and full content series.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 THE DEEN VISION. Dynamic Media Portal Integration Framework. Powered by Clean Architectural Logic.</p>
+        <p>&copy; 2026 THE DEEN VISION. Dynamic Media Portal Integration Framework.</p>
     </footer>
 
     <script>
-        // AI Voice Greeting & Portal Entrance Engine
+        // Force Trigger Autoplay Engine for Mobile Handsets
+        function forcePlayAllVideos() {
+            const videoElements = document.querySelectorAll('.hero-video-element');
+            videoElements.forEach(video => {
+                video.muted = true;
+                video.playsInline = true;
+                let playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Autoplay forced system prevented slightly: ", error);
+                    });
+                }
+            });
+        }
+
         function unlockPortalAndGreet() {
             document.getElementById('portalGate').classList.add('hidden');
+            forcePlayAllVideos();
             
             if ('speechSynthesis' in window) {
                 const speechText = "Welcome to The Deen Vision";
                 const utterance = new SpeechSynthesisUtterance(speechText);
-                
-                utterance.volume = 1.0; 
-                utterance.rate = 0.95; 
-                utterance.pitch = 1.0; 
-                
-                const voices = window.speechSynthesis.getVoices();
-                const premiumVoice = voices.find(voice => voice.lang.includes('en') && voice.name.toLowerCase().includes('google'));
-                if (premiumVoice) utterance.voice = premiumVoice;
-                
+                utterance.volume = 1.0; utterance.rate = 0.95; utterance.pitch = 1.0;
                 window.speechSynthesis.speak(utterance);
             }
 
-            // Start smooth engine video carousel rotation
             initiateSliderEngine();
         }
 
-        // Robust JS Engine for Flawless Cross-Fade Slides
+        // JS Engine for Slide Fades
         let currentSlide = 0;
         function initiateSliderEngine() {
             const slides = document.querySelectorAll('.slide-video-wrapper');
@@ -582,44 +481,34 @@
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
-            }, 5000); // Changes back-to-back every 5 seconds seamlessly
+                
+                // Play specific focused active slide element safely
+                const activeVideo = slides[currentSlide].querySelector('.hero-video-element');
+                if(activeVideo) activeVideo.play();
+            }, 5000); 
         }
 
-        // Owner Modal Controls
+        window.addEventListener('DOMContentLoaded', () => {
+            forcePlayAllVideos();
+        });
+
         function toggleOwnerVault(shouldOpen) {
             const vault = document.getElementById('ownerOverlayVault');
-            if (shouldOpen) {
-                vault.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                vault.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            if (shouldOpen) { vault.classList.add('active'); document.body.style.overflow = 'hidden'; } 
+            else { vault.classList.remove('active'); document.body.style.overflow = ''; }
         }
 
         function closeVaultViaOverlay(event) {
-            if (event.target.id === 'ownerOverlayVault') {
-                toggleOwnerVault(false);
-            }
+            if (event.target.id === 'ownerOverlayVault') toggleOwnerVault(false);
         }
 
-        // Real-Time Dynamic Grid Filtering System
         function executeClientSearch() {
             let userQuery = document.getElementById('workspaceSearch').value.toLowerCase();
             let videoItems = document.getElementsByClassName('video-item');
-
             for (let item of videoItems) {
                 let currentTitle = item.getElementsByClassName('video-title-text')[0].innerText.toLowerCase();
-                if (currentTitle.includes(userQuery)) {
-                    item.style.display = "";
-                } else {
-                    item.style.display = "none";
-                }
+                item.style.display = currentTitle.includes(userQuery) ? "" : "none";
             }
-        }
-
-        if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = () => {};
         }
     </script>
 </body>
